@@ -1,0 +1,25 @@
+#Titre {
+    margin-top: 5%;
+    text-align: center;
+    cursor: default;
+}
+
+body {
+    background-image: url("../img/Background-Menu.jpg");
+    background-size: cover;
+    height: 100%;
+}
+
+#DivButton {
+    border: solid white;
+    width: 30%;
+    text-align: center;
+}
+
+.Button {
+    background-color: rgba(206, 206, 206, 0.15);
+    backdrop-filter: blur(3px);
+    width: 42%;
+    text-align: center;
+    dadada
+}

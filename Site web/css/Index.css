@@ -7,19 +7,31 @@
 body {
     background-image: url("../img/Background-Menu.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     height: 100%;
+    font-family: 'Raleway', sans-serif;
 }
 
 #DivButton {
-    border: solid white;
-    width: 30%;
+    position: relative;
+    margin-top: 25%;
+    width: 70%;
     text-align: center;
+    margin: 0 auto;
 }
 
 .Button {
-    background-color: rgba(206, 206, 206, 0.15);
+    background-color: rgba(206, 206, 206, 0.4);
     backdrop-filter: blur(3px);
-    width: 42%;
+    width: 25%;
     text-align: center;
-    dadada
+    padding: 12px;
+    margin: auto;
+    margin-top: 5%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.Button:hover {
+    transform: scale(1.15)
 }

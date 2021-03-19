@@ -50,15 +50,3 @@ body {
     height: 33vw;
     line-height: 33vw;
 }
-
-#MenuPrincipale {}
-
-#TerrainDeFoot {
-    width: 50%;
-    margin-top: 9%;
-    position: relative;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    display: none;
-}

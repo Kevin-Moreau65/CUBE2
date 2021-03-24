@@ -42,24 +42,30 @@
     align-items: center;
     border-radius: 5px;
     color: black;
+    transition: transform 0.2s;
+    cursor: pointer;
 }
-    
+
+#Precedent:hover, #Suivant:hover {
+    transform: scale(1.1);
+}
+
 #Precedent {
     left: 8%;
 }
-    
+
 #Suivant {
     left: 90.1%;
 }
 
-#Etape1{
-    background-color: rgba(206, 206, 206, 0.4); 
+#Etape1 {
+    background-color: rgba(206, 206, 206, 0.4);
     border-radius: 12px;
     width: 70%;
     margin: 0 auto;
-
+    overflow: hidden;
 }
-     
+
 #Menu-Gauche {
     position: absolute;
     width: 15%;
@@ -67,9 +73,10 @@
     height: 70%;
 }
 
-#Menu-Droit{  
-    position: absolute; 
+#Menu-Droit {
+    position: absolute;
     width: 15%;
-    right: 15%;
+    right: 16%;
     text-align: center;
+    height: 70%;
 }

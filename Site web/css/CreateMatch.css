@@ -24,23 +24,52 @@
 }
 
 #Terrain {
-    width: 40%;
-    margin-left: 30%;
-    #Precedent, #Suivant {
-        background-color: rgba(206, 206, 206, 0.4);
-        width: 2%;
-        text-align: center;
-        height: 15vh;
-        position: absolute;
-        top: 40%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 5px;
-    }
-    #Precedent {
-        left: 8%;
-    }
-    #Suivant {
-        left: 90.1%;
-    }
+    width: 55%;
+    margin: auto;
+    display: block;
+    height: 70vh;
+}
+
+#Precedent, #Suivant {
+    background-color: rgba(206, 206, 206, 0.4);
+    width: 2%;
+    text-align: center;
+    height: 15vh;
+    position: absolute;
+    top: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: black;
+}
+    
+#Precedent {
+    left: 8%;
+}
+    
+#Suivant {
+    left: 90.1%;
+}
+
+#Etape1{
+    background-color: rgba(206, 206, 206, 0.4); 
+    border-radius: 12px;
+    width: 70%;
+    margin: 0 auto;
+
+}
+     
+#Menu-Gauche {
+    position: absolute;
+    width: 15%;
+    text-align: center;
+    height: 70%;
+}
+
+#Menu-Droit{  
+    position: absolute; 
+    width: 15%;
+    right: 15%;
+    text-align: center;
+}

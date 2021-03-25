@@ -24,7 +24,7 @@
 }
 
 #Terrain {
-    width: 55%;
+    width: 100%;
     margin: auto;
     display: block;
     height: 70vh;
@@ -88,58 +88,80 @@
     opacity: 0.6;
 }
 
-#Maillot1{
-    position: absolute; 
-    left: 43%;
-    top: 27%;  
+#Maillot1 {
+    position: absolute;
+    left: 42.7%;
+    top: 27%;
 }
-#Maillot2{
-    position: absolute; 
-    right: 43%;
-    top: 27%;  
+
+#Maillot2 {
+    position: absolute;
+    left: 51%;
+    top: 27%;
 }
-#Maillot3{
-    position: absolute; 
+
+#Maillot3 {
+    position: absolute;
     left: 39%;
-    top: 43%;  
+    top: 43%;
 }
-#Maillot4{
-    position: absolute; 
-    left: 48%;
-    top: 48%;  
+
+#Maillot4 {
+    position: absolute;
+    left: 42.2%;
+    top: 64%;
 }
-#Maillot5{
-    position: absolute; 
-    right: 39%;
-    top: 43%;  
+
+#Maillot5 {
+    position: absolute;
+    left: 52.3%;
+    top: 64%;
 }
-#Maillot6{
-    position: absolute; 
-    left: 34%;
-    bottom: 39%;  
+
+#Maillot6 {
+    position: absolute;
+    left: 36.3%;
+    top: 56%;
 }
-#Maillot7{
-    position: absolute; 
+
+#Maillot7 {
+    position: absolute;
     left: 40%;
-    bottom: 32%  
+    top: 32%
 }
-#Maillot8{
-    position: absolute; 
-    left: 48%;
-    bottom: 30%;  
+
+#Maillot8 {
+    position: absolute;
+    left: 47.3%;
+    top: 50%;
 }
-#Maillot9{
-    position: absolute; 
-    right: 40%;
-    bottom: 32%;  
+
+#Maillot9 {
+    position: absolute;
+    left: 53.5%;
+    top: 32%;
 }
-#Maillot10{
-    position: absolute; 
-    right: 34%;
-    bottom: 39%;  
+
+#Maillot10 {
+    position: absolute;
+    left: 58%;
+    top: 56%;
 }
-#Maillot11{
-    position: absolute; 
-    left: 48%;
-    bottom: 18%;  
+
+#Maillot11 {
+    position: absolute;
+    left: 47.3%;
+    top: 75%;
+}
+
+#TerrainMaillot {
+    width: 50%;
+    margin: auto;
+    display: block;
+    height: 69.8vh;
+    overflow: hidden;
+}
+
+.Maillot {
+    width: 5.5%;
 }

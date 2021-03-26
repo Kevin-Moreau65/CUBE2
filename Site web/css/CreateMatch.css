@@ -69,15 +69,16 @@
 
 #Menu-Gauche {
     position: absolute;
-    width: 15%;
+    width: 18%;
+    left: 15%;
     text-align: center;
     height: 70%;
 }
 
 #Menu-Droit {
     position: absolute;
-    width: 15%;
-    right: 16%;
+    width: 18%;
+    right: 15%;
     text-align: center;
     height: 70%;
 }
@@ -88,71 +89,62 @@
     opacity: 0.6;
 }
 
-#Maillot1 {
-    position: absolute;
-    left: 42.7%;
-    top: 27%;
+#Maillot1{
+    position: absolute; 
+    left: 42%;
+    top: 25%;  
 }
-
-#Maillot2 {
-    position: absolute;
-    left: 51%;
-    top: 27%;
-}
-
-#Maillot3 {
-    position: absolute;
-    left: 39%;
-    top: 43%;
-}
-
-#Maillot4 {
-    position: absolute;
-    left: 42.2%;
-    top: 64%;
-}
-
-#Maillot5 {
-    position: absolute;
-    left: 52.3%;
-    top: 64%;
-}
-
-#Maillot6 {
-    position: absolute;
-    left: 36.3%;
-    top: 56%;
-}
-
-#Maillot7 {
-    position: absolute;
-    left: 40%;
-    top: 32%
-}
-
-#Maillot8 {
-    position: absolute;
-    left: 47.3%;
-    top: 50%;
-}
-
-#Maillot9 {
-    position: absolute;
+#Maillot2{
+    position: absolute; 
     left: 53.5%;
-    top: 32%;
+    top: 25%;  
+}
+#Maillot3{
+    position: absolute; 
+    left: 35%;
+    top: 43%;  
+}
+#Maillot4{
+    position: absolute; 
+    left: 44%;
+    top: 43%;  
+}
+#Maillot5{
+    position: absolute; 
+    left: 51.5%;
+    top: 43%;  
+}
+#Maillot6{
+    position: absolute; 
+    left: 60.5%;
+    top: 43%;  
+}
+#Maillot7{
+    position: absolute; 
+    left: 35%;
+    bottom: 33%;  
+}
+#Maillot8{
+    position: absolute; 
+    left: 44%;
+    bottom: 33%;  
+}
+#Maillot9{
+    position: absolute; 
+    left: 51.5%;
+    bottom: 33%;  
+}
+#Maillot10{
+    position: absolute; 
+    left: 60.5%;
+    bottom: 33%;  
+}
+#Maillot11{
+    position: absolute; 
+    left: 47.8%;
+    bottom: 18%;  
 }
 
-#Maillot10 {
-    position: absolute;
-    left: 58%;
-    top: 56%;
-}
-
-#Maillot11 {
-    position: absolute;
-    left: 47.3%;
-    top: 75%;
-}
 
 #TerrainMaillot {
     width: 50%;
@@ -163,5 +155,6 @@
 }
 
 .Maillot {
-    width: 5.5%;
+    width: 4.5%;
+    opacity: 0.5;
 }

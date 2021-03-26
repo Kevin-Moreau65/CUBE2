@@ -1,14 +1,15 @@
 #Etape3 {
     position: relative;
     border-radius: 8px;
+    top: -70%;
     background-color: rgba(206, 206, 206, 0.4);
     backdrop-filter: blur(5px);
-    width: 80%;
+    width: 70%;
     height: 34vw;
     margin: 0 auto;
     text-align: center;
     box-shadow: 0px 0px 10px black;
-    display: none;
+    transition: transform 1s, opacity 1s;
 }
 
 #Etape3>h2 {
@@ -59,12 +60,23 @@
     left: 90.1%;
 }
 
+.Passé {
+    transform: translateX(-200%) scale(0.1);
+    opacity: 0;
+}
+
+.PasPassé {
+    transform: translateX(200%) scale(0.1);
+    opacity: 0;
+}
+
 #Etape1 {
     background-color: rgba(206, 206, 206, 0.4);
     border-radius: 12px;
     width: 70%;
     margin: 0 auto;
     overflow: hidden;
+    transition: transform 1s, opacity 1s;
 }
 
 #Menu-Gauche {
@@ -144,7 +156,6 @@
     left: 47.8%;
     bottom: 18%;  
 }
-
 
 #TerrainMaillot {
     width: 50%;

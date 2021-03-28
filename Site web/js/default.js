@@ -28,38 +28,38 @@ $("#BoutonGauche").change(function () {
 
 $("#BoutonDroit").change(function () {
   if ($(this).val() == "4-4-2") {
-    $("#Maillot1").animate({ left: "42%", top: "25%" }, 250);
-    $("#Maillot2").animate({ left: "53.5%", top: "25%" }, 250);
-    $("#Maillot3").animate({ left: "35%", top: "43%" }, 250);
-    $("#Maillot4").animate({ left: "44%", top: "43%" }, 250);
-    $("#Maillot5").animate({ left: "51.5%", top: "43%" }, 250);
-    $("#Maillot6").animate({ left: "60.5%", top: "43%" }, 250);
-    $("#Maillot7").animate({ left: "35%", bottom: "33%" }, 250);
-    $("#Maillot8").animate({ left: "44%", bottom: "33%" }, 250);
-    $("#Maillot9").animate({ left: "51.5%", bottom: "33%" }, 250);
-    $("#Maillot10").animate({ left: "60.5%", bottom: "33%" }, 250);
+    $("#Maillot1").animate({ left: "39.5%", top: "13%" }, 250);
+    $("#Maillot2").animate({ left: "53.5%", top: "13%" }, 250);
+    $("#Maillot3").animate({ left: "28%", top: "33%" }, 250);
+    $("#Maillot4").animate({ left: "38%", top: "33%" }, 250);
+    $("#Maillot5").animate({ left: "55%", top: "33%" }, 250);
+    $("#Maillot6").animate({ left: "65%", top: "33%" }, 250);
+    $("#Maillot7").animate({ left: "28%", bottom: "33%" }, 250);
+    $("#Maillot8").animate({ left: "38%", bottom: "33%" }, 250);
+    $("#Maillot9").animate({ left: "55%", bottom: "33%" }, 250);
+    $("#Maillot10").animate({ left: "65%", bottom: "33%" }, 250);
   } else if ($(this).val() == "4-4-2 losange") {
-    $("#Maillot1").animate({ left: "42%", top: "21%" }, 250);
-    $("#Maillot2").animate({ left: "53.5%", top: "21%" }, 250);
-    $("#Maillot3").animate({ left: "48%", top: "32%" }, 250);
-    $("#Maillot4").animate({ left: "42%", top: "40%" }, 250);
-    $("#Maillot5").animate({ left: "53.5%", top: "40%" }, 250);
-    $("#Maillot6").animate({ left: "48%", top: "50%" }, 250);
-    $("#Maillot7").animate({ left: "35%", bottom: "37%" }, 250);
-    $("#Maillot8").animate({ left: "43%", bottom: "30%" }, 250);
-    $("#Maillot9").animate({ left: "52.5%", bottom: "30%" }, 250);
-    $("#Maillot10").animate({ left: "60.5%", bottom: "37%" }, 250);
+    $("#Maillot1").animate({ left: "39.5%", top: "13%" }, 250);
+    $("#Maillot2").animate({ left: "53.5%", top: "13%" }, 250);
+    $("#Maillot3").animate({ left: "46.5%", top: "28%" }, 250);
+    $("#Maillot4").animate({ left: "39%", top: "40%" }, 250);
+    $("#Maillot5").animate({ left: "54%", top: "40%" }, 250);
+    $("#Maillot6").animate({ left: "46.5%", top: "52%" }, 250);
+    $("#Maillot7").animate({ left: "29%", bottom: "32%" }, 250);
+    $("#Maillot8").animate({ left: "39%", bottom: "24%" }, 250);
+    $("#Maillot9").animate({ left: "54%", bottom: "24%" }, 250);
+    $("#Maillot10").animate({ left: "64%", bottom: "32%" }, 250);
   } else if ($(this).val() == "Coupe du monde 2018") {
-    $("#Maillot1").animate({ left: "48%", top: "28%" }, 250);
-    $("#Maillot2").animate({ left: "37%", top: "42%" }, 250);
-    $("#Maillot3").animate({ left: "48%", top: "42%" }, 250);
-    $("#Maillot4").animate({ left: "59%", top: "42%" }, 250);
-    $("#Maillot5").animate({ left: "43%", top: "52%" }, 250);
-    $("#Maillot6").animate({ left: "53%", top: "52%" }, 250);
-    $("#Maillot7").animate({ left: "35%", bottom: "35%" }, 250);
-    $("#Maillot8").animate({ left: "43%", bottom: "30%" }, 250);
-    $("#Maillot9").animate({ left: "53%", bottom: "30%" }, 250);
-    $("#Maillot10").animate({ left: "60.5%", bottom: "35%" }, 250);
+    $("#Maillot1").animate({ left: "46.5%", top: "13%" }, 250);
+    $("#Maillot2").animate({ left: "33%", top: "33%" }, 250);
+    $("#Maillot3").animate({ left: "46.5%", top: "33%" }, 250);
+    $("#Maillot4").animate({ left: "60%", top: "33%" }, 250);
+    $("#Maillot5").animate({ left: "39%", top: "46%" }, 250);
+    $("#Maillot6").animate({ left: "54%", top: "46%" }, 250);
+    $("#Maillot7").animate({ left: "28%", bottom: "32%" }, 250);
+    $("#Maillot8").animate({ left: "39%", bottom: "24%" }, 250);
+    $("#Maillot9").animate({ left: "54%", bottom: "24%" }, 250);
+    $("#Maillot10").animate({ left: "65%", bottom: "32%" }, 250);
   } else if ($(this).val() == "5-3-2") {
     $("#Maillot1").animate({ left: "43%", top: "27%" }, 250);
     $("#Maillot2").animate({ left: "53.5%", top: "27%" }, 250);
@@ -78,9 +78,13 @@ $("#Suivant").click(function () {
   if (State == 0) {
     GoForward(1);
     State++;
+    $("#NextStep").text("Paramètre du match");
+    $("#BackStep").text("\u00c9quipe domicile");
   } else if (State == 1) {
     GoForward(2);
     State++;
+    $("#NextStep").text("Lancement du match");
+    $("#BackStep").text("\u00c9quipe extérieur");
   } else {
     console.log("NON");
   }
@@ -92,9 +96,13 @@ $("#Precedent").click(function () {
   } else if (State == 2) {
     GoBack(3);
     State--;
+    $("#NextStep").text("Paramètre du match");
+    $("#BackStep").text("\u00c9quipe domicile");
   } else if (State == 1) {
     GoBack(2);
     State--;
+    $("#NextStep").text("\u00c9quipe extérieur");
+    $("#BackStep").text("Aucune étape précédente");
   } else {
     console.log("NON");
   }
@@ -108,4 +116,17 @@ function GoForward(i) {
   iPlus = i++;
   $("#Etape" + i).toggleClass("PasPassé");
   $("#Etape" + iPlus).toggleClass("Passé");
+}
+$("#Suivant, #Precedent").hover(
+  function () {
+    $(this).animate({ width: "9.5em" }, 200);
+  },
+  function () {
+    DelayHover(this);
+  }
+);
+function DelayHover(Element) {
+  setTimeout(function () {
+    $(Element).animate({ width: "1.2em" }, 200);
+  }, 2500);
 }

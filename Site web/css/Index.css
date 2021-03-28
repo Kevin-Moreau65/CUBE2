@@ -1,6 +1,7 @@
-html{
+html {
     color: white;
 }
+
 #Titre {
     margin-top: 5%;
     text-align: center;
@@ -9,7 +10,8 @@ html{
 
 body {
     background-image: url("../img/Background-Menu.jpg");
-    background-size:cover; background-position:center;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     font-family: 'Raleway', sans-serif;
     overflow: hidden;
@@ -44,6 +46,10 @@ body {
 
 .Button:hover {
     transform: scale(1.1)
+}
+
+.Button:active {
+    transform: scale(0.9)
 }
 
 .twitter-timeline {

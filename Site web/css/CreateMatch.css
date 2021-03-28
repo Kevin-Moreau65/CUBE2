@@ -34,30 +34,59 @@
 #Precedent, #Suivant {
     background-color: rgba(206, 206, 206, 0.4);
     backdrop-filter: blur(5px);
-    width: 2%;
+    width: 1.2em;
     text-align: center;
     height: 15vh;
     position: absolute;
     top: 40%;
     display: flex;
-    justify-content: center;
     align-items: center;
     border-radius: 5px;
     color: black;
     transition: transform 0.2s;
     cursor: pointer;
+    overflow: hidden;
 }
 
 #Precedent:hover, #Suivant:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 #Precedent {
-    left: 8%;
+    margin-right: 85.5%;
+    right: 0;
+    padding-right: 10px;
 }
 
 #Suivant {
-    left: 90.1%;
+    margin-left: 85%;
+    padding-left: 10px;
+}
+
+#Suivant>h3 {
+    margin-right: 10px;
+}
+
+#Precedent>h3 {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+}
+
+#NextStep {
+    position: absolute;
+    left: 0;
+    margin-left: 1.8em;
+    height: auto;
+    width: 8em;
+}
+
+#BackStep {
+    position: absolute;
+    right: 0;
+    margin-right: 2em;
+    height: auto;
+    width: 8em;
 }
 
 .Passé {
@@ -72,6 +101,7 @@
 
 #Etape1 {
     background-color: rgba(206, 206, 206, 0.4);
+    backdrop-filter: blur(5px);
     border-radius: 12px;
     width: 70%;
     margin: 0 auto;
@@ -82,7 +112,7 @@
 #Menu-Gauche {
     position: absolute;
     width: 18%;
-    left: 15%;
+    left: 3.5%;
     text-align: center;
     height: 70%;
 }
@@ -90,7 +120,7 @@
 #Menu-Droit {
     position: absolute;
     width: 18%;
-    right: 15%;
+    right: 4.6%;
     text-align: center;
     height: 70%;
 }
@@ -101,60 +131,70 @@
     opacity: 0.6;
 }
 
-#Maillot1{
-    position: absolute; 
-    left: 42%;
-    top: 25%;  
+#Maillot1 {
+    position: absolute;
+    left: 39.5%;
+    top: 13%;
 }
-#Maillot2{
-    position: absolute; 
+
+#Maillot2 {
+    position: absolute;
     left: 53.5%;
-    top: 25%;  
+    top: 13%;
 }
-#Maillot3{
-    position: absolute; 
-    left: 35%;
-    top: 43%;  
+
+#Maillot3 {
+    position: absolute;
+    left: 28%;
+    top: 33%;
 }
-#Maillot4{
-    position: absolute; 
-    left: 44%;
-    top: 43%;  
+
+#Maillot4 {
+    position: absolute;
+    left: 38%;
+    top: 33%;
 }
-#Maillot5{
-    position: absolute; 
-    left: 51.5%;
-    top: 43%;  
+
+#Maillot5 {
+    position: absolute;
+    left: 55%;
+    top: 33%;
 }
-#Maillot6{
-    position: absolute; 
-    left: 60.5%;
-    top: 43%;  
+
+#Maillot6 {
+    position: absolute;
+    left: 65%;
+    top: 33%;
 }
-#Maillot7{
-    position: absolute; 
-    left: 35%;
-    bottom: 33%;  
+
+#Maillot7 {
+    position: absolute;
+    left: 28%;
+    bottom: 33%;
 }
-#Maillot8{
-    position: absolute; 
-    left: 44%;
-    bottom: 33%;  
+
+#Maillot8 {
+    position: absolute;
+    left: 38%;
+    bottom: 33%;
 }
-#Maillot9{
-    position: absolute; 
-    left: 51.5%;
-    bottom: 33%;  
+
+#Maillot9 {
+    position: absolute;
+    left: 55%;
+    bottom: 33%;
 }
-#Maillot10{
-    position: absolute; 
-    left: 60.5%;
-    bottom: 33%;  
+
+#Maillot10 {
+    position: absolute;
+    left: 65%;
+    bottom: 33%;
 }
-#Maillot11{
-    position: absolute; 
-    left: 47.8%;
-    bottom: 18%;  
+
+#Maillot11 {
+    position: absolute;
+    left: 46.5%;
+    bottom: 10%;
 }
 
 #TerrainMaillot {
@@ -166,6 +206,6 @@
 }
 
 .Maillot {
-    width: 4.5%;
+    width: 7%;
     opacity: 0.5;
 }

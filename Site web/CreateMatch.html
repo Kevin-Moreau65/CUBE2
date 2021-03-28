@@ -14,12 +14,10 @@
   <div id="Etape1">
     <div id="Menu-Gauche">
       <select id="BoutonGauche" name="Selec2">
-      <option value="none" selected disabled hidden>
-        Liste des équipes
-      </option>
-      <option>Pau FC</option>
-      <option>PSG</option>      
-    </select>
+        <option value="none" selected disabled hidden>Liste des équipes</option>
+        <option>Pau FC</option>
+        <option>PSG</option>
+      </select>
     </div>
 
     <div id="Menu-Droit">
@@ -61,8 +59,14 @@
       <input id="DatePicker" type="date" />
     </div>
   </div>
-  <h3 id="Precedent"><</h3>
-  <h3 id="Suivant">></h3>
+  <div id="Precedent">
+    <h3><</h3>
+    <h4 id="BackStep">Aucune étape précédente</h4>
+  </div>
+  <div id="Suivant">
+    <h3>></h3>
+    <h4 id="NextStep">&Eacutequipe extérieur</h4>
+  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="js/default.js"></script>
 </body>

@@ -118,16 +118,19 @@ function GoForward(i) {
   $("#Etape" + i).toggleClass("PasPassé");
   $("#Etape" + iPlus).toggleClass("Passé");
 }
+// 2 timer, un pour chaque flèches
+var Suivant, Precedent;
+var Timer = [Precedent, Suivant];
+// Quand la souris passe sur les flèches
 $("#Suivant, #Precedent").hover(
   function () {
+    // reset le timer de l'animation
+    clearTimeout(Timer[Timer.indexOf($(this).attr("id"))]);
+    // animation
     $(this).animate({ width: "9.5em" }, 200);
   },
   function () {
-    DelayHover(this);
+    // Délai de désactivation de l'animation
+    DelayHover(this, $(this).attr("id"));
   }
 );
-function DelayHover(Element) {  
-  setTimeout(function () {
-    $(Element).animate({ width: "1.2em" }, 200);
-  }, 1250);
-}

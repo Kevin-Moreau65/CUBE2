@@ -147,3 +147,4 @@ function DelayHover(Element, i) {
     return;
   }, 800);
 }
+lololoololololololololo

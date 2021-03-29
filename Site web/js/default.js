@@ -1,5 +1,5 @@
-$("#BoutonGauche").change(function () {/*Bouton de changement d'équipe*/
-  if ($(this).val() == "Pau FC") {
+$("#BoutonGauche").change(function () {
+  /*Bouton de changement d'équipe*/ if ($(this).val() == "Pau FC") {
     $("#Maillot1").attr("src", "img/maillot-paufc.png");
     $("#Maillot2").attr("src", "img/maillot-paufc.png");
     $("#Maillot3").attr("src", "img/maillot-paufc.png");
@@ -26,8 +26,8 @@ $("#BoutonGauche").change(function () {/*Bouton de changement d'équipe*/
   }
 });
 
-$("#BoutonDroit").change(function () {/*Bouton de changement de formation*/
-  if ($(this).val() == "4-4-2") {
+$("#BoutonDroit").change(function () {
+  /*Bouton de changement de formation*/ if ($(this).val() == "4-4-2") {
     $("#Maillot1").animate({ left: "39.5%", top: "13%" }, 250);
     $("#Maillot2").animate({ left: "53.5%", top: "13%" }, 250);
     $("#Maillot3").animate({ left: "28%", top: "33%" }, 250);
@@ -89,7 +89,11 @@ $("#Suivant").click(function () {
     console.log("NON");
   }
 });
-$("#Precedent").click(function() {if (State == 0) {window.location.href='index.html'}})
+$("#Precedent").click(function () {
+  if (State == 0) {
+    window.location.href = "index.html";
+  }
+});
 $("#Precedent").click(function () {
   if (State == 3) {
     GoBack(4);
@@ -134,3 +138,12 @@ $("#Suivant, #Precedent").hover(
     DelayHover(this, $(this).attr("id"));
   }
 );
+function DelayHover(Element, i) {
+  clearTimeout(Timer[Timer.indexOf(i)]);
+  // active le timer de la flèche correspondante
+  Timer[Timer.indexOf(i)] = setTimeout(function () {
+    // remet la flèche dans sa taille d'origine
+    $(Element).animate({ width: "1.2em" }, 200);
+    return;
+  }, 800);
+}

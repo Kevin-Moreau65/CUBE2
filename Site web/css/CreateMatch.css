@@ -209,3 +209,9 @@
     width: 7%;
     opacity: 0.5;
 }
+
+.BoutonMenu{
+    border-radius: 10px;
+    height: 5%;
+    margin-top: 2%;
+}

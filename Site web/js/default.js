@@ -1,4 +1,4 @@
-$("#BoutonGauche").change(function () {
+$("#BoutonGauche").change(function () {/*Bouton de changement d'équipe*/
   if ($(this).val() == "Pau FC") {
     $("#Maillot1").attr("src", "img/maillot-paufc.png");
     $("#Maillot2").attr("src", "img/maillot-paufc.png");
@@ -26,7 +26,7 @@ $("#BoutonGauche").change(function () {
   }
 });
 
-$("#BoutonDroit").change(function () {
+$("#BoutonDroit").change(function () {/*Bouton de changement de formation*/
   if ($(this).val() == "4-4-2") {
     $("#Maillot1").animate({ left: "39.5%", top: "13%" }, 250);
     $("#Maillot2").animate({ left: "53.5%", top: "13%" }, 250);
@@ -61,16 +61,16 @@ $("#BoutonDroit").change(function () {
     $("#Maillot9").animate({ left: "54%", bottom: "24%" }, 250);
     $("#Maillot10").animate({ left: "65%", bottom: "32%" }, 250);
   } else if ($(this).val() == "5-3-2") {
-    $("#Maillot1").animate({ left: "43%", top: "27%" }, 250);
-    $("#Maillot2").animate({ left: "53.5%", top: "27%" }, 250);
-    $("#Maillot3").animate({ left: "39%", top: "43%" }, 250);
-    $("#Maillot4").animate({ left: "48%", top: "48%" }, 250);
-    $("#Maillot5").animate({ left: "56.5%", top: "43%" }, 250);
-    $("#Maillot6").animate({ left: "35%", top: "56%" }, 250);
-    $("#Maillot7").animate({ left: "40%", bottom: "32%" }, 250);
-    $("#Maillot8").animate({ left: "48%", bottom: "30%" }, 250);
-    $("#Maillot9").animate({ left: "55.5%", bottom: "32%" }, 250);
-    $("#Maillot10").animate({ left: "60.5%", bottom: "37.5%" }, 250);
+    $("#Maillot1").animate({ left: "40%", top: "15%" }, 250);
+    $("#Maillot2").animate({ left: "53%", top: "15%" }, 250);
+    $("#Maillot3").animate({ left: "34%", top: "36%" }, 250);
+    $("#Maillot4").animate({ left: "46.5%", top: "43%" }, 250);
+    $("#Maillot5").animate({ left: "59.5%", top: "36%" }, 250);
+    $("#Maillot6").animate({ left: "28.5%", top: "52.5%" }, 250);
+    $("#Maillot7").animate({ left: "36%", bottom: "27%" }, 250);
+    $("#Maillot8").animate({ left: "46.5%", bottom: "24%" }, 250);
+    $("#Maillot9").animate({ left: "57%", bottom: "27%" }, 250);
+    $("#Maillot10").animate({ left: "64.5%", bottom: "37.5%" }, 250);
   }
 });
 var State = 0;
@@ -89,6 +89,7 @@ $("#Suivant").click(function () {
     console.log("NON");
   }
 });
+$("#Precedent").click(function() {if (State == 0) {window.location.href='index.html'}})
 $("#Precedent").click(function () {
   if (State == 3) {
     GoBack(4);
@@ -102,7 +103,7 @@ $("#Precedent").click(function () {
     GoBack(2);
     State--;
     $("#NextStep").text("\u00c9quipe extérieur");
-    $("#BackStep").text("Aucune étape précédente");
+    $("#BackStep").text("Menu Principale");
   } else {
     console.log("NON");
   }
@@ -125,8 +126,8 @@ $("#Suivant, #Precedent").hover(
     DelayHover(this);
   }
 );
-function DelayHover(Element) {
+function DelayHover(Element) {  
   setTimeout(function () {
     $(Element).animate({ width: "1.2em" }, 200);
-  }, 2500);
+  }, 1250);
 }

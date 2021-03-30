@@ -1,28 +1,10 @@
 $("#BoutonGauche").change(function () {
-  /*Bouton de changement d'équipe*/ if ($(this).val() == "Pau FC") {
-    $("#Maillot1").attr("src", "img/maillot-paufc.png");
-    $("#Maillot2").attr("src", "img/maillot-paufc.png");
-    $("#Maillot3").attr("src", "img/maillot-paufc.png");
-    $("#Maillot4").attr("src", "img/maillot-paufc.png");
-    $("#Maillot5").attr("src", "img/maillot-paufc.png");
-    $("#Maillot6").attr("src", "img/maillot-paufc.png");
-    $("#Maillot7").attr("src", "img/maillot-paufc.png");
-    $("#Maillot8").attr("src", "img/maillot-paufc.png");
-    $("#Maillot9").attr("src", "img/maillot-paufc.png");
-    $("#Maillot10").attr("src", "img/maillot-paufc.png");
-    $(".Maillot").css({ opacity: "1" });
-  } else if ($(this).val() == "PSG") {
-    $("#Maillot1").attr("src", "img/maillot-psg.png");
-    $("#Maillot2").attr("src", "img/maillot-psg.png");
-    $("#Maillot3").attr("src", "img/maillot-psg.png");
-    $("#Maillot4").attr("src", "img/maillot-psg.png");
-    $("#Maillot5").attr("src", "img/maillot-psg.png");
-    $("#Maillot6").attr("src", "img/maillot-psg.png");
-    $("#Maillot7").attr("src", "img/maillot-psg.png");
-    $("#Maillot8").attr("src", "img/maillot-psg.png");
-    $("#Maillot9").attr("src", "img/maillot-psg.png");
-    $("#Maillot10").attr("src", "img/maillot-psg.png");
-    $(".Maillot").css({ opacity: "1" });
+  /*Bouton de changement d'équipe*/ if ($(this).val() == "Pau FC") {  
+    $(".MaillotG").attr("src", "img/maillot-paufc.png");
+    $(".MaillotGoal").attr("src", "img/maillot-gardien.png");     
+  } else if ($(this).val() == "PSG") {    
+    $(".MaillotG").attr("src", "img/maillot-psg.png"); 
+    $(".MaillotGoal").attr("src", "img/maillot-gardien.png");    
   }
 });
 

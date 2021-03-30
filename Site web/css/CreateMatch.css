@@ -231,6 +231,8 @@
     justify-content: center;
     height: 94.8%;
     overflow-y: scroll;
+    overflow-x: hidden;
+    padding-left: 8px;
 }
 #Droite {
     text-align: center;
@@ -254,6 +256,18 @@
     
 }
 
+#Gauche>h3 {
+    display: flex;
+}
+
+#Gauche>h3:before, #Gauche>h3:after {
+    color: white;
+    content: '';
+    flex: 1;
+    border-bottom: solid 1.5px;
+    margin: auto 0.25em;
+}
+
 ::-webkit-scrollbar-thumb {
     height: 6px;
     border: 4px solid rgba(0, 0, 0, 0);
@@ -271,4 +285,8 @@
 
 ::-webkit-scrollbar-corner {
     background-color: transparent;
+}
+
+#MaillotMap {
+    cursor: pointer;
 }

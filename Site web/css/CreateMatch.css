@@ -111,18 +111,18 @@
 
 #Menu-Gauche {
     position: absolute;
-    width: 18%;
-    left: 3.5%;
+    width: 25%;
+    left: 0%;
     text-align: center;
-    height: 70%;
+    height: 100%;
 }
 
 #Menu-Droit {
     position: absolute;
-    width: 18%;
-    right: 4.6%;
+    width: 25%;
+    right: 0%;
     text-align: center;
-    height: 70%;
+    height: 100%;
 }
 
 .maillotB {
@@ -196,7 +196,10 @@
     left: 46.5%;
     bottom: 6.5%;
 }
-
+#MaillotJoueur1{
+    left: 10%;
+    top: 10%;
+}
 #TerrainMaillot {
     width: 50%;
     margin: auto;
@@ -212,6 +215,12 @@
 
 .BoutonMenu{
     border-radius: 10px;
-    height: 5%;
+    height: 3%;
     margin-top: 2%;
+}
+
+#ColoneAttaquant{
+    position: absolute;
+    left: -45%;
+    top: 7%;
 }

@@ -196,10 +196,12 @@
     left: 46.5%;
     bottom: 6.5%;
 }
-#MaillotJoueur1{
+
+#MaillotJoueur1 {
     left: 10%;
     top: 10%;
 }
+
 #TerrainMaillot {
     width: 50%;
     margin: auto;
@@ -213,14 +215,43 @@
     opacity: 0.5;
 }
 
-.BoutonMenu{
+.BoutonMenu {
     border-radius: 10px;
-    height: 3%;
+    height: 4%;
     margin-top: 2%;
 }
 
-#ColoneAttaquant{
-    position: absolute;
-    left: -45%;
-    top: 7%;
+.MaillotG {
+    width: 28%;
+    margin: 2px;
+}
+
+#Gauche {
+    text-align: center;
+    justify-content: center;
+    height: 94.8%;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 18px;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    -webkit-border-radius: 7px;
+    background-color: rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
 }

@@ -123,7 +123,7 @@ function GoForward(i) {
   $("#Etape" + iPlus).toggleClass("Passé");
 }
 // 2 timer, un pour chaque flèches
-var Suivant, Precedent;
+var Precedent, Suivant;
 var Timer = [Precedent, Suivant];
 // Quand la souris passe sur les flèches
 $("#Suivant, #Precedent").hover(
@@ -147,5 +147,3 @@ function DelayHover(Element, i) {
     return;
   }, 800);
 }
-
-

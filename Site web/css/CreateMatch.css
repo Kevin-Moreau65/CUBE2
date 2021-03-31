@@ -52,6 +52,10 @@
     transform: scale(1.05);
 }
 
+#Precedent:active, #Suivant:active {
+    transform: scale(0.95)
+}
+
 #Precedent {
     margin-right: 85.5%;
     right: 0;
@@ -234,17 +238,26 @@
     overflow-x: hidden;
     padding-left: 8px;
 }
+
 #Droite {
     text-align: center;
     justify-content: center;
     height: 94.8%;
     overflow-y: scroll;
+    padding-right: 8px;
 }
 
-.MaillotD {
-    width: 28%;
-    margin: 2px;
+#DivMaillot {
+    width: 33.3%;
+    height: 13%;
+    float: left;
 }
+
+#DivMaillot>h4 {
+    margin: 0;
+    color: rgb(255, 255, 255);
+}
+
 .MaillotGoal {
     width: 28%;
     margin: 2px;
@@ -253,18 +266,18 @@
 ::-webkit-scrollbar {
     width: 14px;
     height: 18px;
-    
 }
 
-#Gauche>h3 {
+#Gauche>h3, #Droite>h3 {
     display: flex;
+    position: relative;
 }
 
 #Gauche>h3:before, #Gauche>h3:after {
     color: white;
     content: '';
     flex: 1;
-    border-bottom: solid 1.5px;
+    border-bottom: solid 2px;
     margin: auto 0.25em;
 }
 
@@ -273,8 +286,20 @@
     border: 4px solid rgba(0, 0, 0, 0);
     background-clip: padding-box;
     -webkit-border-radius: 7px;
-    background-color: rgb(206, 206, 206);;
-    
+    background-color: rgb(206, 206, 206);
+    ;
+}
+
+#Droite>h3:before, #Droite>h3:after {
+    color: white;
+    content: '';
+    flex: 1;
+    border-bottom: solid 2px;
+    margin: auto 0.5em;
+}
+
+#Droite>h3::before {
+    margin-left: 1.3em !important;
 }
 
 ::-webkit-scrollbar-button {
@@ -289,4 +314,8 @@
 
 #MaillotMap {
     cursor: pointer;
+}
+
+.MaillotD {
+    width: 85%;
 }

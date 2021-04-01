@@ -1,10 +1,19 @@
 $("#BoutonGauche").change(function () {
-  /*Bouton de changement d'équipe*/ if ($(this).val() == "Pau FC") {  
-    $(".MaillotG").attr("src", "img/maillot-paufc.png");
-    $(".MaillotGoal").attr("src", "img/maillot-gardien.png");     
-  } else if ($(this).val() == "PSG") {    
-    $(".MaillotG").attr("src", "img/maillot-psg.png"); 
-    $(".MaillotGoal").attr("src", "img/maillot-gardien.png");    
+  /*Bouton de changement d'équipe*/ if ($(this).val() == "Pau FC") {
+    $(".MaillotD").attr("src", "img/maillot-paufc.png");
+    $(".MaillotGoal").attr("src", "img/maillot-gardien.png");
+  } else if ($(this).val() == "PSG") {
+    $(".MaillotD").attr("src", "img/maillot-psg.png");
+    $(".MaillotGoal").attr("src", "img/maillot-gardien.png");
+  }
+});
+$("#BoutonGaucheE").change(function () {
+  /*Bouton de changement d'équipe*/ if ($(this).val() == "Pau FC") {
+    $(".MaillotDE").attr("src", "img/maillot-paufc.png");
+    $(".MaillotGoalE").attr("src", "img/maillot-gardien.png");
+  } else if ($(this).val() == "PSG") {
+    $(".MaillotDE").attr("src", "img/maillot-psg.png");
+    $(".MaillotGoalE").attr("src", "img/maillot-gardien.png");
   }
 });
 
@@ -53,6 +62,53 @@ $("#BoutonDroit").change(function () {
     $("#Maillot8").animate({ left: "46.5%", bottom: "24%" }, 250);
     $("#Maillot9").animate({ left: "57%", bottom: "27%" }, 250);
     $("#Maillot10").animate({ left: "64.5%", bottom: "37.5%" }, 250);
+  }
+});
+$("#BoutonDroitE").change(function () {
+  /*Bouton de changement de formation*/ if ($(this).val() == "4-4-2") {
+    $("#Maillot1E").animate({ left: "39.5%", top: "13%" }, 250);
+    $("#Maillot2E").animate({ left: "53.5%", top: "13%" }, 250);
+    $("#Maillot3E").animate({ left: "28%", top: "33%" }, 250);
+    $("#Maillot4E").animate({ left: "38%", top: "33%" }, 250);
+    $("#Maillot5E").animate({ left: "55%", top: "33%" }, 250);
+    $("#Maillot6E").animate({ left: "65%", top: "33%" }, 250);
+    $("#Maillot7E").animate({ left: "28%", bottom: "33%" }, 250);
+    $("#Maillot8E").animate({ left: "38%", bottom: "33%" }, 250);
+    $("#Maillot9E").animate({ left: "55%", bottom: "33%" }, 250);
+    $("#Maillot10E").animate({ left: "65%", bottom: "33%" }, 250);
+  } else if ($(this).val() == "4-4-2 losange") {
+    $("#Maillot1E").animate({ left: "39.5%", top: "13%" }, 250);
+    $("#Maillot2E").animate({ left: "53.5%", top: "13%" }, 250);
+    $("#Maillot3E").animate({ left: "46.5%", top: "28%" }, 250);
+    $("#Maillot4E").animate({ left: "39%", top: "40%" }, 250);
+    $("#Maillot5E").animate({ left: "54%", top: "40%" }, 250);
+    $("#Maillot6E").animate({ left: "46.5%", top: "52%" }, 250);
+    $("#Maillot7E").animate({ left: "29%", bottom: "32%" }, 250);
+    $("#Maillot8E").animate({ left: "39%", bottom: "24%" }, 250);
+    $("#Maillot9E").animate({ left: "54%", bottom: "24%" }, 250);
+    $("#Maillot10E").animate({ left: "64%", bottom: "32%" }, 250);
+  } else if ($(this).val() == "Coupe du monde 2018") {
+    $("#Maillot1E").animate({ left: "46.5%", top: "13%" }, 250);
+    $("#Maillot2E").animate({ left: "33%", top: "33%" }, 250);
+    $("#Maillot3E").animate({ left: "46.5%", top: "33%" }, 250);
+    $("#Maillot4E").animate({ left: "60%", top: "33%" }, 250);
+    $("#Maillot5E").animate({ left: "39%", top: "46%" }, 250);
+    $("#Maillot6E").animate({ left: "54%", top: "46%" }, 250);
+    $("#Maillot7E").animate({ left: "28%", bottom: "32%" }, 250);
+    $("#Maillot8E").animate({ left: "39%", bottom: "24%" }, 250);
+    $("#Maillot9E").animate({ left: "54%", bottom: "24%" }, 250);
+    $("#Maillot10E").animate({ left: "65%", bottom: "32%" }, 250);
+  } else if ($(this).val() == "5-3-2") {
+    $("#Maillot1E").animate({ left: "40%", top: "15%" }, 250);
+    $("#Maillot2E").animate({ left: "53%", top: "15%" }, 250);
+    $("#Maillot3E").animate({ left: "34%", top: "36%" }, 250);
+    $("#Maillot4E").animate({ left: "46.5%", top: "43%" }, 250);
+    $("#Maillot5E").animate({ left: "59.5%", top: "36%" }, 250);
+    $("#Maillot6E").animate({ left: "28.5%", top: "52.5%" }, 250);
+    $("#Maillot7E").animate({ left: "36%", bottom: "27%" }, 250);
+    $("#Maillot8E").animate({ left: "46.5%", bottom: "24%" }, 250);
+    $("#Maillot9E").animate({ left: "57%", bottom: "27%" }, 250);
+    $("#Maillot10E").animate({ left: "64.5%", bottom: "37.5%" }, 250);
   }
 });
 var State = 0;

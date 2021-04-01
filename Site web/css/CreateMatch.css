@@ -237,11 +237,6 @@
     margin-top: 2%;
 }
 
-.MaillotG {
-    width: 28%;
-    margin: 2px;
-}
-
 #Gauche {
     text-align: center;
     justify-content: center;
@@ -266,6 +261,7 @@
     margin-bottom: 5px;
     margin-left: 2px;
     align-items: center;
+    overflow: hidden;
 }
 
 #DivMaillot>h4 {
@@ -274,7 +270,7 @@
     font-size: 0.8em;
 }
 
-.MaillotGoal {
+.MaillotGoal, .MaillotGoalE {
     width: 28%;
     margin: 2px;
 }
@@ -323,6 +319,6 @@
     cursor: pointer;
 }
 
-.MaillotD {
+.MaillotD, .MaillotDE {
     width: 100%;
 }

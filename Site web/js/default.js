@@ -1,19 +1,31 @@
-$("#BoutonGauche").change(function () {
-  /*Bouton de changement d'équipe*/ if ($(this).val() == "Pau FC") {
+$("#BoutonGauche").change(function () {/*Bouton de changement d'équipe*/ 
+    if ($(this).val() == "Pau FC") {
     $(".MaillotD").attr("src", "img/maillot-paufc.png");
     $(".MaillotGoal").attr("src", "img/maillot-gardien.png");
-  } else if ($(this).val() == "PSG") {
+  } if ($(this).val() == "PSG") {
     $(".MaillotD").attr("src", "img/maillot-psg.png");
+    $(".MaillotGoal").attr("src", "img/maillot-gardien.png");
+  } if ($(this).val() == "Dortmund") {
+    $(".MaillotD").attr("src", "img/maillot-dortmund.png");
+    $(".MaillotGoal").attr("src", "img/maillot-gardien.png");
+  } if ($(this).val() == "Juventus") {
+    $(".MaillotD").attr("src", "img/maillot-juventus.png");
     $(".MaillotGoal").attr("src", "img/maillot-gardien.png");
   }
 });
-$("#BoutonGaucheE").change(function () {
-  /*Bouton de changement d'équipe*/ if ($(this).val() == "Pau FC") {
+$("#BoutonGaucheE").change(function () {/*Bouton de changement d'équipe*/ 
+    if ($(this).val() == "Pau FC") {
     $(".MaillotDE").attr("src", "img/maillot-paufc.png");
     $(".MaillotGoalE").attr("src", "img/maillot-gardien.png");
-  } else if ($(this).val() == "PSG") {
+  } if ($(this).val() == "PSG") {
     $(".MaillotDE").attr("src", "img/maillot-psg.png");
     $(".MaillotGoalE").attr("src", "img/maillot-gardien.png");
+  } if ($(this).val() == "Dortmund") {
+    $(".MaillotDE").attr("src", "img/maillot-dortmund.png");
+    $(".MaillotGoalE").attr("src", "img/maillot-gardien.png");
+  } if ($(this).val() == "Juventus") {
+    $(".MaillotD").attr("src", "img/maillot-juventus.png");
+    $(".MaillotGoal").attr("src", "img/maillot-gardien.png");
   }
 });
 

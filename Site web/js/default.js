@@ -1,35 +1,29 @@
-$("#BoutonGauche").change(function () {
-  /*Bouton de changement d'équipe*/ if ($(this).val() == "Pau FC") {
+$("#BoutonGauche").change(function () {/*Bouton de changement d'équipe*/ 
+    if ($(this).val() == "Pau FC") {
     $(".MaillotD").attr("src", "img/maillot-paufc.png");
     $(".MaillotGoal").attr("src", "img/maillot-gardien.png");
-  }
-  if ($(this).val() == "PSG") {
+  } if ($(this).val() == "PSG") {
     $(".MaillotD").attr("src", "img/maillot-psg.png");
     $(".MaillotGoal").attr("src", "img/maillot-gardien.png");
-  }
-  if ($(this).val() == "Dortmund") {
+  } if ($(this).val() == "Dortmund") {
     $(".MaillotD").attr("src", "img/maillot-dortmund.png");
     $(".MaillotGoal").attr("src", "img/maillot-gardien.png");
-  }
-  if ($(this).val() == "Juventus") {
+  } if ($(this).val() == "Juventus") {
     $(".MaillotD").attr("src", "img/maillot-juventus.png");
     $(".MaillotGoal").attr("src", "img/maillot-gardien.png");
   }
 });
-$("#BoutonGaucheE").change(function () {
-  /*Bouton de changement d'équipe*/ if ($(this).val() == "Pau FC") {
+$("#BoutonGaucheE").change(function () {/*Bouton de changement d'équipe*/ 
+    if ($(this).val() == "Pau FC") {
     $(".MaillotDE").attr("src", "img/maillot-paufc.png");
     $(".MaillotGoalE").attr("src", "img/maillot-gardien.png");
-  }
-  if ($(this).val() == "PSG") {
+  } if ($(this).val() == "PSG") {
     $(".MaillotDE").attr("src", "img/maillot-psg.png");
     $(".MaillotGoalE").attr("src", "img/maillot-gardien.png");
-  }
-  if ($(this).val() == "Dortmund") {
+  } if ($(this).val() == "Dortmund") {
     $(".MaillotDE").attr("src", "img/maillot-dortmund.png");
     $(".MaillotGoalE").attr("src", "img/maillot-gardien.png");
-  }
-  if ($(this).val() == "Juventus") {
+  } if ($(this).val() == "Juventus") {
     $(".MaillotD").attr("src", "img/maillot-juventus.png");
     $(".MaillotGoal").attr("src", "img/maillot-gardien.png");
   }
@@ -145,14 +139,10 @@ $("#Suivant").click(function () {
     console.log("NON");
   }
 });
-$("#RetourMenu").click(function () {
-  window.location.href = "index.html";
-});
-$("#RetourPage").click(function () {
-  $("#AlerteRetour, #Darken").animate({ opacity: "0" }, 100);
-  setTimeout(function () {
-    $("#AlerteRetour, #Darken").hide();
-  }, 100);
+$("#Precedent").click(function () {
+  if (State == 0) {
+    window.location.href = "index.html";
+  }
 });
 $("#Precedent").click(function () {
   if (State == 3) {
@@ -168,9 +158,6 @@ $("#Precedent").click(function () {
     State--;
     $("#NextStep").text("\u00c9quipe extérieur");
     $("#BackStep").text("Menu Principale");
-  } else if (State == 0) {
-    $("#AlerteRetour, #Darken").show();
-    $("#AlerteRetour, #Darken").animate({ opacity: "1" }, 100);
   } else {
     console.log("NON");
   }
@@ -208,5 +195,5 @@ function DelayHover(Element, i) {
     // remet la flèche dans sa taille d'origine
     $(Element).animate({ width: "1.2em" }, 200);
     return;
-  }, 500);
+  }, 800);
 }

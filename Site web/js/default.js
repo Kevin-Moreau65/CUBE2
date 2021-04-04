@@ -157,7 +157,7 @@ $("#Precedent").click(function () {
     GoBack(2);
     State--;
     $("#NextStep").text("\u00c9quipe extérieur");
-    $("#BackStep").text("Menu Principale");
+    $("#BackStep").text("Menu Principal");
   } else {
     console.log("NON");
   }

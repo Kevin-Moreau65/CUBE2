@@ -323,8 +323,6 @@
     width: 90%;
 }
 
-}
-
 #Centre {
     position: absolute;
     left: 50%;
@@ -368,3 +366,4 @@
     height: 100%;
     display: none;
     opacity: 0;
+}

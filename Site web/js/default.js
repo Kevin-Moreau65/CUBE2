@@ -227,7 +227,7 @@ $( function() {
   $( ".Maillot" ).droppable({
     drop: function( event, ui ) {
       $( this )
-        .addClass( "ui-state-highlight" )
+        .attr("src", "/Site web/img/maillot-cesi.png")
     }
   });
 } )

@@ -3,6 +3,10 @@ $("#BoutonGauche").change(function () {
     $(".MaillotD").attr("src", "/Site web/img/maillot-paufc.png");
     $(".MaillotGoal").attr("src", "/Site web/img/maillot-gardien.png");
   }
+  if ($(this).val() == "Cesi") {
+    $(".MaillotD").attr("src", "/Site web/img/maillot-cesi.png");
+    $(".MaillotGoal").attr("src", "/Site web/img/maillot-gardiencesi.png");
+  }
   if ($(this).val() == "PSG") {
     $(".MaillotD").attr("src", "/Site web/img/maillot-psg.png");
     $(".MaillotGoal").attr("src", "/Site web/img/maillot-gardien.png");
@@ -129,6 +133,7 @@ $("#BoutonDroitE").change(function () {
     $("#Maillot10E").animate({ left: "64.5%", bottom: "37.5%" }, 250);
   }
 });
+/*-----------------------------Bouton droite et gauche-----------------------------------------------------------------------------*/
 var State = 0;
 $("#Suivant").click(function () {
   if (State == 0) {
@@ -214,3 +219,16 @@ $("#RetourPage").click(function () {
     $("#AlerteRetour, #Darken").hide();
   }, 100);
 });
+/*----------------------------------------------------------------------------------------------------------*/
+$( function() {
+  $( ".bouge" ).draggable({
+    helper: 'clone'
+  });
+  $( ".Maillot" ).droppable({
+    drop: function( event, ui ) {
+      $( this )
+        .addClass( "ui-state-highlight" )
+    }
+  });
+} )
+      

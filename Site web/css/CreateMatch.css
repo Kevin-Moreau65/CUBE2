@@ -25,6 +25,7 @@
 }
 
 #Terrain {
+    z-index: -20;
     width: 100%;
     margin: auto;
     display: block;
@@ -321,6 +322,10 @@
 }
 
 .MaillotD, .MaillotDE {
+    width: 90%;
+}
+
+.Brassard {
     width: 90%;
 }
 

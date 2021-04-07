@@ -17,6 +17,9 @@
 </map>
 
   <h1 id="Titre">Création de match</h1>
+  <div id="CentreTitre">
+  <h2 id="SousTitre">&Eacutequipe domicile</h2>
+  </div>
   <div id="Etape1">
     <div id="Menu-Gauche">      
       <select id="BoutonGauche" class="BoutonMenu" name="Selec2">      
@@ -28,10 +31,15 @@
       </select>
       <div id="Gauche">
         <h3 id="ColoneAttaquant">ATTAQUANT</h3>
+        <div id="float">
         <div id="DivMaillot">
           <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
           <h4>K.Mbappé</h4>
           </div>
+          <div id="DivMaillot">
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+            </div>
           <div id="DivMaillot">
             <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
             <h4>K.Mbappé</h4>
@@ -49,8 +57,11 @@
                     <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
                     <h4>K.Mbappé</h4>
                     </div>
+                  </div>
         <h3 id="ColoneMilieu">MILIEU</h3>
+        <div id="float">
         <div id="DivMaillot">
+          <img class="MaillotD" src="/Site web/img/brassard.png" />
           <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
           <h4>K.Mbappé</h4>
           </div>
@@ -71,7 +82,9 @@
                     <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
                     <h4>K.Mbappé</h4>
                     </div>
+                  </div>
         <h3 id="ColoneDefenseur">D&EacuteFENSEUR</h3>
+        <div id="float">
         <div id="DivMaillot">
           <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
           <h4>K.Mbappé</h4>
@@ -93,6 +106,7 @@
                     <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
                     <h4>K.Mbappé</h4>
                     </div>
+                  </div>
         <h3 id="ColoneGardien">GARDIEN</h3>
         <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
         <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
@@ -332,12 +346,17 @@
     </div>
   </div>
   <div id="Etape3" class="PasPassé">
-    <h2>Paramètre du match</h2>
     <div id="Date">
       <br>
       <h3 id="DateTitre">Date</h3>
     </br>
       <input id="DatePicker"  class="BoutonMenu" type="date" />
+    </div>
+    <div id="Arbitres">
+      <h3>
+        Arbitres
+      </h3>
+      <input name="Insérer le nom des arbitre">
     </div>
   </div>
   <div id="Precedent">

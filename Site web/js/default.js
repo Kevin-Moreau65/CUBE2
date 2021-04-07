@@ -136,11 +136,13 @@ $("#Suivant").click(function () {
     State++;
     $("#NextStep").text("Paramètre du match");
     $("#BackStep").text("\u00c9quipe domicile");
+    $("#SousTitre").text("\u00c9quipe extérieur")
   } else if (State == 1) {
     GoForward(2);
     State++;
     $("#NextStep").text("Lancement du match");
     $("#BackStep").text("\u00c9quipe extérieur");
+    $("#SousTitre").text("Paramètre du match");
   } else {
     console.log("NON");
   }
@@ -154,11 +156,13 @@ $("#Precedent").click(function () {
     State--;
     $("#NextStep").text("Paramètre du match");
     $("#BackStep").text("\u00c9quipe domicile");
+    $("#SousTitre").text("\u00c9quipe extérieur")
   } else if (State == 1) {
     GoBack(2);
     State--;
     $("#NextStep").text("\u00c9quipe extérieur");
     $("#BackStep").text("Menu Principal");
+    $("#SousTitre").text("\u00c9quipe domicile")
   } else if (State == 0) {
     $("#AlerteRetour, #Darken").show();
     $("#AlerteRetour, #Darken").animate({ opacity: "1" }, 100);

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap"
+    rel="stylesheet"
+  />
+  <link href="/Site web/css/Index.css" rel="stylesheet" type="text/css" />
+  <link href="/Site web/css/CreateMatch.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <title>Historique des matchs</title>
+</head>
+<body>
+  <map name="MaillotMap">
+    <area target="" alt="" title="" href="" coords="20,0,60,53" shape="rect">
+    <area target="" alt="" title="" href="" coords="20,0,0,19,14,33,35,14" shape="poly">
+    <area target="" alt="" title="" href="" coords="58,0,78,19,64,33,45,14,37,8" shape="poly">
+</map>
+
+  <h1 id="Titre">Historique des matchs</h1>
+  <div id="Etape1">
+    <div id="Menu-Gauche">  
+    <div id="Gauche">    
+    </div>
+  </div> 
+    
+  <div id="Menu-Droit">
+    <div id="Droite">      
+    </div>
+  </div>
+
+    <div id="TerrainMaillot">      
+      
+    </div>
+  </div>
+  <div id="Etape3" class="PasPassé">
+    <h2>Paramètre du match</h2>
+    <div id="Date">
+      <br>
+      <h3 id="DateTitre">Date</h3>
+    </br>
+      <input id="DatePicker"  class="BoutonMenu" type="date" />
+    </div>
+  </div>
+  <div id="Precedent">
+    <h3><</h3>
+    <h4 id="BackStep">Menu Principale</h4>
+  </div>
+  <div id="Suivant">
+    <h3>></h3>
+    <h4 id="NextStep">&Eacutequipe extérieur</h4>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/Site web/js/default.js"></script>
+</body>

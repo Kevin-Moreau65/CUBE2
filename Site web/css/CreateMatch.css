@@ -271,7 +271,7 @@
 }
 
 .MaillotGoal, .MaillotGoalE {
-    width: 28%;
+    width: 90%;
     margin: 2px;
 }
 
@@ -390,4 +390,8 @@ h1 {
     position: absolute;
     left: 50%;
     top: 10%;
+}
+.MaillotT {
+    display: flex;
+    flex-direction: column;
 }

@@ -221,21 +221,29 @@ $("#RetourPage").click(function () {
   }, 100);
 });
 /*----------------------------------------------------------------------------------------------------------*/
+let NomJoueur;
 $(function () {
   $(".bouge").draggable({
     helper: "clone",
     tolerance: "pointer",
     greedy: true,
+    drag: function (event, ui) {
+      $(this).hide();
+      NomJoueur = $(this).text()
+    },
   });
-  $(".Maillot").droppable({
+  $(".MaillotT").droppable({
     tolerance: "pointer",
     drop: function (event, ui) {
-      $(this).attr("src", $(".MaillotD").attr("src"));
-      $(this).css({ opacity: "1" });
+      $(this+">img").attr("src", $(".MaillotD").attr("src"));
+      $(this+">img").css({ opacity: "1" });
+      $(this+">h4").text(NomJoueur)
     },
   });
 });
 function RefreshMaillot() {
   $(".Maillot").attr("src", "/Site web/img/maillot-blanc.png");
   $(".Maillot").css({ opacity: "0.5" });
+  $(".bouge").show();
 }
+

@@ -19,6 +19,7 @@ $("#BoutonGauche").change(function () {
     $(".MaillotD").attr("src", "/Site web/img/maillot-juventus.png");
     $(".MaillotGoal").attr("src", "/Site web/img/maillot-gardien.png");
   }
+  RefreshMaillot()
 });
 $("#BoutonGaucheE").change(function () {
   /*Bouton de changement d'équipe*/ if ($(this).val() == "Pau FC") {
@@ -222,13 +223,18 @@ $("#RetourPage").click(function () {
 /*----------------------------------------------------------------------------------------------------------*/
 $( function() {
   $( ".bouge" ).draggable({
-    helper: 'clone'
+    helper: 'clone',
+    tolerance: "touch"
   });
   $( ".Maillot" ).droppable({
     drop: function( event, ui ) {
       $( this )
-        .attr("src", "/Site web/img/maillot-cesi.png")
+        .attr("src", $(".MaillotD").attr("src"))
+        $(this).css({opacity: "1"})
     }
   });
 } )
-      
+function RefreshMaillot() {
+  $(".Maillot").attr("src", "/Site web/img/maillot-blanc.png")
+  $(".Maillot").css({opacity: "0.5"})
+}      

@@ -283,9 +283,11 @@
 #Droite>h3 {
     display: flex;
 }
+
 #Gauche>h3 {
     display: flex;
 }
+
 ::-webkit-scrollbar-thumb {
     height: 6px;
     border: 4px solid rgba(0, 0, 0, 0);
@@ -373,14 +375,17 @@
     display: none;
     opacity: 0;
 }
+
 h1 {
     position: relative;
     top: -4.5%;
 }
+
 #SousTitre {
     position: relative;
     left: -50%;
 }
+
 #CentreTitre {
     position: absolute;
     left: 50%;

@@ -19,7 +19,7 @@ $("#BoutonGauche").change(function () {
     $(".MaillotD").attr("src", "/Site web/img/maillot-juventus.png");
     $(".MaillotGoal").attr("src", "/Site web/img/maillot-gardien.png");
   }
-  RefreshMaillot()
+  RefreshMaillot();
 });
 $("#BoutonGaucheE").change(function () {
   /*Bouton de changement d'équipe*/ if ($(this).val() == "Pau FC") {
@@ -142,7 +142,7 @@ $("#Suivant").click(function () {
     State++;
     $("#NextStep").text("Paramètre du match");
     $("#BackStep").text("\u00c9quipe domicile");
-    $("#SousTitre").text("\u00c9quipe extérieur")
+    $("#SousTitre").text("\u00c9quipe extérieur");
   } else if (State == 1) {
     GoForward(2);
     State++;
@@ -162,13 +162,13 @@ $("#Precedent").click(function () {
     State--;
     $("#NextStep").text("Paramètre du match");
     $("#BackStep").text("\u00c9quipe domicile");
-    $("#SousTitre").text("\u00c9quipe extérieur")
+    $("#SousTitre").text("\u00c9quipe extérieur");
   } else if (State == 1) {
     GoBack(2);
     State--;
     $("#NextStep").text("\u00c9quipe extérieur");
     $("#BackStep").text("Menu Principal");
-    $("#SousTitre").text("\u00c9quipe domicile")
+    $("#SousTitre").text("\u00c9quipe domicile");
   } else if (State == 0) {
     $("#AlerteRetour, #Darken").show();
     $("#AlerteRetour, #Darken").animate({ opacity: "1" }, 100);
@@ -221,20 +221,21 @@ $("#RetourPage").click(function () {
   }, 100);
 });
 /*----------------------------------------------------------------------------------------------------------*/
-$( function() {
-  $( ".bouge" ).draggable({
-    helper: 'clone',
-    tolerance: "touch"
+$(function () {
+  $(".bouge").draggable({
+    helper: "clone",
+    tolerance: "pointer",
+    greedy: true,
   });
-  $( ".Maillot" ).droppable({
-    drop: function( event, ui ) {
-      $( this )
-        .attr("src", $(".MaillotD").attr("src"))
-        $(this).css({opacity: "1"})
-    }
+  $(".Maillot").droppable({
+    tolerance: "pointer",
+    drop: function (event, ui) {
+      $(this).attr("src", $(".MaillotD").attr("src"));
+      $(this).css({ opacity: "1" });
+    },
   });
-} )
+});
 function RefreshMaillot() {
-  $(".Maillot").attr("src", "/Site web/img/maillot-blanc.png")
-  $(".Maillot").css({opacity: "0.5"})
-}      
+  $(".Maillot").attr("src", "/Site web/img/maillot-blanc.png");
+  $(".Maillot").css({ opacity: "0.5" });
+}

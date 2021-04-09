@@ -1,5 +1,6 @@
 $("#BoutonGauche").change(function () {
-  /*Bouton de changement d'équipe*/ if ($(this).val() == "Pau FC") {
+  /*Bouton de changement d'équipe*/
+   if ($(this).val() == "Pau FC") {
     $(".MaillotD").attr("src", "/Site web/img/maillot-paufc.png");
     $(".MaillotGoal").attr("src", "/Site web/img/maillot-gardien.png");
   }

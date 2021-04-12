@@ -391,7 +391,25 @@ h1 {
     left: 50%;
     top: 10%;
 }
+
 .MaillotT {
     display: flex;
+    position: absolute;
     flex-direction: column;
+    font-size: 0.7em;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    width: 7%;
+    height: 20%;
+}
+
+.MaillotT img {
+    width: 96%;
+    z-index: 99;
+}
+
+.MaillotT h4 {
+    justify-content: center;
+    z-index: 100;
 }

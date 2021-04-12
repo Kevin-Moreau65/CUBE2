@@ -1,6 +1,6 @@
 $("#BoutonGauche").change(function () {
   /*Bouton de changement d'équipe*/
-   if ($(this).val() == "Pau FC") {
+  if ($(this).val() == "Pau FC") {
     $(".MaillotD").attr("src", "/Site web/img/maillot-paufc.png");
     $(".MaillotGoal").attr("src", "/Site web/img/maillot-gardien.png");
   }
@@ -223,22 +223,25 @@ $("#RetourPage").click(function () {
 });
 /*----------------------------------------------------------------------------------------------------------*/
 let NomJoueur;
+let MaillotSRC;
 $(function () {
   $(".bouge").draggable({
     helper: "clone",
     tolerance: "pointer",
     greedy: true,
-    drag: function (event, ui) {
+    drag: function () {
       $(this).hide();
-      NomJoueur = $(this).text()
+      NomJoueur = $(this).children("h4").text();
+      console.log(NomJoueur);
+      MaillotSRC = $(this).children("img").attr("src");
     },
   });
-  $(".MaillotT").droppable({
+  $(".MaillotT>img").droppable({
     tolerance: "pointer",
-    drop: function (event, ui) {
-      $(this+">img").attr("src", $(".MaillotD").attr("src"));
-      $(this+">img").css({ opacity: "1" });
-      $(this+">h4").text(NomJoueur)
+    drop: function () {
+      $(this).parent().children("img").attr("src", MaillotSRC);
+      $(this).parent().children("h4").text(NomJoueur);
+      $(this).css({ opacity: "1" });
     },
   });
 });
@@ -247,4 +250,3 @@ function RefreshMaillot() {
   $(".Maillot").css({ opacity: "0.5" });
   $(".bouge").show();
 }
-

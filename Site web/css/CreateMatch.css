@@ -227,11 +227,6 @@
     overflow: hidden;
 }
 
-.Maillot {
-    width: 7%;
-    opacity: 0.5;
-}
-
 .BoutonMenu {
     border-radius: 10px;
     height: 4%;
@@ -402,6 +397,7 @@ h1 {
     justify-content: center;
     width: 7%;
     height: 20%;
+    opacity: 0.5;
 }
 
 .MaillotT img {

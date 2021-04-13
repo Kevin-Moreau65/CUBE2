@@ -231,34 +231,40 @@ $(function () {
     helper: "clone",
     tolerance: "pointer",
     greedy: true,
-    drag: function () {
+    start: function () {
       $(this).hide();
       NomJoueur = $(this).children("h4").text();
       MaillotSRC = $(this).children("img").attr("src");
-      MaillotDIV = $(this)
-      FromDrop = $(this).parent()
+      MaillotDIV = $(this);
+      FromDrop = $(this).parent();
     },
   });
   $("#Droite").droppable({
     tolerance: "pointer",
     drop: function () {
-     $(this).append(MaillotDIV);
-     $(this).children(MaillotDIV).show();
+      $(this).append(MaillotDIV);
+      $(this).children(MaillotDIV).show();
     },
-  })
-  $("#Gauche").droppable();
+  });
+  $("#Gauche").droppable({
+    tolerance: "pointer",
+    drop: function () {
+      $(MaillotDIV).show();
+    },
+  });
   $(".MaillotT>img").droppable({
     tolerance: "pointer",
     drop: function () {
       $(this).parent().children("img").attr("src", MaillotSRC);
       $(this).parent().children("h4").text(NomJoueur);
-      $(this).css({ opacity: "1" });
+      $(this).parent().css({ opacity: "1" });
     },
   });
 });
 function RefreshMaillot() {
-  $(".Maillot").attr("src", "/Site web/img/maillot-blanc.png");
-  $(".Maillot").css({ opacity: "0.5" });
+  $(".MaillotT>img").attr("src", "/Site web/img/maillot-blanc.png");
+  $(".MaillotT>h4").text("");
+  $(".MaillotT").css({ opacity: "0.5" });
   $(".bouge").show();
   $("#Droite > .bouge").remove();
 }

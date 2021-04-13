@@ -49,10 +49,10 @@ $("#BoutonDroit").change(function () {
     $("#Maillot4").animate({ left: "38%", top: "33%" }, 250);
     $("#Maillot5").animate({ left: "55%", top: "33%" }, 250);
     $("#Maillot6").animate({ left: "65%", top: "33%" }, 250);
-    $("#Maillot7").animate({ left: "28%", bottom: "33%" }, 250);
-    $("#Maillot8").animate({ left: "38%", bottom: "33%" }, 250);
-    $("#Maillot9").animate({ left: "55%", bottom: "33%" }, 250);
-    $("#Maillot10").animate({ left: "65%", bottom: "33%" }, 250);
+    $("#Maillot7").animate({ left: "28%", bottom: "27%" }, 250);
+    $("#Maillot8").animate({ left: "38%", bottom: "27%" }, 250);
+    $("#Maillot9").animate({ left: "55%", bottom: "27%" }, 250);
+    $("#Maillot10").animate({ left: "65%", bottom: "27%" }, 250);
   } else if ($(this).val() == "4-4-2 losange") {
     $("#Maillot1").animate({ left: "39.5%", top: "13%" }, 250);
     $("#Maillot2").animate({ left: "53.5%", top: "13%" }, 250);
@@ -60,10 +60,10 @@ $("#BoutonDroit").change(function () {
     $("#Maillot4").animate({ left: "39%", top: "40%" }, 250);
     $("#Maillot5").animate({ left: "54%", top: "40%" }, 250);
     $("#Maillot6").animate({ left: "46.5%", top: "52%" }, 250);
-    $("#Maillot7").animate({ left: "29%", bottom: "32%" }, 250);
-    $("#Maillot8").animate({ left: "39%", bottom: "24%" }, 250);
-    $("#Maillot9").animate({ left: "54%", bottom: "24%" }, 250);
-    $("#Maillot10").animate({ left: "64%", bottom: "32%" }, 250);
+    $("#Maillot7").animate({ left: "29%", bottom: "30%" }, 250);
+    $("#Maillot8").animate({ left: "39%", bottom: "17%" }, 250);
+    $("#Maillot9").animate({ left: "54%", bottom: "17%" }, 250);
+    $("#Maillot10").animate({ left: "64%", bottom: "30%" }, 250);
   } else if ($(this).val() == "Coupe du monde 2018") {
     $("#Maillot1").animate({ left: "46.5%", top: "13%" }, 250);
     $("#Maillot2").animate({ left: "33%", top: "33%" }, 250);
@@ -71,21 +71,21 @@ $("#BoutonDroit").change(function () {
     $("#Maillot4").animate({ left: "60%", top: "33%" }, 250);
     $("#Maillot5").animate({ left: "39%", top: "46%" }, 250);
     $("#Maillot6").animate({ left: "54%", top: "46%" }, 250);
-    $("#Maillot7").animate({ left: "28%", bottom: "32%" }, 250);
-    $("#Maillot8").animate({ left: "39%", bottom: "24%" }, 250);
-    $("#Maillot9").animate({ left: "54%", bottom: "24%" }, 250);
-    $("#Maillot10").animate({ left: "65%", bottom: "32%" }, 250);
+    $("#Maillot7").animate({ left: "28%", bottom: "27%" }, 250);
+    $("#Maillot8").animate({ left: "39%", bottom: "17%" }, 250);
+    $("#Maillot9").animate({ left: "54%", bottom: "17%" }, 250);
+    $("#Maillot10").animate({ left: "65%", bottom: "27%" }, 250);
   } else if ($(this).val() == "5-3-2") {
-    $("#Maillot1").animate({ left: "40%", top: "15%" }, 250);
-    $("#Maillot2").animate({ left: "53%", top: "15%" }, 250);
-    $("#Maillot3").animate({ left: "34%", top: "36%" }, 250);
-    $("#Maillot4").animate({ left: "46.5%", top: "43%" }, 250);
-    $("#Maillot5").animate({ left: "59.5%", top: "36%" }, 250);
-    $("#Maillot6").animate({ left: "28.5%", top: "52.5%" }, 250);
-    $("#Maillot7").animate({ left: "36%", bottom: "27%" }, 250);
-    $("#Maillot8").animate({ left: "46.5%", bottom: "24%" }, 250);
-    $("#Maillot9").animate({ left: "57%", bottom: "27%" }, 250);
-    $("#Maillot10").animate({ left: "64.5%", bottom: "37.5%" }, 250);
+    $("#Maillot1").animate({ left: "40%", top: "10%" }, 250);
+    $("#Maillot2").animate({ left: "53%", top: "10%" }, 250);
+    $("#Maillot3").animate({ left: "34%", top: "30%" }, 250);
+    $("#Maillot4").animate({ left: "46.5%", top: "38%" }, 250);
+    $("#Maillot5").animate({ left: "59.5%", top: "30%" }, 250);
+    $("#Maillot6").animate({ left: "28.5%", top: "47.5%" }, 250);
+    $("#Maillot7").animate({ left: "36%", bottom: "23%" }, 250);
+    $("#Maillot8").animate({ left: "46.5%", bottom: "18%" }, 250);
+    $("#Maillot9").animate({ left: "57%", bottom: "23%" }, 250);
+    $("#Maillot10").animate({ left: "64.5%", bottom: "32.5%" }, 250);
   }
 });
 $("#BoutonDroitE").change(function () {
@@ -224,6 +224,8 @@ $("#RetourPage").click(function () {
 /*----------------------------------------------------------------------------------------------------------*/
 let NomJoueur;
 let MaillotSRC;
+let MaillotDIV;
+let FromDrop;
 $(function () {
   $(".bouge").draggable({
     helper: "clone",
@@ -232,10 +234,19 @@ $(function () {
     drag: function () {
       $(this).hide();
       NomJoueur = $(this).children("h4").text();
-      console.log(NomJoueur);
       MaillotSRC = $(this).children("img").attr("src");
+      MaillotDIV = $(this)
+      FromDrop = $(this).parent()
     },
   });
+  $("#Droite").droppable({
+    tolerance: "pointer",
+    drop: function () {
+     $(this).append(MaillotDIV);
+     $(this).children(MaillotDIV).show();
+    },
+  })
+  $("#Gauche").droppable();
   $(".MaillotT>img").droppable({
     tolerance: "pointer",
     drop: function () {
@@ -249,4 +260,5 @@ function RefreshMaillot() {
   $(".Maillot").attr("src", "/Site web/img/maillot-blanc.png");
   $(".Maillot").css({ opacity: "0.5" });
   $(".bouge").show();
+  $("#Droite > .bouge").remove();
 }

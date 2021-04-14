@@ -239,6 +239,10 @@ $(function () {
       FromDrop = $(this).parent();
     },
   });
+  $(".DragCapitaine").draggable({
+    helper: "clone",
+    tolerance: "pointer",
+  });
   $("#Droite").droppable({
     tolerance: "pointer",
     drop: function () {
@@ -255,9 +259,24 @@ $(function () {
   $(".MaillotT>img").droppable({
     tolerance: "pointer",
     drop: function () {
-      $(this).parent().children("img").attr("src", MaillotSRC);
-      $(this).parent().children("h4").text(NomJoueur);
-      $(this).parent().css({ opacity: "1" });
+      if (MaillotDIV.hasClass("Capitaine")) {
+        $(this)
+          .parent()
+          .append('<img src="' + MaillotSRC + '" class="bouge Capitaine">');
+        $(this)
+          .parent()
+          .children("img.Capitaine")
+          .css({
+            top: "16%",
+            position: "absolute",
+            left: $(this).position().left,
+            zIndex: "999999",
+          });
+      } else {
+        $(this).parent().children("img").attr("src", MaillotSRC);
+        $(this).parent().children("h4").text(NomJoueur);
+        $(this).parent().css({ opacity: "1" });
+      }
     },
   });
 });

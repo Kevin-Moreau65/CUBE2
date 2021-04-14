@@ -249,6 +249,10 @@ $(function () {
       }
     }
   });
+  $(".DragCapitaine").draggable({
+    helper: "clone",
+    tolerance: "pointer",
+  });
   $("#Droite").droppable({
     tolerance: "pointer",
     drop: function () {
@@ -271,12 +275,32 @@ $(function () {
       $(this).parent().children("h4").text(NomJoueur);
       $(this).parent().css({ opacity: "1" });
       Dropped = true;
+      if (MaillotDIV.hasClass("Capitaine")) {
+        $(this)
+          .parent()
+          .append('<img src="' + MaillotSRC + '" class="bouge Capitaine">');        
+        $(this)
+          .parent()
+          .children("img.Capitaine")
+          .css({
+            position: "absolute",
+            zIndex: "999999",            
+            marginTop: "-18.5%",
+          })
+        $(this).parent().children("h4").text(NomJoueur);
+      } else {
+        $(this).parent().children("img").first().attr("src", MaillotSRC);
+        $(this).parent().children("h4").text(NomJoueur);
+        $(this).parent().children("h4").css({ opacity: "1" });
+        $(this).parent().css({ opacity: "1" });
+      }
     },
   });
 });
 function RefreshMaillot() {
   $(".MaillotT>img").attr("src", "/Site web/img/maillot-blanc.png");
-  $(".MaillotT>h4").text("");
+  $(".MaillotT>img.Capitaine").remove();
+  $(".MaillotT>h4").css({ opacity: "0" });
   $(".MaillotT").css({ opacity: "0.5" });
   $(".bouge").show();
   $("#Droite > .bouge").remove();

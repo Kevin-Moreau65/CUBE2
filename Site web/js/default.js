@@ -226,6 +226,7 @@ let NomJoueur;
 let MaillotSRC;
 let MaillotDIV;
 let FromDrop;
+let topM = 0;
 $(function () {
   $(".bouge").draggable({
     helper: "clone",
@@ -263,15 +264,15 @@ $(function () {
         $(this)
           .parent()
           .append('<img src="' + MaillotSRC + '" class="bouge Capitaine">');
-        $(this)
-          .parent()
-          .children("img.Capitaine")
-          .css({
-            top: "16%",
-            position: "absolute",
-            left: $(this).position().left,
-            zIndex: "999999",
-          });
+        topM = $(this).position().top;
+        topM = -topM;
+        topM += 5;
+        console.log(topM, $(this).position().top);
+        $(this).parent().children("img.Capitaine").css({
+          position: "absolute",
+          zIndex: "999999",
+          top: topM,
+        });
       } else {
         $(this).parent().children("img").attr("src", MaillotSRC);
         $(this).parent().children("h4").text(NomJoueur);

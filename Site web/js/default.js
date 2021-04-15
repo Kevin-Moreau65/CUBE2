@@ -36,9 +36,10 @@ $("#BoutonGaucheE").change(function () {
     $(".MaillotGoalE").attr("src", "/Site web/img/maillot-gardien.png");
   }
   if ($(this).val() == "Juventus") {
-    $(".MaillotD").attr("src", "/Site web/img/maillot-juventus.png");
+    $(".MaillotDE").attr("src", "/Site web/img/maillot-juventus.png");
     $(".MaillotGoal").attr("src", "/Site web/img/maillot-gardien.png");
   }
+  RefreshMaillot();
 });
 
 $("#BoutonDroit").change(function () {
@@ -96,10 +97,10 @@ $("#BoutonDroitE").change(function () {
     $("#Maillot4E").animate({ left: "38%", top: "33%" }, 250);
     $("#Maillot5E").animate({ left: "55%", top: "33%" }, 250);
     $("#Maillot6E").animate({ left: "65%", top: "33%" }, 250);
-    $("#Maillot7E").animate({ left: "28%", bottom: "33%" }, 250);
-    $("#Maillot8E").animate({ left: "38%", bottom: "33%" }, 250);
-    $("#Maillot9E").animate({ left: "55%", bottom: "33%" }, 250);
-    $("#Maillot10E").animate({ left: "65%", bottom: "33%" }, 250);
+    $("#Maillot7E").animate({ left: "28%", bottom: "27%" }, 250);
+    $("#Maillot8E").animate({ left: "38%", bottom: "27%" }, 250);
+    $("#Maillot9E").animate({ left: "55%", bottom: "27%" }, 250);
+    $("#Maillot10E").animate({ left: "65%", bottom: "27%" }, 250);
   } else if ($(this).val() == "4-4-2 losange") {
     $("#Maillot1E").animate({ left: "39.5%", top: "13%" }, 250);
     $("#Maillot2E").animate({ left: "53.5%", top: "13%" }, 250);
@@ -107,10 +108,10 @@ $("#BoutonDroitE").change(function () {
     $("#Maillot4E").animate({ left: "39%", top: "40%" }, 250);
     $("#Maillot5E").animate({ left: "54%", top: "40%" }, 250);
     $("#Maillot6E").animate({ left: "46.5%", top: "52%" }, 250);
-    $("#Maillot7E").animate({ left: "29%", bottom: "32%" }, 250);
-    $("#Maillot8E").animate({ left: "39%", bottom: "24%" }, 250);
-    $("#Maillot9E").animate({ left: "54%", bottom: "24%" }, 250);
-    $("#Maillot10E").animate({ left: "64%", bottom: "32%" }, 250);
+    $("#Maillot7E").animate({ left: "29%", bottom: "30%" }, 250);
+    $("#Maillot8E").animate({ left: "39%", bottom: "17%" }, 250);
+    $("#Maillot9E").animate({ left: "54%", bottom: "17%" }, 250);
+    $("#Maillot10E").animate({ left: "64%", bottom: "30%" }, 250);
   } else if ($(this).val() == "Coupe du monde 2018") {
     $("#Maillot1E").animate({ left: "46.5%", top: "13%" }, 250);
     $("#Maillot2E").animate({ left: "33%", top: "33%" }, 250);
@@ -118,21 +119,21 @@ $("#BoutonDroitE").change(function () {
     $("#Maillot4E").animate({ left: "60%", top: "33%" }, 250);
     $("#Maillot5E").animate({ left: "39%", top: "46%" }, 250);
     $("#Maillot6E").animate({ left: "54%", top: "46%" }, 250);
-    $("#Maillot7E").animate({ left: "28%", bottom: "32%" }, 250);
-    $("#Maillot8E").animate({ left: "39%", bottom: "24%" }, 250);
-    $("#Maillot9E").animate({ left: "54%", bottom: "24%" }, 250);
-    $("#Maillot10E").animate({ left: "65%", bottom: "32%" }, 250);
+    $("#Maillot7E").animate({ left: "28%", bottom: "27%" }, 250);
+    $("#Maillot8E").animate({ left: "39%", bottom: "17%" }, 250);
+    $("#Maillot9E").animate({ left: "54%", bottom: "17%" }, 250);
+    $("#Maillot10E").animate({ left: "65%", bottom: "27%" }, 250);
   } else if ($(this).val() == "5-3-2") {
-    $("#Maillot1E").animate({ left: "40%", top: "15%" }, 250);
-    $("#Maillot2E").animate({ left: "53%", top: "15%" }, 250);
-    $("#Maillot3E").animate({ left: "34%", top: "36%" }, 250);
-    $("#Maillot4E").animate({ left: "46.5%", top: "43%" }, 250);
-    $("#Maillot5E").animate({ left: "59.5%", top: "36%" }, 250);
-    $("#Maillot6E").animate({ left: "28.5%", top: "52.5%" }, 250);
-    $("#Maillot7E").animate({ left: "36%", bottom: "27%" }, 250);
-    $("#Maillot8E").animate({ left: "46.5%", bottom: "24%" }, 250);
-    $("#Maillot9E").animate({ left: "57%", bottom: "27%" }, 250);
-    $("#Maillot10E").animate({ left: "64.5%", bottom: "37.5%" }, 250);
+    $("#Maillot1E").animate({ left: "40%", top: "10%" }, 250);
+    $("#Maillot2E").animate({ left: "53%", top: "10%" }, 250);
+    $("#Maillot3E").animate({ left: "34%", top: "30%" }, 250);
+    $("#Maillot4E").animate({ left: "46.5%", top: "38%" }, 250);
+    $("#Maillot5E").animate({ left: "59.5%", top: "30%" }, 250);
+    $("#Maillot6E").animate({ left: "28.5%", top: "47.5%" }, 250);
+    $("#Maillot7E").animate({ left: "36%", bottom: "23%" }, 250);
+    $("#Maillot8E").animate({ left: "46.5%", bottom: "18%" }, 250);
+    $("#Maillot9E").animate({ left: "57%", bottom: "23%" }, 250);
+    $("#Maillot10E").animate({ left: "64.5%", bottom: "32.5%" }, 250);
   }
 });
 /*-----------------------------Bouton droite et gauche-----------------------------------------------------------------------------*/
@@ -269,37 +270,28 @@ $(function () {
     tolerance: "pointer",
     drop: function () {
       $(MaillotDIV).show();
+      Dropped = true;
     },
   });
   $(".MaillotT>img").droppable({
     tolerance: "pointer",
     drop: function () {
+      $(this).parent().children("img").attr("src", MaillotSRC);
+      $(this).parent().children("h4").text(NomJoueur);
+      $(this).parent().css({ opacity: "1" });
+      Dropped = true;
       if (MaillotDIV.hasClass("Capitaine")) {
         $(this)
           .parent()
-<<<<<<< Updated upstream
-          .append('<img src="' + MaillotSRC + '" class="bouge Capitaine">');        
-        $(this)
-          .parent()
-          .children("img.Capitaine")
-          .css({
-            position: "absolute",
-            zIndex: "999999",            
-            marginTop: "-18.5%",
-          })
-        $(this).parent().children("h4").text(NomJoueur);
-=======
           .append('<img src="' + MaillotSRC + '" class="bouge Capitaine">');
         $(this).parent().children("img.Capitaine").css({
           position: "absolute",
           zIndex: "999999",
           marginTop: "-18.5%",
         });
->>>>>>> Stashed changes
       } else {
-        $(this).parent().children("img").first().attr("src", MaillotSRC);
+        $(this).parent().children("img").attr("src", MaillotSRC);
         $(this).parent().children("h4").text(NomJoueur);
-        $(this).parent().children("h4").css({ opacity: "1" });
         $(this).parent().css({ opacity: "1" });
       }
       Dropped = true;
@@ -307,9 +299,8 @@ $(function () {
   });
 });
 function RefreshMaillot() {
-  $(".MaillotT>img").attr("src", "/Site web/img/maillot-blanc.png");
-  $(".MaillotT>img.Capitaine").remove();
-  $(".MaillotT>h4").css({ opacity: "0" });
+  $(".MaillotT>img").first().attr("src", "/Site web/img/maillot-blanc.png");
+  $(".MaillotT>h4").text("");
   $(".MaillotT").css({ opacity: "0.5" });
   $(".bouge").show();
   $("#Droite > .bouge").remove();

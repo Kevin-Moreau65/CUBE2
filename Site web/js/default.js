@@ -226,12 +226,11 @@ let NomJoueur;
 let MaillotSRC;
 let MaillotDIV;
 let FromDrop;
-let topM = 0;
+let Dropped = false;
 $(function () {
   $(".bouge").draggable({
     helper: "clone",
     tolerance: "pointer",
-    greedy: true,
     start: function () {
       $(this).hide();
       NomJoueur = $(this).children("h4").text();
@@ -239,16 +238,31 @@ $(function () {
       MaillotDIV = $(this);
       FromDrop = $(this).parent();
     },
+    stop: function () {
+      if (Dropped === false) {
+        $(this).show();
+      } else {
+        Dropped = false;
+      }
+    },
   });
   $(".DragCapitaine").draggable({
     helper: "clone",
     tolerance: "pointer",
+    stop: function () {
+      if (Dropped === false) {
+        $(this).show();
+      } else {
+        Dropped = false;
+      }
+    },
   });
   $("#Droite").droppable({
     tolerance: "pointer",
     drop: function () {
       $(this).append(MaillotDIV);
       $(this).children(MaillotDIV).show();
+      Dropped = true;
     },
   });
   $("#Gauche").droppable({
@@ -263,6 +277,7 @@ $(function () {
       if (MaillotDIV.hasClass("Capitaine")) {
         $(this)
           .parent()
+<<<<<<< Updated upstream
           .append('<img src="' + MaillotSRC + '" class="bouge Capitaine">');        
         $(this)
           .parent()
@@ -273,12 +288,21 @@ $(function () {
             marginTop: "-18.5%",
           })
         $(this).parent().children("h4").text(NomJoueur);
+=======
+          .append('<img src="' + MaillotSRC + '" class="bouge Capitaine">');
+        $(this).parent().children("img.Capitaine").css({
+          position: "absolute",
+          zIndex: "999999",
+          marginTop: "-18.5%",
+        });
+>>>>>>> Stashed changes
       } else {
         $(this).parent().children("img").first().attr("src", MaillotSRC);
         $(this).parent().children("h4").text(NomJoueur);
         $(this).parent().children("h4").css({ opacity: "1" });
         $(this).parent().css({ opacity: "1" });
       }
+      Dropped = true;
     },
   });
 });

@@ -278,20 +278,19 @@ $(function () {
       if (MaillotDIV.hasClass("Capitaine")) {
         $(this)
           .parent()
-          .append('<img src="' + MaillotSRC + '" class="bouge Capitaine">');        
-        $(this)
-          .parent()
-          .children("img.Capitaine")
-          .css({
-            position: "absolute",
-            zIndex: "999999",            
-            marginTop: "-18.5%",
-          })
-        $(this).parent().children("h4").text(NomJoueur);
+          .append('<img src="' + MaillotSRC + '" class="bouge Capitaine">');
+        topM = $(this).position().top;
+        topM = -topM;
+        topM += 5;
+        console.log(topM, $(this).position().top);
+        $(this).parent().children("img.Capitaine").css({
+          position: "absolute",
+          zIndex: "999999",
+          top: topM,
+        });
       } else {
-        $(this).parent().children("img").first().attr("src", MaillotSRC);
+        $(this).parent().children("img").attr("src", MaillotSRC);
         $(this).parent().children("h4").text(NomJoueur);
-        $(this).parent().children("h4").css({ opacity: "1" });
         $(this).parent().css({ opacity: "1" });
       }
     },
@@ -299,8 +298,7 @@ $(function () {
 });
 function RefreshMaillot() {
   $(".MaillotT>img").attr("src", "/Site web/img/maillot-blanc.png");
-  $(".MaillotT>img.Capitaine").remove();
-  $(".MaillotT>h4").css({ opacity: "0" });
+  $(".MaillotT>h4").text("");
   $(".MaillotT").css({ opacity: "0.5" });
   $(".bouge").show();
   $("#Droite > .bouge").remove();

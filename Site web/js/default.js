@@ -249,10 +249,6 @@ $(function () {
       }
     }
   });
-  $(".DragCapitaine").draggable({
-    helper: "clone",
-    tolerance: "pointer",
-  });
   $("#Droite").droppable({
     tolerance: "pointer",
     drop: function () {
@@ -275,6 +271,7 @@ $(function () {
       $(this).parent().children("h4").text(NomJoueur);
       $(this).parent().css({ opacity: "1" });
       Dropped = true;
+<<<<<<< HEAD
       if (MaillotDIV.hasClass("Capitaine")) {
         $(this)
           .parent()
@@ -293,6 +290,8 @@ $(function () {
         $(this).parent().children("h4").text(NomJoueur);
         $(this).parent().css({ opacity: "1" });
       }
+=======
+>>>>>>> parent of 7fee2c7 (Merge branch 'Page-céer-un-match' of https://github.com/Kevin-Moreau65/CUBE2 into Page-céer-un-match)
     },
   });
 });

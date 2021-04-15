@@ -229,6 +229,7 @@ let MaillotDIV;
 let FromDrop;
 let IDdrag;
 let remplacant = 0;
+let Droite = false;
 let Dropped = false;
 $(function () {
   $(".bouge").draggable({
@@ -251,7 +252,6 @@ $(function () {
           $(this).remove();
         }
       }
-      nombreRemplacant(IDdrag);
     },
   });
   $(".DragCapitaine").draggable({
@@ -269,9 +269,12 @@ $(function () {
     tolerance: "pointer",
     drop: function () {
       if (MaillotDIV.hasClass("Capitaine") === false) {
+        Droite = true;
+        console.log(Droite);
         $(this).append(MaillotDIV);
         $(this).children(MaillotDIV).show();
         Dropped = true;
+        nombreRemplacant(IDdrag);
       }
     },
   });
@@ -280,6 +283,7 @@ $(function () {
     drop: function () {
       $(MaillotDIV).show();
       Dropped = true;
+      nombreRemplacant(IDdrag);
     },
   });
   $(".MaillotT>img").droppable({
@@ -305,6 +309,7 @@ $(function () {
         });
       }
       Dropped = true;
+      nombreRemplacant(IDdrag);
     },
   });
 });
@@ -317,11 +322,12 @@ function RefreshMaillot() {
   $("#Droite > .bouge").remove();
 }
 function nombreRemplacant(ID) {
-  if (ID === "Droite") {
-    remplacant--;
-    $("#ColoneBanc").text("BANC (" + remplacant + "/11)");
-  } else {
+  if (Droite === true) {
     remplacant++;
+    $("#ColoneBanc").text("BANC (" + remplacant + "/11)");
+    Droite = false;
+  } else if (ID === "Droite") {
+    remplacant--;
     $("#ColoneBanc").text("BANC (" + remplacant + "/11)");
   }
   if (remplacant >= 1) {
@@ -330,4 +336,3 @@ function nombreRemplacant(ID) {
     $("#Warning").text("Il faut un minimum de 3 remplacant");
   }
 }
-

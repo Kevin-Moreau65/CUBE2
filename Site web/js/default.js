@@ -227,6 +227,8 @@ let NomJoueur;
 let MaillotSRC;
 let MaillotDIV;
 let FromDrop;
+let IDdrag;
+let remplacant = 0;
 let Dropped = false;
 $(function () {
   $(".bouge").draggable({
@@ -238,13 +240,18 @@ $(function () {
       MaillotSRC = $(this).children("img").attr("src");
       MaillotDIV = $(this);
       FromDrop = $(this).parent();
+      IDdrag = $(this).parent().attr("id");
     },
     stop: function () {
       if (Dropped === false) {
         $(this).show();
       } else {
         Dropped = false;
+        if (IDdrag === "Droite") {
+          $(this).remove();
+        }
       }
+      nombreRemplacant(IDdrag);
     },
   });
   $(".DragCapitaine").draggable({
@@ -261,9 +268,11 @@ $(function () {
   $("#Droite").droppable({
     tolerance: "pointer",
     drop: function () {
-      $(this).append(MaillotDIV);
-      $(this).children(MaillotDIV).show();
-      Dropped = true;
+      if (MaillotDIV.hasClass("Capitaine") === false) {
+        $(this).append(MaillotDIV);
+        $(this).children(MaillotDIV).show();
+        Dropped = true;
+      }
     },
   });
   $("#Gauche").droppable({
@@ -288,16 +297,36 @@ $(function () {
       } else {
         $(this).parent().children("img").attr("src", MaillotSRC);
         $(this).parent().children("h4").text(NomJoueur);
-        $(this).parent().css({ opacity: "1" });
+        $(this).parent().css({
+          opacity: "1",
+        });
+        $($(this).parent().children("h4")).css({
+          opacity: "1",
+        });
       }
       Dropped = true;
     },
   });
 });
 function RefreshMaillot() {
-  $(".MaillotT>img").first().attr("src", "/Site web/img/maillot-blanc.png");
-  $(".MaillotT>h4").text("");
+  $(".MaillotT>img").attr("src", "/Site web/img/maillot-blanc.png");
+  $(".MaillotT>img.Capitaine").remove();
+  $(".MaillotT>h4").css({ opacity: "0" });
   $(".MaillotT").css({ opacity: "0.5" });
   $(".bouge").show();
   $("#Droite > .bouge").remove();
+}
+function nombreRemplacant(ID) {
+  if (ID === "Droite") {
+    remplacant--;
+    $("#ColoneBanc").text("BANC (" + remplacant + "/11)");
+  } else {
+    remplacant++;
+    $("#ColoneBanc").text("BANC (" + remplacant + "/11)");
+  }
+  if (remplacant >= 1) {
+    $("#Warning").text(" ");
+  } else {
+    $("#Warning").text("Il faut un minimum de 3 remplacant");
+  }
 }

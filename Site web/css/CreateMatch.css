@@ -250,6 +250,10 @@
     padding-right: 8px;
 }
 
+#Warning {
+    color: rgb(216, 1, 1);
+}
+
 #DivMaillot {
     width: 31%;
     height: 15%;

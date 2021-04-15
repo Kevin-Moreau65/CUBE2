@@ -330,3 +330,4 @@ function nombreRemplacant(ID) {
     $("#Warning").text("Il faut un minimum de 3 remplacant");
   }
 }
+

@@ -276,22 +276,14 @@ $(function () {
   $(".MaillotT>img").droppable({
     tolerance: "pointer",
     drop: function () {
-      $(this).parent().children("img").attr("src", MaillotSRC);
-      $(this).parent().children("h4").text(NomJoueur);
-      $(this).parent().css({ opacity: "1" });
-      Dropped = true;
       if (MaillotDIV.hasClass("Capitaine")) {
         $(this)
           .parent()
           .append('<img src="' + MaillotSRC + '" class="bouge Capitaine">');
-        topM = $(this).position().top;
-        topM = -topM;
-        topM += 5;
-        console.log(topM, $(this).position().top);
         $(this).parent().children("img.Capitaine").css({
           position: "absolute",
           zIndex: "999999",
-          marginTop: "18.5%",
+          marginTop: "-18.5%",
         });
       } else {
         $(this).parent().children("img").attr("src", MaillotSRC);

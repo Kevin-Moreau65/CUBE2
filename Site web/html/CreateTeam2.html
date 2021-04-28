@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link
-        href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap"
-        rel="stylesheet"/>
         <link href="/Site web/css/Index.css" rel="stylesheet" type="text/css" />
-        <link href="/Site web/css/Create.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link href="/Site web/css/CreateTeam2.css" rel="stylesheet" type="text/css" />
         <meta charset="UTF-8" />
+        <script src="js/default.js"></script>
+
     </head>
 
     <body>
-        <h1 id="Titre">Création d'une équipe </h1>
-
-        <div style="display:block;margin:auto;width: 300px;">
-            <h2 id="étapes">Etape 2/3
-                <progress value="0.66" ></progress>
-                <input type="text" placeholder="Nom" size="70">
-                <input type="text" placeholder="Prénom" size="70">
-                <input type="text" placeholder="Age" size="70">
-                <input type="text" placeholder="Numéro" size="70">
-
-
+        <h1 id="Titre">Création d'une équipe</h1>
+        <div id="Conteneur">
+            <div class="element 1"><h3><input type="text" placeholder="Nom" size="24"></h3></div>
+            <div class="element 2"><h3><input type="text" placeholder="Prénom" size="24"></h3></div>
+            <div class="element 3"><h3><input type="text" placeholder="Age" size="24"></h3></div>
+            <div class="element 4"><h3><input type="text" placeholder="Numéro" size="24"></h3></div>
+            <div class="element 5">
                 <select name="poste" id="poste-select">
                     <option value="">--Choisissez un poste--</option>
                     <option value="attaquant">Attaquant</option>
-                    <option value="defenseur">Defenseur</option>
-                    <option value="milieu">Milieu</option>
-                    <option value="gardien">Gardien</option>
+                    <option value="defenseur">defenseur</option>
+                    <option value="milieu">milieu</option>
+                    <option value="gardien">gardien</option>
                 </select>
-                <br>
-                <button class="favorite styled"type="button">
-                   Suivant
-               </button>
-            </h2>
+            </div>
         </div>
+    
+        <br>
+        <button class="favorite styled" type="button">
+            Suivant
+        </button>
+        <button class="boucle joueurs" type="button">
+            Valider
+        </button>
     </body>
 </html>

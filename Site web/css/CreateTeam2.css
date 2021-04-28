@@ -1,6 +1,6 @@
 label, footer
 {
-    font-family: sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 label
@@ -11,7 +11,7 @@ label
 
 select
 {
-    font-size: 9rem;
+    font-size: 15px;
     padding: 2px 5px;
 }
 
@@ -21,4 +21,26 @@ footer
     position: absolute;
     bottom: 30px;
     left: 30px;
+}
+
+body
+{
+    text-align: center;
+}
+
+#Conteneur
+{
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.element
+{
+    width: 14%;
+    background-color: rgba(206, 206, 206, 2.4);
+    height: 55px;
+    border-radius: 5%;
 }

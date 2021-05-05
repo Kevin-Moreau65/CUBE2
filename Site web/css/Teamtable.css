@@ -1,6 +1,7 @@
 html {
     color: white;
 }
+
 body {
     background-image: url("../img/Background-Menu.jpg");
     background-size: cover;
@@ -11,21 +12,24 @@ body {
     height: 100vh;
     
 }
-p
-{
+p  {
     font-size: 14px; /* Paragraphes de 14 pixels */
 }
-h1
-{
+h1  {
     font-size: 30px; /* Titres de 40 pixels */
 }
 
 
+
+   
+  
 .centre{
     display:block;margin:auto;width:500px;
    
   }
-  #greybox {
+
+
+#greybox {
     background-color: rgba(206, 206, 206, 0.4);
     backdrop-filter: blur(5px);
     border-radius: 12px;
@@ -33,17 +37,22 @@ h1
     height: 300px;
     margin: center;
     overflow: hidden;
-    transition: transform 1s, opacity 1s;
+ 
     text-align : center
 }
+
+
 
 td /* Toutes les cellules des tableaux... */
 {
     border: 1px solid white; /* auront une bordure de 1px */
+    text-align :center;
 }
 .entete{display:block;margin:auto;width:400px;}
 
-
+table {
+margin: auto;
+margin-top:20px}
 
 #DivButton {
     position: relative;
@@ -52,4 +61,26 @@ td /* Toutes les cellules des tableaux... */
     height: 31vw;
     text-align: center;
     margin: 0 auto;
+}
+
+.Button {
+    position: relative;
+    top: 5%;
+    background-color: rgba(206, 206, 206, 0.4);
+    backdrop-filter: blur(3px);
+    width: 90%;
+    height: 2vw;
+    text-align: center;
+    padding: 15px;
+    margin: auto;
+    margin-top: 9.5%;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.15s;
+    box-shadow: 0px 0px 15px black;
+    line-height: 39px;
+}
+
+.Button:hover {
+    transform: scale(1.1)
 }

@@ -1,3 +1,4 @@
+var State = 0;
 $("#Precedent").click(function () {
     if (State == 3) {
       GoBack(4);
@@ -22,7 +23,7 @@ $("#Precedent").click(function () {
     }
   });
 
-  var Precedent, Suivant;
+var Precedent, Suivant;
 var Timer = [Precedent, Suivant];
 // Quand la souris passe sur les flèches
 $("#Suivant, #Precedent").hover(
@@ -37,3 +38,14 @@ $("#Suivant, #Precedent").hover(
     DelayHover(this, $(this).attr("id"));
   }
 );
+
+function DelayHover(Element, i) {
+  clearTimeout(Timer[Timer.indexOf(i)]);
+  // active le timer de la flèche correspondante
+  Timer[Timer.indexOf(i)] = setTimeout(function () {
+    // remet la flèche dans sa taille d'origine
+    $(Element).animate({ width: "1.2em" }, 200);
+    return;
+  }, 100);
+}
+

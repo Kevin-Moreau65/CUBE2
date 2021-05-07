@@ -1,3 +1,1 @@
 
-$(CreateTeam)
-$(Etape1)

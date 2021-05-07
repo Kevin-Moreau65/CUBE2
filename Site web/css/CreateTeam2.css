@@ -26,6 +26,14 @@ footer
 body
 {
     text-align: center;
+    background-image: url("../img/Background-Menu.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    color: white;
 }
 
 #Conteneur
@@ -41,13 +49,7 @@ body
 
 .element
 {
-    width: 200px;
-    background-color: rgba(206, 206, 206, 0.4);
-    backdrop-filter: blur(3px);
-    height: 50px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 15px black;
-    
+    height: 50px;    
 }
 
 #poste-select
@@ -112,7 +114,7 @@ body
 }
 
 #Suivant {
-    margin-left: 60%;
+    margin-left: 59.5%;
     padding-left: 10px;
 }
 
@@ -126,13 +128,58 @@ body
     margin-right: 10px;
 }
 
-table
-{
-    background-color: rgba(206, 206, 206, 0.4);
-    backdrop-filter: blur(5px);
-    margin-left: 60%;
-    margin-top: -230px;
-    width: 250px;
-    height: 250px;
+#NextStep {
+    position: absolute;
+    left: 0;
+    margin-left: 1.8em;
+    height: auto;
+    width: 8em;
 }
 
+#BackStep {
+    position: absolute;
+    right: 0;
+    margin-right: 2em;
+    height: auto;
+    width: 8em;
+}
+
+
+
+input, select
+{
+    background: rgba(206, 206, 206, 0.048);
+}
+
+input
+{
+    position : relative; bottom : 6px; 
+}
+
+select
+{
+    position: relative;
+    top: 13px;
+}
+
+option
+{
+    background-color: gray;
+}
+
+.background {
+    background: rgba(206, 206, 206, 0.5);
+    width:19%;
+    display: block;
+    margin: auto;
+    border-radius: 30px;
+}
+
+p
+{
+    font-size: 14px; /* Paragraphes de 14 pixels */
+}
+h1
+{
+    font-size: 30px; /* Titres de 40 pixels */
+}

@@ -181,5 +181,6 @@ p
 }
 h1
 {
-    font-size: 30px; /* Titres de 40 pixels */
+    position: relative;
+    top: -4.5%;
 }

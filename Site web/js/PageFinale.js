@@ -63,5 +63,5 @@ $(document).ready(function(){
     
     slideEtapes(); // enfin, on lance la fonction une première fois
     
-    });
+    };
     

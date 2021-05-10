@@ -5,7 +5,8 @@
  
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet"    />
   <link rel="stylesheet" href="/Site web/css/CreateTeam.css" />
-  <script src="//code.jquery.com/jquery-1.12.2.js"></script>
+  
+ 
   
   <meta charset="UTF-8" />
 </head>
@@ -30,28 +31,36 @@
         <input type="text" placeholder="Nom de l'équipe" size="30"> 
       
         <h2>Insérer l'emblême:</h2>
-
-        <input type="file"
-               class=button 
-               accept="image/png, image/jpeg">
+        <div class="input-file-container">
+          <input class="input-file" id="my-file" type="file">
+          <label for="my-file" class="input-file-trigger" tabindex="0">
+            Select a file...
+          </label>
+        </div>
+        <p class="file-return"></p>
                <!-- <br>     Rajouter un appercu de l'image uploadée -->
                
                <h2>Insérer les maillots </h2>
 
-               <input type="file"
-                      class=button 
-                      accept="image/png, image/jpeg">
-                      
-                      <input type="file"
-                      class=button 
-                      accept="image/png, image/jpeg">
+               <div class="input-file-container">
+                <input class="input-file" id="my-file" type="file">
+                <label for="my-file" class="input-file-trigger" tabindex="0">
+                Maillot Domicile
+                </label>
 
-                      <input type="file"
-                      class=button 
-                      accept="image/png, image/jpeg">
+                <input class="input-file" id="my-file" type="file">
+                <label for="my-file" class="input-file-trigger" tabindex="0">
+                Maillot Exterieur
+                </label>
 
+                <input class="input-file" id="my-file" type="file">
+                <label for="my-file" class="input-file-trigger" tabindex="0">
+                Maillot Alternatif
+                </label>
 
-               <!-- Domicile ext, neutre -->
+              </div>
+              <p class="file-return"></p>
+                    </div>
                
             <br>
     </div>

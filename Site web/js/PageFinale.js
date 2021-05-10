@@ -6,8 +6,8 @@ $(document).ready(function(){
         i = 0, // on initialise un compteur
         $currentEtapes = $Etapes.eq(i); // enfin, on cible l'image courante, qui possède l'index i (0 pour l'instant)
     
-    $etapes.css('display', 'none'); // on cache les images
-    $currentEtapes.css('display', 'block'); // on affiche seulement l'image courante
+        $('.Etapes').css('display', 'none'); // on cache les images
+        $Etapes.eq(i).css('display', 'block'); // on affiche seulement l'image courante
     
     $transition.append('<div class="controls"> <span class="prev">Precedent</span> <span class="next">Suivant</span> </div>');
     
@@ -65,3 +65,9 @@ $(document).ready(function(){
     
     };
     
+
+
+
+    1 div par page
+
+Creation variable index 

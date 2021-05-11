@@ -1,73 +1,85 @@
-$(document).ready(function(){
-    
-    var $transition = $('#transition,'), // on cible le bloc du carrousel
-        $Etapes = $('.Etapes'), // on cible les images contenues dans le carrousel
-        indexEtapes = $Etapes.length - 1, // on définit l'index du dernier élément
-        i = 0, // on initialise un compteur
-        $currentEtapes = $Etapes.eq(i); // enfin, on cible l'image courante, qui possède l'index i (0 pour l'instant)
-    
-        $('.Etapes').css('display', 'none'); // on cache les images
-        $Etapes.eq(i).css('display', 'block'); // on affiche seulement l'image courante
-    
-    $transition.append('<div class="controls"> <span class="prev">Precedent</span> <span class="next">Suivant</span> </div>');
-    
-    $('.next').click(function(){ // image suivante
-    
-        i++; // on incrémente le compteur
-    
-        if( i <= indexEtapes ){
-            $Etapes.css('display', 'none'); // on cache les images
-            $currentEtapes = $Etapes.eq(i); // on définit la nouvelle image
-            $currentEtapes.css('display', 'block'); // puis on l'affiche
-        }
-        else{
-            i = indexEtapes;
-        }
-    
+var State = 0;
+$("#Suivant").click(function () {
+    if (State == 0) {
+        GoForward(1);
+        State++;
+        $("#NextStep").text("Paramètre du match");
+        $("#BackStep").text("\u00c9quipe domicile");
+        $("#SousTitre").text("\u00c9quipe extérieur");
+      } else if (State == 1) {
+        GoForward(2);
+        State++;
+        $("#NextStep").text("Lancement du match");
+        $("#BackStep").text("\u00c9quipe extérieur");
+        $("#SousTitre").text("Paramètre du match");
+      } else {
+        console.log("NON");
+      }
     });
-    
-    $('.prev').click(function(){ // image précédente
-    
-        i--; // on décrémente le compteur, puis on réalise la même chose que pour la fonction "suivante"
-    
-        if( i >= 0 ){
-            $Etapes.css('display', 'none');
-            $currentEtapes = $img.eq(i);
-            $currentEtapes.css('display', 'block');
-        }
-        else{
-            i = 0;
-        }
-    
+    $("#Precedent").click(function () {
+      if (State == 3) {
+        GoBack(4);
+        State--;
+      } else if (State == 2) {
+        GoBack(3);
+        State--;
+        $("#NextStep").text("Création");
+        $("#BackStep").text("\u00c9quipe domicile");
+        $("#SousTitre").text("\u00c9quipe extérieur");
+      } else if (State == 1) {
+        GoBack(2);
+        State--;
+        $("#NextStep").text("\u00c9quipe extérieur");
+        $("#BackStep").text("Menu Principal");
+        $("#SousTitre").text("\u00c9quipe domicile");
+      } else if (State == 0) {
+        $("#AlerteRetour, #Darken").show();
+        $("#AlerteRetour, #Darken").animate({ opacity: "1" }, 100);
+      } else {
+        console.log("NON");
+      }
     });
-    
-    function slideEtapes(){
-        setTimeout(function(){ // on utilise une fonction anonyme
-                            
-            if(i < indexEtapes){ // si le compteur est inférieur au dernier index
-            i++; // on l'incrémente
-        }
-        else{ // sinon, on le remet à 0 (première image)
-            i = 0;
-        }
-    
-        $Etapes.css('display', 'none');
-    
-        $currentEtapes = $img.eq(i);
-        $currentEtapes.css('display', 'block');
-    
-        slideEtapes(); // on oublie pas de relancer la fonction à la fin
-    
-   
+    function GoBack(i) {
+      iMoins = i--;
+      $("#Etape" + i).toggleClass("Passé");
+      $("#Etape" + iMoins).toggleClass("PasPassé");
     }
-    
-    slideEtapes(); // enfin, on lance la fonction une première fois
-    
-    };
-    
-
-
-
-    1 div par page
-
-Creation variable index 
+    function GoForward(i) {
+      iPlus = i++;
+      $("#Etape" + i).toggleClass("PasPassé");
+      $("#Etape" + iPlus).toggleClass("Passé");
+    }
+    // 2 timer, un pour chaque flèches
+    var Precedent, Suivant;
+    var Timer = [Precedent, Suivant];
+    // Quand la souris passe sur les flèches
+    $("#Suivant, #Precedent").hover(
+      function () {
+        // reset le timer de l'animation
+        clearTimeout(Timer[Timer.indexOf($(this).attr("id"))]);
+        // animation
+        $(this).animate({ width: "9.5em" }, 200);
+      },
+      function () {
+        // Délai de désactivation de l'animation
+        DelayHover(this, $(this).attr("id"));
+      }
+    );
+    function DelayHover(Element, i) {
+      clearTimeout(Timer[Timer.indexOf(i)]);
+      // active le timer de la flèche correspondante
+      Timer[Timer.indexOf(i)] = setTimeout(function () {
+        // remet la flèche dans sa taille d'origine
+        $(Element).animate({ width: "1.2em" }, 200);
+        return;
+      }, 800);
+    }
+    $("#RetourMenu").click(function () {
+      window.location.href = "/Site web/index.html";
+    });
+    $("#RetourPage").click(function () {
+      $("#AlerteRetour, #Darken").animate({ opacity: "0" }, 100);
+      setTimeout(function () {
+        $("#AlerteRetour, #Darken").hide();
+      }, 100);
+    });

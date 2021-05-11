@@ -3,14 +3,14 @@ $("#Suivant").click(function () {
     if (State == 0) {
         GoForward(1);
         State++;
-        $("#NextStep").text("Paramètre du match");
-        $("#BackStep").text("\u00c9quipe domicile");
-        $("#SousTitre").text("\u00c9quipe extérieur");
+        $("#NextStep").text("Etape1/3");
+        $("#BackStep").text("Etape 2/3--");
+        $("#SousTitre").text("Etape 3/3");
       } else if (State == 1) {
         GoForward(2);
         State++;
-        $("#NextStep").text("Lancement du match");
-        $("#BackStep").text("\u00c9quipe extérieur");
+        $("#NextStep").text("Etape 2/3");
+        $("#BackStep").text("Etape 3/3");
         $("#SousTitre").text("Paramètre du match");
       } else {
         console.log("NON");

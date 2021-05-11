@@ -3,15 +3,15 @@ $("#Suivant").click(function () {
     if (State == 0) {
         GoForward(1);
         State++;
-        $("#NextStep").text("Etape1/3");
-        $("#BackStep").text("Etape 2/3--");
+        $("#NextStep").text("Etape 2/3");
+        $("#BackStep").text("Etape 1/3");
         $("#SousTitre").text("Etape 3/3");
       } else if (State == 1) {
         GoForward(2);
         State++;
-        $("#NextStep").text("Etape 2/3");
-        $("#BackStep").text("Etape 3/3");
-        $("#SousTitre").text("Paramètre du match");
+        $("#NextStep").text("Etape 3/3");
+        $("#BackStep").text("Etape 1/3");
+        $("#SousTitre").text("Etape 2/3");
       } else {
         console.log("NON");
       }

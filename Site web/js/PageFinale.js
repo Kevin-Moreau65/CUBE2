@@ -4,8 +4,8 @@ $("#Suivant").click(function () {
         GoForward(1);
         State++;
         $("#NextStep").text("Etape 2/3");
-        $("#BackStep").text("Etape 1/3");
-        $("#SousTitre").text("Etape 3/3");
+        $("#BackStep").text("Menu principal");
+        $("#SousTitre").text("Etape 1/3");
       } else if (State == 1) {
         GoForward(2);
         State++;
@@ -23,15 +23,15 @@ $("#Suivant").click(function () {
       } else if (State == 2) {
         GoBack(3);
         State--;
-        $("#NextStep").text("Création");
-        $("#BackStep").text("\u00c9quipe domicile");
-        $("#SousTitre").text("\u00c9quipe extérieur");
+        $("#NextStep").text("Créer l'équipe");
+        $("#BackStep").text("Etape 2/3");
+        $("#SousTitre").text("Etape 3/3");
       } else if (State == 1) {
         GoBack(2);
         State--;
-        $("#NextStep").text("\u00c9quipe extérieur");
+        $("#NextStep").text("Etape 2/3");
         $("#BackStep").text("Menu Principal");
-        $("#SousTitre").text("\u00c9quipe domicile");
+        $("#SousTitre").text("Etape 1/3");
       } else if (State == 0) {
         $("#AlerteRetour, #Darken").show();
         $("#AlerteRetour, #Darken").animate({ opacity: "1" }, 100);
@@ -83,3 +83,4 @@ $("#Suivant").click(function () {
         $("#AlerteRetour, #Darken").hide();
       }, 100);
     });
+    

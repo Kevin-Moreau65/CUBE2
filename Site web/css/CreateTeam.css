@@ -15,6 +15,7 @@ body{
 p
 {
     font-size: 14px; /* Paragraphes de 14 pixels */
+    text-align: center;
 }
 
 h1
@@ -161,11 +162,11 @@ td /* Toutes les cellules des tableaux... */
 }
 
 #Etape1 {
-    background-color: rgba(206, 206, 206, 0.4);
+    /* background-color: rgba(206, 206, 206, 0.4);
     backdrop-filter: blur(5px);
     border-radius: 12px;
     width: 70%;
-    margin: 0 auto;
+    margin: 0 auto; */
     overflow: hidden;
     transition: transform 1s, opacity 1s;
 }
@@ -301,4 +302,45 @@ td /* Toutes les cellules des tableaux... */
 	content: "Selected file: ";
 	font-style: normal;
 	font-weight: normal;
+}
+
+
+/* CSS JANEK ------------------------------------------------------------------------------- */
+
+footer
+{
+    font-size: 8rem;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+#Conteneur
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 450px;
+    width: 250px;
+    margin: auto;
+}
+
+.element
+{
+    height: 50px;    
+}
+
+#poste-select
+{
+    text-align: end;
+}
+
+.tableau
+{
+    background: rgba(206, 206, 206, 0.5);
+    width: 35%;
+    height: 62%;
+    bottom: 62%;
+    position: relative;
+    border-radius: 30px;
 }

@@ -2,7 +2,7 @@
 <html>
 
 <head>
- 
+  <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/Site web/css/CreateTeam.css" >
   <!-- <link href="/Site web/css/CreateTeam2.css" rel="stylesheet" type="text/css" /> -->
@@ -34,29 +34,27 @@
             <input type="text" placeholder="Nom de l'équipe" size="30"> 
           
             <h2>Insérer l'emblême:</h2>
-            <div class="input-file-container">
-              <input class="input-file" id="my-file" type="file">
-              <label for="my-file" class="input-file-trigger" tabindex="0">
-                Select a file...
-              </label>
-            </div>
-            <p class="file-return"></p>
-                   <!-- <br>     Rajouter un appercu de l'image uploadée -->
-                   
-                   <h2>Insérer les maillots domicile, extérieur et alternatif :</h2>
+            <input type='file' onchange="readURL(this);" />
+            <img id="blah" src="#" alt="your image" />
+            
     
-                   <div class="input-file-container">
-                    <input class="input-file" id="my-file" type="file" accept="image/*" multiple >
-                    <label for="my-file" class="input-file-trigger" tabindex="0">
+                   
+           <h2>Insérer les maillots domicile, extérieur et alternatif :</h2>
+    
+                   
+            <input class="input-file" id="my-file" type="file" accept="image/*" multiple >
+            <input class="input-file" id="my-file" type="file" accept="image/*" multiple >
+            <input class="input-file" id="my-file" type="file" accept="image/*" multiple >
+             
                   
-                    </label>
+                 
                
     
                     
     
-                  </div>
-                  <p class="file-return">    
-                    utiliser SHIFT ou CTRL pour choisir plusieurs fichiers
+            
+               
+                  <p>  utiliser SHIFT ou CTRL pour choisir plusieurs fichiers
                   </p>
                   
                         </div>

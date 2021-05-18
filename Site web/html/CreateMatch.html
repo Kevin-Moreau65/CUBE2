@@ -19,7 +19,7 @@
   <h2 id="SousTitre"> Paramètres du match</h2>
   </div>
   <div id="Etape1">
-    <div>
+    <div id="M1G">
       <p>Domicile</p>
         <select id="BoutonGauche" class="BoutonMenu" name="TeamDom" onchange="Selectchange('Dom')">      
         <option value="none" selected disabled hidden>Liste des équipes</option>
@@ -30,15 +30,17 @@
         <option>Juventus</option>
       </select>
     </div>
-    <p>Exterieur</p>
-    <select id="BoutonGaucheE" class="BoutonMenu" name="TeamExt" onchange="Selectchange('Ext')">      
-      <option value="none" selected disabled hidden>Liste des équipes</option>
-      <option>Pau FC</option>
-      <option>Cesi</option>
-      <option>PSG</option>
-      <option>Dortmund</option>
-      <option>Juventus</option>
-    </select>
+    <div id="M1D">
+      <p>Exterieur </p> 
+      <select id="BoutonGaucheE" class="BoutonMenu" name="TeamExt" onchange="Selectchange('Ext')">      
+        <option value="none" selected disabled hidden>Liste des équipes</option>
+        <option>Pau FC</option>
+        <option>Cesi</option>
+        <option>PSG</option>
+        <option>Dortmund</option>
+        <option>Juventus</option>
+      </select>
+    </div>
     <div id="Date">
       <br>
       <h3 id="DateTitre">Date</h3>
@@ -46,11 +48,10 @@
       <input id="DatePicker"  class="BoutonMenu" type="date" />
     </div>
     <div id="Arbitres">
-      <h3>
-        Arbitres
-      </h3>
+      <h3>Arbitres</h3>
       <input name="Insérer le nom des arbitre">
     </div>
+    <div class="bouton"><h3>Sauvegarder</h3></div>
   </div>
   <div id="Etape2" class="PasPassé">
     <div id="Menu-Gauche">      

@@ -19,6 +19,26 @@
   <h2 id="SousTitre"> Paramètres du match</h2>
   </div>
   <div id="Etape1">
+    <div>
+      <p>Domicile</p>
+        <select id="BoutonGauche" class="BoutonMenu" name="TeamDom" onchange="Selectchange('Dom')">      
+        <option value="none" selected disabled hidden>Liste des équipes</option>
+        <option>Pau FC</option>
+        <option>Cesi</option>
+        <option>PSG</option>
+        <option>Dortmund</option>
+        <option>Juventus</option>
+      </select>
+    </div>
+    <p>Exterieur</p>
+    <select id="BoutonGaucheE" class="BoutonMenu" name="TeamExt" onchange="Selectchange('Ext')">      
+      <option value="none" selected disabled hidden>Liste des équipes</option>
+      <option>Pau FC</option>
+      <option>Cesi</option>
+      <option>PSG</option>
+      <option>Dortmund</option>
+      <option>Juventus</option>
+    </select>
     <div id="Date">
       <br>
       <h3 id="DateTitre">Date</h3>
@@ -34,14 +54,6 @@
   </div>
   <div id="Etape2" class="PasPassé">
     <div id="Menu-Gauche">      
-      <select id="BoutonGauche" class="BoutonMenu" name="Selec2">      
-        <option value="none" selected disabled hidden>Liste des équipes</option>
-        <option>Pau FC</option>
-        <option>Cesi</option>
-        <option>PSG</option>
-        <option>Dortmund</option>
-        <option>Juventus</option>
-      </select>
       <div id="Gauche">
         <h3 id="ColoneAttaquant">ATTAQUANT</h3>
         <div id="float">
@@ -209,13 +221,6 @@
   </div>
   <div id="Etape3" class="PasPassé">
     <div id="Menu-Gauche">      
-      <select id="BoutonGaucheE" class="BoutonMenu" name="Selec2">      
-        <option value="none" selected disabled hidden>Liste des équipes</option>
-        <option>Pau FC</option>
-        <option>PSG</option>
-        <option>Dortmund</option>
-        <option>Juventus</option>
-      </select>
       <div id="Gauche">
         <h3 id="ColoneAttaquant">ATTAQUANT</h3>
         <div class="bouge" id="DivMaillot">

@@ -142,35 +142,32 @@ $("#Suivant").click(function () {
   if (State == 0) {
     GoForward(1);
     State++;
-    $("#NextStep").text("Paramètre du match");
-    $("#BackStep").text("\u00c9quipe domicile");
-    $("#SousTitre").text("\u00c9quipe extérieur");
+    $("#NextStep").text("\u00c9quipe extérieur");
+    $("#BackStep").text("Paramètre du match");
+    $("#SousTitre").text("\u00c9quipe domicile");
   } else if (State == 1) {
     GoForward(2);
     State++;
     $("#NextStep").text("Lancement du match");
-    $("#BackStep").text("\u00c9quipe extérieur");
-    $("#SousTitre").text("Paramètre du match");
+    $("#BackStep").text("\u00c9quipe domicile");
+    $("#SousTitre").text("\u00c9quipe extérieur");
   } else {
     console.log("NON");
   }
 });
 $("#Precedent").click(function () {
-  if (State == 3) {
-    GoBack(4);
-    State--;
-  } else if (State == 2) {
+  if (State == 2) {
     GoBack(3);
     State--;
-    $("#NextStep").text("Paramètre du match");
-    $("#BackStep").text("\u00c9quipe domicile");
-    $("#SousTitre").text("\u00c9quipe extérieur");
+    $("#NextStep").text("\u00c9quipe extérieur");
+    $("#BackStep").text("Paramètre du match");
+    $("#SousTitre").text("\u00c9quipe domicile");
   } else if (State == 1) {
     GoBack(2);
     State--;
-    $("#NextStep").text("\u00c9quipe extérieur");
+    $("#NextStep").text("\u00c9quipe domicile");
     $("#BackStep").text("Menu Principal");
-    $("#SousTitre").text("\u00c9quipe domicile");
+    $("#SousTitre").text("Paramètre du match");
   } else if (State == 0) {
     $("#AlerteRetour, #Darken").show();
     $("#AlerteRetour, #Darken").animate({ opacity: "1" }, 100);

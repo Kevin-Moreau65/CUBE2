@@ -333,3 +333,10 @@ function nombreRemplacant(ID) {
     $("#Warning").text("Il faut un minimum de 3 remplacant");
   }
 }
+function Selectchange(Select) {
+  var value;
+  if (Select === 'Dom') {
+    value = $("BoutonGauche").val()
+    
+  }
+}

@@ -335,12 +335,13 @@ function nombreRemplacant(ID) {
 }
 function Selectchange(Select) {
   let value;
-  $("#BoutonGaucheE > option, #BoutonGauche > option").show()
-  if (Select === 'Dom') {
-    value = $("#BoutonGauche").val()
-    $("#BoutonGaucheE > option:contains('"+value+"')").hide()
-  } else if (Select === 'Ext') {
-    value = $("#BoutonGaucheE").val()
-    $("#BoutonGauche > option:contains('"+value+"')").hide()
+  if (Select === "Dom") {
+    $("#BoutonGaucheE > option").show();
+    value = $("#BoutonGauche").val();
+    $("#BoutonGaucheE > option:contains('" + value + "')").hide();
+  } else if (Select === "Ext") {
+    $("#BoutonGauche > option").show();
+    value = $("#BoutonGaucheE").val();
+    $("#BoutonGauche > option:contains('" + value + "')").hide();
   }
 }

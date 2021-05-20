@@ -1,160 +1,210 @@
 <!DOCTYPE html>
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet"    />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap"
+    rel="stylesheet"
+  />
   <link href="/Site web/css/Index.css" rel="stylesheet" type="text/css" />
   <link href="/Site web/css/CreateMatch.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link
+    rel="stylesheet"
+    href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+  />
   <meta charset="UTF-8" />
   <title>Préparation d'un Match</title>
 </head>
 <body>
   <map name="MaillotMap">
-    <area target="" alt="" title="" href="" coords="20,0,60,53" shape="rect">
-    <area target="" alt="" title="" href="" coords="20,0,0,19,14,33,35,14" shape="poly">
-    <area target="" alt="" title="" href="" coords="58,0,78,19,64,33,45,14,37,8" shape="poly">
-</map>
+    <area target="" alt="" title="" href="" coords="20,0,60,53" shape="rect" />
+    <area
+      target=""
+      alt=""
+      title=""
+      href=""
+      coords="20,0,0,19,14,33,35,14"
+      shape="poly"
+    />
+    <area
+      target=""
+      alt=""
+      title=""
+      href=""
+      coords="58,0,78,19,64,33,45,14,37,8"
+      shape="poly"
+    />
+  </map>
 
   <h1 id="Titre">Préparation d'un Match</h1>
   <div id="CentreTitre">
-  <h2 id="SousTitre"> Paramètres du match</h2>
+    <h2 id="SousTitre">Paramètres du match</h2>
   </div>
   <div id="Etape1">
-    <div>
-      <p>Domicile</p>
-        <select id="BoutonGauche" class="BoutonMenu" name="TeamDom" onchange="Selectchange('Dom')">      
-        <option value="none" selected disabled hidden>Liste des équipes</option>
-        <option>Pau FC</option>
-        <option>Cesi</option>
-        <option>PSG</option>
-        <option>Dortmund</option>
-        <option>Juventus</option>
-      </select>
-    </div>
-    <p>Exterieur</p>
-    <select id="BoutonGaucheE" class="BoutonMenu" name="TeamExt" onchange="Selectchange('Ext')">      
-      <option value="none" selected disabled hidden>Liste des équipes</option>
-      <option>Pau FC</option>
-      <option>Cesi</option>
-      <option>PSG</option>
-      <option>Dortmund</option>
-      <option>Juventus</option>
-    </select>
-    <div id="Date">
-      <br>
-      <h3 id="DateTitre">Date</h3>
-    </br>
-      <input id="DatePicker"  class="BoutonMenu" type="date" />
+    <div class="rectangle">
+      <div id="M1G">
+        <p>Domicile</p>
+        <select
+          id="BoutonGauche"
+          class="BoutonMenu"
+          name="TeamDom"
+          onchange="Selectchange('Dom')"
+        >
+          <option value="none" selected disabled hidden>
+            Liste des équipes
+          </option>
+          <option>Pau FC</option>
+          <option>Cesi</option>
+          <option>PSG</option>
+          <option>Dortmund</option>
+          <option>Juventus</option>
+        </select>
+      </div>
+      <div id="M1D">
+        <p>Exterieur</p>
+        <select
+          id="BoutonGaucheE"
+          class="BoutonMenu"
+          name="TeamExt"
+          onchange="Selectchange('Ext')"
+        >
+          <option value="none" selected disabled hidden>
+            Liste des équipes
+          </option>
+          <option>Pau FC</option>
+          <option>Cesi</option>
+          <option>PSG</option>
+          <option>Dortmund</option>
+          <option>Juventus</option>
+        </select>
+      </div>
     </div>
     <div id="Arbitres">
-      <h3>
-        Arbitres
-      </h3>
-      <input name="Insérer le nom des arbitre">
+      <h3>Arbitres</h3>
+      <div class="bouton"><h3>Ajouter</h3></div>
     </div>
+    <div class="rectangle">
+      <div id="Date">
+        <h3 id="DateTitre">Date</h3>
+        <input id="DatePicker" class="BoutonMenu" type="date" />
+      </div>
+      <div id="Lieu">
+        <h3 id="LieuTitre">Lieu</h3>
+        <input class="BoutonMenuInput" />
+      </div>
+    </div>
+    <div class="bouton"><h3>Sauvegarder</h3></div>
   </div>
   <div id="Etape2" class="PasPassé">
-    <div id="Menu-Gauche">      
+    <div id="Menu-Gauche">
       <div id="Gauche">
         <h3 id="ColoneAttaquant">ATTAQUANT</h3>
         <div id="float">
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
           </div>
           <div class="bouge" id="DivMaillot">
             <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
             <h4>C.Ronaldo</h4>
-            </div>
+          </div>
           <div class="bouge" id="DivMaillot">
             <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
             <h4>K.Mbappé</h4>
-            </div><div class="bouge" id="DivMaillot">
-              <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-              <h4>K.Mbappé</h4>
-              </div>
-              <div class="bouge" id="DivMaillot">
-                <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-                <h4>K.Mbappé</h4>
-                </div><div class="bouge" id="DivMaillot">
-                  <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-                  <h4>K.Mbappé</h4>
-                  </div><div class="bouge" id="DivMaillot">
-                    <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-                    <h4>K.Mbappé</h4>
-                    </div>
-                </div>
+          </div>
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+          </div>
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+          </div>
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+          </div>
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+          </div>
+        </div>
         <h3 id="ColoneMilieu">MILIEU</h3>
         <div id="float">
-        <div class="bouge" id="DivMaillot">          
-          <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
           </div>
           <div class="bouge" id="DivMaillot">
             <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
             <h4>K.Mbappé</h4>
-            </div><div class="bouge" id="DivMaillot">
-              <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-              <h4>K.Mbappé</h4>
-              </div>
-              <div class="bouge" id="DivMaillot">
-                <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-                <h4>K.Mbappé</h4>
-                </div><div class="bouge" id="DivMaillot">
-                  <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-                  <h4>K.Mbappé</h4>
-                  </div><div class="bouge" id="DivMaillot">
-                    <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-                    <h4>K.Mbappé</h4>
-                    </div>
-                  </div>
+          </div>
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+          </div>
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+          </div>
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+          </div>
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+          </div>
+        </div>
         <h3 id="ColoneDefenseur">D&EacuteFENSEUR</h3>
         <div id="float">
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
           </div>
           <div class="bouge" id="DivMaillot">
             <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
             <h4>K.Mbappé</h4>
-            </div><div class="bouge" id="DivMaillot">
-              <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-              <h4>K.Mbappé</h4>
-              </div>
-              <div class="bouge" id="DivMaillot">
-                <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-                <h4>K.Mbappé</h4>
-                </div><div class="bouge" id="DivMaillot">
-                  <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-                  <h4>K.Mbappé</h4>
-                  </div><div class="bouge" id="DivMaillot">
-                    <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-                    <h4>K.Mbappé</h4>
-                    </div>
-                  </div>
-        <h3 id="ColoneGardien">GARDIEN</h3>        
+          </div>
           <div class="bouge" id="DivMaillot">
-            <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
             <h4>K.Mbappé</h4>
-            </div>
-            <div class="bouge" id="DivMaillot">
-              <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
-              <h4>K.Mbappé</h4>
-              </div>
-              <div class="bouge" id="DivMaillot">
-                <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
-                <h4>K.Mbappé</h4>
-                </div>
-                <div class="bouge" id="DivMaillot">
-                  <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
-                  <h4>K.Mbappé</h4>
-                  </div>                   
+          </div>
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+          </div>
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+          </div>
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+          </div>
+        </div>
+        <h3 id="ColoneGardien">GARDIEN</h3>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
         <h3 id="ColoneCapitaine">Capitaine</h3>
         <div class="Capitaine bouge" id="DivMaillot">
-        <img class="Brassard Capitaine" src="/Site web/img/brassard.png" />
-        <h4>Capitaine</h4>
-      </div>        
+          <img class="Brassard Capitaine" src="/Site web/img/brassard.png" />
+          <h4>Capitaine</h4>
+        </div>
       </div>
-  </div>
+    </div>
 
     <div id="Menu-Droit">
       <select id="BoutonDroit" class="BoutonMenu" name="Selec1">
@@ -173,121 +223,130 @@
     </div>
     <div id="TerrainMaillot">
       <div class="MaillotT" id="Maillot1">
-      <img   src="/Site web/img/maillot-blanc.png" />
-      <h4>&nbsp;</h4>
-      </div>    
-      <div class="MaillotT" id="Maillot2">
-        <img   src="/Site web/img/maillot-blanc.png" />
+        <img src="/Site web/img/maillot-blanc.png" />
         <h4>&nbsp;</h4>
-        </div>    
-        <div class="MaillotT" id="Maillot3">
-          <img   src="/Site web/img/maillot-blanc.png" />
-          <h4>&nbsp;</h4>
-          </div>    
-          <div class="MaillotT" id="Maillot4">
-            <img   src="/Site web/img/maillot-blanc.png" />
-            <h4>&nbsp;</h4>
-            </div>    
-            <div class="MaillotT" id="Maillot5">
-              <img   src="/Site web/img/maillot-blanc.png" />
-              <h4>&nbsp;</h4>
-              </div>    
-              <div class="MaillotT" id="Maillot6">
-                <img   src="/Site web/img/maillot-blanc.png" />
-                <h4>&nbsp;</h4>
-                </div>    
-                <div class="MaillotT" id="Maillot7">
-                  <img   src="/Site web/img/maillot-blanc.png" />
-                  <h4>&nbsp;</h4>
-                  </div>    
-                  <div class="MaillotT" id="Maillot8">
-                    <img   src="/Site web/img/maillot-blanc.png" />
-                    <h4>&nbsp;</h4>
-                    </div>    
-                    <div class="MaillotT" id="Maillot9">
-                      <img   src="/Site web/img/maillot-blanc.png" />
-                      <h4>&nbsp;</h4>
-                      </div>    
-                      <div class="MaillotT" id="Maillot10">
-                        <img   src="/Site web/img/maillot-blanc.png" />
-                        <h4>&nbsp;</h4>
-                        </div>    
-                        <div class="MaillotT" id="Maillot11">
-                          <img   src="/Site web/img/maillot-blanc.png" />
-                          <h4>&nbsp;</h4>
-                          </div>    
+      </div>
+      <div class="MaillotT" id="Maillot2">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot3">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot4">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot5">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot6">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot7">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot8">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot9">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot10">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot11">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
       <img id="Terrain" src="/Site web/img/Terrain-menu.jpg" />
     </div>
   </div>
   <div id="Etape3" class="PasPassé">
-    <div id="Menu-Gauche">      
+    <div id="Menu-Gauche">
       <div id="Gauche">
         <h3 id="ColoneAttaquant">ATTAQUANT</h3>
         <div class="bouge" id="DivMaillot">
           <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
           <h4>K.Mbappé</h4>
-          </div>
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-            </div><div class="bouge" id="DivMaillot">
-              <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-              <h4>K.Mbappé</h4>
-              </div>
-              <div class="bouge" id="DivMaillot">
-                <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-                <h4>K.Mbappé</h4>
-                </div><div class="bouge" id="DivMaillot">
-                  <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-                  <h4>K.Mbappé</h4>
-                  </div><div class="bouge" id="DivMaillot">
-                    <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-                    <h4>K.Mbappé</h4>
-                    </div>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
         <h3 id="ColoneMilieu">MILIEU</h3>
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-            </div>
-            <div class="bouge" id="DivMaillot">
-              <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-              <h4>K.Mbappé</h4>
-              </div><div class="bouge" id="DivMaillot">
-                <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-                <h4>K.Mbappé</h4>
-                </div>
-                <div class="bouge" id="DivMaillot">
-                  <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-                  <h4>K.Mbappé</h4>
-                  </div><div class="bouge" id="DivMaillot">
-                    <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-                    <h4>K.Mbappé</h4>
-                    </div><div class="bouge" id="DivMaillot">
-                      <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-                      <h4>K.Mbappé</h4>
-                      </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
         <h3 id="ColoneDefenseur">D&EacuteFENSEUR</h3>
-                    <div class="bouge" id="DivMaillot">
-                      <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-                      <h4>K.Mbappé</h4>
-                      </div>
-                      <div class="bouge" id="DivMaillot">
-                        <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-                        <h4>K.Mbappé</h4>
-                        </div><div class="bouge" id="DivMaillot">
-                          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-                          <h4>K.Mbappé</h4>
-                          </div>
-                          <div class="bouge" id="DivMaillot">
-                            <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-                            <h4>K.Mbappé</h4>
-                            </div><div class="bouge" id="DivMaillot">
-                              <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-                              <h4>K.Mbappé</h4>
-                              </div><div class="bouge" id="DivMaillot">
-                                <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-                                <h4>K.Mbappé</h4>
-                                </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
         <h3 id="ColoneGardien">GARDIEN</h3>
         <img class="MaillotGoalE" src="/Site web/img/maillot-blanc.png" />
         <img class="MaillotGoalE" src="/Site web/img/maillot-blanc.png" />
@@ -295,9 +354,8 @@
         <img class="MaillotGoalE" src="/Site web/img/maillot-blanc.png" />
         <img class="MaillotGoalE" src="/Site web/img/maillot-blanc.png" />
         <img class="MaillotGoalE" src="/Site web/img/maillot-blanc.png" />
-        
       </div>
-  </div>
+    </div>
 
     <div id="Menu-Droit">
       <select id="BoutonDroitE" class="BoutonMenu" name="Selec1">
@@ -315,55 +373,55 @@
     </div>
     <div id="TerrainMaillot">
       <div class="MaillotT" id="Maillot1E">
-        <img   src="/Site web/img/maillot-blanc.png" />
+        <img src="/Site web/img/maillot-blanc.png" />
         <h4>&nbsp;</h4>
-        </div>    
-        <div class="MaillotT" id="Maillot2E">
-          <img   src="/Site web/img/maillot-blanc.png" />
-          <h4>&nbsp;</h4>
-          </div>    
-          <div class="MaillotT" id="Maillot3E">
-            <img   src="/Site web/img/maillot-blanc.png" />
-            <h4>&nbsp;</h4>
-            </div>    
-            <div class="MaillotT" id="Maillot4E">
-              <img   src="/Site web/img/maillot-blanc.png" />
-              <h4>&nbsp;</h4>
-              </div>    
-              <div class="MaillotT" id="Maillot5E">
-                <img   src="/Site web/img/maillot-blanc.png" />
-                <h4>&nbsp;</h4>
-                </div>    
-                <div class="MaillotT" id="Maillot6E">
-                  <img   src="/Site web/img/maillot-blanc.png" />
-                  <h4>&nbsp;</h4>
-                  </div>    
-                  <div class="MaillotT" id="Maillot7E">
-                    <img   src="/Site web/img/maillot-blanc.png" />
-                    <h4>&nbsp;</h4>
-                    </div>    
-                    <div class="MaillotT" id="Maillot8E">
-                      <img   src="/Site web/img/maillot-blanc.png" />
-                      <h4>&nbsp;</h4>
-                      </div>    
-                      <div class="MaillotT" id="Maillot9E">
-                        <img   src="/Site web/img/maillot-blanc.png" />
-                        <h4>&nbsp;</h4>
-                        </div>    
-                        <div class="MaillotT" id="Maillot10E">
-                          <img   src="/Site web/img/maillot-blanc.png" />
-                          <h4>&nbsp;</h4>
-                          </div>    
-                          <div class="MaillotT" id="Maillot11E">
-                            <img   src="/Site web/img/maillot-blanc.png" />
-                            <h4>&nbsp;</h4>
-                            </div>    
+      </div>
+      <div class="MaillotT" id="Maillot2E">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot3E">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot4E">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot5E">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot6E">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot7E">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot8E">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot9E">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot10E">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
+      <div class="MaillotT" id="Maillot11E">
+        <img src="/Site web/img/maillot-blanc.png" />
+        <h4>&nbsp;</h4>
+      </div>
       <img id="Terrain" src="/Site web/img/Terrain-menu.jpg" />
     </div>
   </div>
   <div id="Precedent">
     <h3><</h3>
-    
+
     <h4 id="BackStep">Menu principal</h4>
   </div>
   <div id="Suivant">
@@ -372,23 +430,16 @@
   </div>
   <div id="Darken"></div>
   <div id="Centre">
-<div id="AlerteRetour">
-  <h2>Retour</h2>
-  <h3>Voulez-vous retourner au menu principal ?</h3>
-  <h4>(Votre avancée ne sera pas sauvegarder)</h4>
-  <h3 id="RetourMenu">Oui</h3>
-  <h3 id="RetourPage">Non</h3>
-</div>
-</div>
+    <div id="AlerteRetour">
+      <h2>Retour</h2>
+      <h3>Voulez-vous retourner au menu principal ?</h3>
+      <h4>(Votre avancée ne sera pas sauvegarder)</h4>
+      <h3 id="RetourMenu">Oui</h3>
+      <h3 id="RetourPage">Non</h3>
+    </div>
+  </div>
 
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="/Site web/js/default.js"></script>
-
-
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="/Site web/js/default.js"></script>
 </body>

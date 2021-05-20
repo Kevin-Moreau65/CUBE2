@@ -334,9 +334,14 @@ function nombreRemplacant(ID) {
   }
 }
 function Selectchange(Select) {
-  var value;
-  if (Select === 'Dom') {
-    value = $("BoutonGauche").val()
-    
+  let value;
+  if (Select === "Dom") {
+    $("#BoutonGaucheE > option").show();
+    value = $("#BoutonGauche").val();
+    $("#BoutonGaucheE > option:contains('" + value + "')").hide();
+  } else if (Select === "Ext") {
+    $("#BoutonGauche > option").show();
+    value = $("#BoutonGaucheE").val();
+    $("#BoutonGauche > option:contains('" + value + "')").hide();
   }
 }

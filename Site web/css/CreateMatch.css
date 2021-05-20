@@ -9,6 +9,7 @@
     text-align: center;
     box-shadow: 0px 0px 10px black;
     transition: transform 1s, opacity 1s;
+    top: -131%;
 }
 
 #Etape3>h2 {
@@ -121,7 +122,7 @@
     overflow: hidden;
     box-shadow: 0px 0px 10px black;
     transition: transform 1s, opacity 1s;
-    top: -73%;
+    top: -61%;
 }
 
 #Menu-Gauche {

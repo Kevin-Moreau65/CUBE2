@@ -1,3 +1,31 @@
+#Etape1 {
+    position: relative;
+    top: 4%;
+    background-color: rgba(206, 206, 206, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    width: 65%;
+    height: 33vw;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0px 0px 10px black;
+    overflow: hidden;
+    transition: transform 1s, opacity 1s;
+}
+
+#Etape2 {
+    position: relative;
+    background-color: rgba(206, 206, 206, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px black;
+    transition: transform 1s, opacity 1s;
+    top: -61%;
+}
+
 #Etape3 {
     position: relative;
     border-radius: 8px;
@@ -34,7 +62,7 @@
     text-align: center;
     height: 15vh;
     position: absolute;
-    top: 40%;
+    top: 49%;
     display: flex;
     align-items: center;
     border-radius: 5px;
@@ -99,31 +127,6 @@
     opacity: 0;
 }
 
-#Etape1 {
-    background-color: rgba(206, 206, 206, 0.4);
-    backdrop-filter: blur(5px);
-    border-radius: 12px;
-    width: 65%;
-    height: 33vw;
-    margin: 0 auto;
-    text-align: center;
-    box-shadow: 0px 0px 10px black;
-    overflow: hidden;
-    transition: transform 1s, opacity 1s;
-}
-
-#Etape2 {
-    position: relative;
-    background-color: rgba(206, 206, 206, 0.4);
-    backdrop-filter: blur(5px);
-    border-radius: 12px;
-    width: 70%;
-    margin: 0 auto;
-    overflow: hidden;
-    box-shadow: 0px 0px 10px black;
-    transition: transform 1s, opacity 1s;
-    top: -61%;
-}
 
 #Menu-Gauche {
     position: absolute;
@@ -387,6 +390,7 @@ h1 {
 
 #SousTitre {
     position: relative;
+    text-align: center;
     left: -50%;
 }
 
@@ -448,4 +452,9 @@ h1 {
     display: flex;
     height: 7vw;
     justify-content: space-evenly;
+}
+
+#étapes{
+    margin-left: -50%;
+    display: flex;
 }

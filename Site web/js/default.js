@@ -345,3 +345,7 @@ function Selectchange(Select) {
     $("#BoutonGauche > option:contains('" + value + "')").hide();
   }
 }
+var valeur = document.getElementById("test").value;
+function test(){  
+  valeur = valeur+0.33;
+}

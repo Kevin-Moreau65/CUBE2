@@ -127,7 +127,6 @@
     opacity: 0;
 }
 
-
 #Menu-Gauche {
     position: absolute;
     width: 25%;
@@ -454,12 +453,26 @@ h1 {
     justify-content: space-evenly;
 }
 
-#étapes{
+#étapes {
     margin-left: -50%;
     display: flex;
 }
-#Barreetape{
-    display: flex;
+
+#Barreetape {
     margin-top: 1%;
     margin-left: 2%;
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+#Barreetape::-moz-progress-bar {
+    background-color: rgb(54, 154, 202);
+}
+
+#Barreetape::-webkit-progress-bar {
+    background-color: rgb(255, 255, 255);
+}
+
+#Barreetape::-webkit-progress-value {
+    background-color: rgb(54, 154, 202);
 }

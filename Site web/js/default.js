@@ -145,18 +145,18 @@ $("#Suivant").click(function () {
     $("#NextStep").text("\u00c9quipe extérieur");
     $("#BackStep").text("Paramètre du match");
     $("#SousTitre").text("\u00c9quipe domicile");
-    Etapeplus()
+    move();
   } else if (State == 1) {
     GoForward(2);
     State++;
     $("#NextStep").text("Lancement du match");
     $("#BackStep").text("\u00c9quipe domicile");
     $("#SousTitre").text("\u00c9quipe extérieur");
-    Etapeplus()
+    Etapeplus();
   } else {
     console.log("NON");
   }
-  Etapecmb()
+  Etapecmb();
 });
 $("#Precedent").click(function () {
   if (State == 2) {
@@ -165,37 +165,37 @@ $("#Precedent").click(function () {
     $("#NextStep").text("\u00c9quipe extérieur");
     $("#BackStep").text("Paramètre du match");
     $("#SousTitre").text("\u00c9quipe domicile");
-    Etapemoins()
+    Etapemoins();
   } else if (State == 1) {
     GoBack(2);
     State--;
     $("#NextStep").text("\u00c9quipe domicile");
     $("#BackStep").text("Menu Principal");
     $("#SousTitre").text("Paramètre du match");
-    Etapemoins()
+    Etapemoins();
   } else if (State == 0) {
     $("#AlerteRetour, #Darken").show();
     $("#AlerteRetour, #Darken").animate({ opacity: "1" }, 100);
   } else {
     console.log("NON");
-  }  
-  Etapecmb()
+  }
+  Etapecmb();
 });
-  var valeur = $("#Barreetape").val();
-  function Etapemoins(){  
-    valeur -= 0.33;
-    if (valeur > 0.66) {
-      $("#Barreetape").val(1)
-    } else {
-    $("#Barreetape").val(valeur)
+var valeur = $("#Barreetape").val();
+function Etapemoins() {
+  valeur -= 0.33;
+  if (valeur > 0.66) {
+    $("#Barreetape").val(1);
+  } else {
+    $("#Barreetape").val(valeur);
   }
 }
-function Etapeplus(){  
+function Etapeplus() {
   valeur += 0.33;
   if (valeur > 0.66) {
-    $("#Barreetape").val(1)
+    $("#Barreetape").val(1);
   } else {
-  $("#Barreetape").val(valeur)
+    $("#Barreetape").val(valeur);
   }
 }
 function GoBack(i) {
@@ -370,10 +370,22 @@ function Selectchange(Select) {
 }
 function Etapecmb() {
   if (State === 0) {
-    $("#Etapetext").text("Etape 1/3")
+    $("#Etapetext").text("Etape 1/3");
   } else if (State === 1) {
-    $("#Etapetext").text("Etape 2/3")
+    $("#Etapetext").text("Etape 2/3");
   } else if (State === 2) {
-    $("#Etapetext").text("Etape 3/3")
+    $("#Etapetext").text("Etape 3/3");
+  }
 }
+function move(value) {
+  var id = setInterval(frame, 22);
+  function frame() {
+    if (value > 0.66) {
+      clearInterval(id);
+      i = 0;
+    } else {
+      width += 0.01;
+      $("#Barreetape").val(width);
+    }
+  }
 }

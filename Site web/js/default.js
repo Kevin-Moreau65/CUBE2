@@ -139,65 +139,54 @@ $("#BoutonDroitE").change(function () {
 /*-----------------------------Bouton droite et gauche-----------------------------------------------------------------------------*/
 var State = 0;
 $("#Suivant").click(function () {
+  let valeur = $("#Barreetape").val();
   if (State == 0) {
     GoForward(1);
     State++;
     $("#NextStep").text("\u00c9quipe extérieur");
     $("#BackStep").text("Paramètre du match");
     $("#SousTitre").text("\u00c9quipe domicile");
-    move();
+    move(valeur, 0.66);
   } else if (State == 1) {
     GoForward(2);
     State++;
     $("#NextStep").text("Lancement du match");
     $("#BackStep").text("\u00c9quipe domicile");
     $("#SousTitre").text("\u00c9quipe extérieur");
-    Etapeplus();
+    move(valeur, 1);
   } else {
     console.log("NON");
   }
   Etapecmb();
 });
 $("#Precedent").click(function () {
+  let valeur = $("#Barreetape").val();
   if (State == 2) {
     GoBack(3);
     State--;
     $("#NextStep").text("\u00c9quipe extérieur");
     $("#BackStep").text("Paramètre du match");
     $("#SousTitre").text("\u00c9quipe domicile");
-    Etapemoins();
+    move(valeur, 0.66);
   } else if (State == 1) {
     GoBack(2);
     State--;
     $("#NextStep").text("\u00c9quipe domicile");
     $("#BackStep").text("Menu Principal");
     $("#SousTitre").text("Paramètre du match");
-    Etapemoins();
+    move(valeur, 0.33);
   } else if (State == 0) {
     $("#AlerteRetour, #Darken").show();
     $("#AlerteRetour, #Darken").animate({ opacity: "1" }, 100);
+    $("#Etapetext").text("Etape 0/3");
+    move(valeur, 0);
+    return;
   } else {
     console.log("NON");
   }
   Etapecmb();
 });
-var valeur = $("#Barreetape").val();
-function Etapemoins() {
-  valeur -= 0.33;
-  if (valeur > 0.66) {
-    $("#Barreetape").val(1);
-  } else {
-    $("#Barreetape").val(valeur);
-  }
-}
-function Etapeplus() {
-  valeur += 0.33;
-  if (valeur > 0.66) {
-    $("#Barreetape").val(1);
-  } else {
-    $("#Barreetape").val(valeur);
-  }
-}
+
 function GoBack(i) {
   iMoins = i--;
   $("#Etape" + i).toggleClass("Passé");
@@ -237,10 +226,13 @@ $("#RetourMenu").click(function () {
   window.location.href = "/Site web/index.html";
 });
 $("#RetourPage").click(function () {
+  let valeur = $("#Barreetape").val();
   $("#AlerteRetour, #Darken").animate({ opacity: "0" }, 100);
   setTimeout(function () {
     $("#AlerteRetour, #Darken").hide();
   }, 100);
+  move(valeur, 0.33);
+  $("#Etapetext").text("Etape 1/3");
 });
 /*----------------------------------------------------------------------------------------------------------*/
 let NomJoueur;
@@ -377,15 +369,32 @@ function Etapecmb() {
     $("#Etapetext").text("Etape 3/3");
   }
 }
-function move(value) {
-  var id = setInterval(frame, 22);
+function moveup(value, nextvalue) {
+  let int = setInterval(frame, 22);
   function frame() {
-    if (value > 0.66) {
-      clearInterval(id);
-      i = 0;
+    if (value >= nextvalue) {
+      clearInterval(int);
     } else {
-      width += 0.01;
-      $("#Barreetape").val(width);
+      value += 0.01;
+      $("#Barreetape").val(value);
     }
+  }
+}
+function movedown(value, nextvalue) {
+  let int = setInterval(frame, 22);
+  function frame() {
+    if (value <= nextvalue) {
+      clearInterval(int);
+    } else {
+      value -= 0.01;
+      $("#Barreetape").val(value);
+    }
+  }
+}
+function move(value, nextvalue) {
+  if (value < nextvalue) {
+    moveup(value, nextvalue);
+  } else {
+    movedown(value, nextvalue);
   }
 }

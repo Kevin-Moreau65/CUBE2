@@ -31,7 +31,7 @@ h2{
     background-color: rgba(206, 206, 206, 0.4);
     backdrop-filter: blur(5px);
     border-radius: 12px;
-    position:relative; margin-top: 1%; margin-left: 20%;
+    position:relative; margin-top: 1%; margin-left: 15%;
     width: 70%;
     height: 35vw;
     overflow: hidden;
@@ -237,53 +237,29 @@ td /* Toutes les cellules des tableaux... */
 }
 
 /* Input type file -----------------------------------------------------------*/
-
-.parcourir
-{
-    background-color: rgba(206, 206, 206, 0.4);
-    backdrop-filter: blur(3px);
-    width: 40%;
-    height: 2vw;
-
+#file {
+    display: none;
 }
 
-
-.js .input-file-container {
-	position: relative;
-	width: 225px;
+label{
+    color: white;
+    height : 60px;
+    width: 250px;
+    background-color: #87ceeb;
+    position:relative;
+    margin: auto;
+    top: 0%;
+    bottom:0%;
+    left: 0%;
+    right: 0%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat",sans-serif;
 }
-
-.js .input-file-trigger {
-	display: block;
-	padding: 14px 45px;
-	background: #39D2B4;
-	color: #fff;
-	font-size: 1em;
-	transition: all .4s;
-	cursor: pointer;
-}
-
-.js .input-file {
-	position: absolute;
-	top: 1%;
-	left: 1%;
-	width: 225px;
-	padding: 14px 0;
-	opacity: 0;
-	cursor: pointer;
-}
-
-/* quelques styles d'interactions */
-.js .input-file:hover + .input-file-trigger,
-.js .input-file:focus + .input-file-trigger,
-.js .input-file-trigger:hover,
-.js .input-file-trigger:focus {
-	background: #34495E;
-	color: #39D2B4;
-}
-
 /* styles du retour visuel */
-.file-return {
+/* .file-return {
 	margin: 0;
 }
 
@@ -295,14 +271,14 @@ td /* Toutes les cellules des tableaux... */
 	font-style: italic;
 	font-size: .9em;
 	font-weight: bold;
-}
+} */
 
 /* on complète l'information d'un contenu textuel uniquement lorsque le paragraphe n'est pas vide */
-.js .file-return:not(:empty):before {
+/* .js .file-return:not(:empty):before {
 	content: "Selected file: ";
 	font-style: normal;
 	font-weight: normal;
-}
+} */
 
 #blah {
 

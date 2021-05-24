@@ -224,7 +224,6 @@ td /* Toutes les cellules des tableaux... */
     cursor: pointer;
     text-decoration: underline;
 }
-
 #Darken {
     background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
@@ -235,7 +234,6 @@ td /* Toutes les cellules des tableaux... */
     display: none;
     opacity: 0;
 }
-
 /* Input type file -----------------------------------------------------------*/
 #file {
     display: none;
@@ -281,38 +279,27 @@ label{
 } */
 
 #blah {
-
     position: relative;
     }
 
     #clah {
-
- position: relative;
-
- ;
+        position: relative; 
     }
-
     #dlah {
-
     position: absolute;
     }
-
     #elah {
-
     position:absolute; 
-
     }
 /* CSS JANEK ------------------------------------------------------------------------------- */
 
-footer
-{
+footer{
     font-size: 8rem;
     position: absolute;
     bottom: 30px;
     left: 30px;
 }
-#Conteneur
-{
+#Conteneur{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -321,19 +308,13 @@ footer
     width: 250px;
     margin: auto;
 }
-
-.element
-{
+.element{
     height: 50px;    
 }
-
-#poste-select
-{
+#poste-select{
     text-align: end;
 }
-
-.tableau
-{
+.tableau{
     background: rgba(206, 206, 206, 0.5);
     width: 35%;
     height: 62%;

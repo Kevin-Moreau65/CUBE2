@@ -457,6 +457,7 @@ h1 {
     margin-left: 2%;
     border-radius: 9px;
     overflow: hidden;
+    border: none;
 }
 
 #Barreetape::-moz-progress-bar {

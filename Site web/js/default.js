@@ -398,3 +398,7 @@ function move(value, nextvalue) {
     movedown(value, nextvalue);
   }
 }
+$("#AjArbitre").click(function () {
+  $("#MenuArbitre,#Darken").show();
+  $("#MenuArbitre,#Darken").animate({ opacity: "1" }, 100);
+});

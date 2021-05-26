@@ -1,0 +1,62 @@
+body {
+    background-image: url("../img/Background-Menu.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+}
+
+html {
+    color: rgb(255, 255, 255);
+}
+
+p
+{
+    font-size: 14px; /* Paragraphes de 14 pixels */
+    text-align: center;
+}
+
+h1
+{
+    position: relative;
+    top: 4.5%;
+}
+h2{
+    margin-top: 4%;
+}
+
+#carrégris {
+
+    background-color: rgba(206, 206, 206, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    position:relative; margin-top: 1%; margin-left: 15%;
+    width: 70%;
+    height: auto;
+    overflow: hidden;
+    transition: transform 1s, opacity 1s;
+    text-align : center;
+    
+}
+
+
+td
+{
+    border: thin solid #6495ed;
+    padding: 8px;
+}
+
+th
+{
+    padding: 10px;
+    border: black 2px solid;
+    border-radius: 8px;
+    background: rgba(0, 0, 129, 0.212);
+}
+
+.btnb {
+border: none;
+
+}

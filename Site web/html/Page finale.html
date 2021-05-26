@@ -31,69 +31,47 @@
     </p>
    
        <!-- début contenu ----------------------------------------------- -->
-        <div id="greybox">
-            <h2>Renseigner le nom de l'équipe:</h2>
-    
-            <input type="text" placeholder="Nom de l'équipe" size="30"> 
-          
-            <h2>Insérer l'emblême:</h2>
-            <input type='file' id="file" accept="image/*" />
-           <label for="file">
-                <i class="materials-icons">
-                   add_photo_alternate
-                </i>&nbsp;
-             Emblême
-           </label>
-            <!-- <img id="blah" src="#"  /> -->
-            
-    
-                   
-           <h2>Insérer les maillots domicile, extérieur et alternatif :</h2>
-    
-                   
-           <input type='file' id="file" accept="image/*" />
-           <label for="file">
-                <i class="materials-icons">
-                   add_photo_alternate
-                </i>&nbsp;
-             Domicile
-           </label>
-           <!-- <img id="clah" src="#"  /> -->
+       <div id="greybox">
+        <h2>Renseigner le nom de l'équipe:</h2>
 
-
-           <input type='file' id="file" accept="image/*" />
-           <label for="file">
-                <i class="materials-icons">
-                   add_photo_alternate
-                </i>&nbsp;
-             Extérieur
-           </label>
-            <!-- <img id="dlah" src="#"  /> -->
-
-            <input type='file' id="file" accept="image/*" />
-           <label for="file">
-                <i class="materials-icons">
-                   add_photo_alternate
-                </i>&nbsp;
-             Alternatif
-           </label>
-            <!-- <img id="elah" src="#"  /> -->
-
-
-                  
-                 
+        <input type="text" placeholder="Nom de l'équipe" size="30"> 
+      
+        
+        <div class="input-file-container">
+          <input class="input-file" id="my-file" type="file" style="display:none ;">
+          <label for="my-file" class="input-file-trigger" tabindex="0">
+            Emblème
+          </label>
+        </div>
                
-    
-                    
-    
-            
+              
+
+               <div class="input-file-container">
+                <input class="input-file" id="my-file" type="file" style="display:none ;">
+                <label for="my-file" class="input-file-trigger" tabindex="0">
+                Maillot Domicile
+                </label>
+               </div>
+
                
-                  
-           
-                  
-                        </div>
-                   
-                <br>
+                <input class="input-file" id="my-file" type="file" style="display:none ;">
+                <label for="my-file" class="input-file-trigger" tabindex="0">
+                Maillot Exterieur
+                </label>
+                
+
+                
+                <input class="input-file" id="my-file" type="file" style="display:none ;">
+                <label for="my-file" class="input-file-trigger" tabindex="0">
+                Maillot Alternatif
+                </label>
+
+              </div>
+              <p class="file-return"></p>
+                    </div>
+               
+            <br>
+    </div>
 
                 
         </div>

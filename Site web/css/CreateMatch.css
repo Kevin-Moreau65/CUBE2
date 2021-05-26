@@ -482,3 +482,9 @@ h1 {
 #CentreRetour {
     top: 30%;
 }
+
+.LigneArbitre>.bouton {
+    width: 5%;
+    font-size: x-large;
+    margin: auto 0;
+}

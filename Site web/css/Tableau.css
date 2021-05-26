@@ -41,7 +41,6 @@ h2{
     
 }
 
-
 td
 {
     border: thin solid #6495ed;
@@ -56,7 +55,6 @@ th
     background: rgba(0, 0, 129, 0.212);
 }
 
-.btnb {
-border: none;
-
+.btntb {
+    border:none;
 }

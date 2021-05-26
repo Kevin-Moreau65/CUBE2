@@ -476,7 +476,8 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    border: solid;
+    border: solid 0.8px;
+    border-radius: 12px;
 }
 
 #CentreRetour {
@@ -488,3 +489,9 @@ h1 {
     font-size: x-large;
     margin: auto 0;
 }
+.LigneArbitre:nth-of-type(3) {
+border-top: none;
+}
+.LigneArbitre:nth-of-type(2) {
+    border-bottom: none;
+    }

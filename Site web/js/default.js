@@ -400,5 +400,15 @@ function move(value, nextvalue) {
 }
 $("#AjArbitre").click(function () {
   $("#MenuArbitre,#Darken").show();
-  $("#MenuArbitre,#Darken").animate({ opacity: "1" }, 100);
+  $("#MenuArbitre,#Darken").animate({ opacity: "1" }, 250);
 });
+$("#Back").click(function () {
+  $("#MenuArbitre,#Darken").animate({ opacity: "0" }, 250);
+  setTimeout(function() { $("#MenuArbitre,#Darken").hide();}, 250)
+});
+$("#Back").click(function() {
+  if ($("#NatArbitreP").val() === "" || $("#NomArbitreP").val() === "" || $("#NatArbitreSec1").val() === "" || $("#NomArbitreSec").val() === "" || $("#NatArbitreSec2").val() === "" || $("#NomArbitreSec2").val() === "" ) {
+  $("#Arbitres>h3").css({ color: "red"})}
+   else {
+    $("#Arbitres>h3").css({ color: "white"})
+   }})

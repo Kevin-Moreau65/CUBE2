@@ -18,12 +18,12 @@
 
 #Etape2 {
     width: 70%;
-    top: -63%;
+    margin-top: -30vw;
 }
 
 #Etape3 {
     width: 70%;
-    top: -133%;
+    margin-top: -70vh;
 }
 
 #Etape3>h2 {

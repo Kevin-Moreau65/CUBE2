@@ -489,9 +489,11 @@ h1 {
     font-size: x-large;
     margin: auto 0;
 }
+
 .LigneArbitre:nth-of-type(3) {
-border-top: none;
+    border-top: none;
 }
+
 .LigneArbitre:nth-of-type(2) {
     border-bottom: none;
-    }
+}

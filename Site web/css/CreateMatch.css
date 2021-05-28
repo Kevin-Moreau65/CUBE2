@@ -497,3 +497,7 @@ h1 {
 .LigneArbitre:nth-of-type(2) {
     border-bottom: none;
 }
+
+.Void {
+    border: solid red 0.5px;
+}

@@ -22,16 +22,12 @@
       <progress id="Barreetape" value="0.33"></progress>
     </a>
   </div>
+  <!-----------------------------------------------------Pages 1--------------------------------------------------------->
   <div id="Etape1" class="Etape">
     <div class="rectangle">
       <div id="M1G">
         <h3>Domicile</h3>
-        <select
-          id="BoutonGauche"
-          class="BoutonMenu"
-          name="TeamDom"
-          onchange="Selectchange('Dom')"
-        >
+        <select id="BoutonGauche" class="BoutonMenu" name="TeamDom" onchange="Selectchange('Dom')">
           <option value="none" selected disabled hidden>
             Liste des équipes
           </option>
@@ -45,11 +41,7 @@
       <div id="M1D">
         <h3>Exterieur</h3>
         <select
-          id="BoutonGaucheE"
-          class="BoutonMenu"
-          name="TeamExt"
-          onchange="Selectchange('Ext')"
-        >
+          id="BoutonGaucheE" class="BoutonMenu" name="TeamExt" onchange="Selectchange('Ext')">
           <option value="none" selected disabled hidden>
             Liste des équipes
           </option>
@@ -77,6 +69,7 @@
     </div>
     <div class="bouton"><h3>Sauvegarder</h3></div>
   </div>
+  <!-----------------------------------------------------Pages 2--------------------------------------------------------->
   <div id="Etape2" class="PasPassé Etape">
     <div id="Menu-Gauche">
       <div id="Gauche">
@@ -253,6 +246,7 @@
       <img id="Terrain" src="/Site web/img/Terrain-menu.jpg" />
     </div>
   </div>
+  <!-----------------------------------------------------Pages 3--------------------------------------------------------->
   <div id="Etape3" class="PasPassé Etape">
     <div id="Menu-Gauche">
       <div id="Gauche">
@@ -332,12 +326,27 @@
           <h4>K.Mbappé</h4>
         </div>
         <h3 id="ColoneGardien">GARDIEN</h3>
-        <img class="MaillotGoalE" src="/Site web/img/maillot-blanc.png" />
-        <img class="MaillotGoalE" src="/Site web/img/maillot-blanc.png" />
-        <img class="MaillotGoalE" src="/Site web/img/maillot-blanc.png" />
-        <img class="MaillotGoalE" src="/Site web/img/maillot-blanc.png" />
-        <img class="MaillotGoalE" src="/Site web/img/maillot-blanc.png" />
-        <img class="MaillotGoalE" src="/Site web/img/maillot-blanc.png" />
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <div class="bouge" id="DivMaillot">
+          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
+          <h4>K.Mbappé</h4>
+        </div>
+        <h3 id="ColoneCapitaine">Capitaine</h3>
+        <div class="Capitaine bouge" id="DivMaillot">
+          <img class="Brassard Capitaine" src="/Site web/img/brassard.png" />
+          <h4>Capitaine</h4>
+        </div>
       </div>
     </div>
 
@@ -352,7 +361,8 @@
         <option>5-3-2</option>
       </select>
       <div id="Droite">
-        <h3 id="ColoneBanc">BANC</h3>
+        <h3 id="ColoneBanc">BANC (0/11)</h3>
+        <h4 id="Warning">Il faut un minimum de 3 remplaçants</h4>
       </div>
     </div>
     <div id="TerrainMaillot">
@@ -403,6 +413,7 @@
       <img id="Terrain" src="/Site web/img/Terrain-menu.jpg" />
     </div>
   </div>
+  <!----------------------------------------------------111---------------------------------------------------------->
   <div id="Precedent">
     <h3><</h3>
 
@@ -428,19 +439,37 @@
       <h3>Arbitre principal</h3>
       <div class="LigneArbitre">
         <h4 class="bouton">+</h4>
-        <h4>Nom : <input id="NomArbitreP"/></h4>
-        <h4>Nationalité : <input id="NatArbitreP"/></h4>
+        <h4>
+          Nom :
+          <input id="NomArbitreP" oninput="IsVoid($('#NomArbitreP'))" />
+        </h4>
+        <h4>
+          Nationalité :
+          <input id="NatArbitreP" oninput="IsVoid($('#NatArbitreP'))" />
+        </h4>
       </div>
       <h3>Arbitres secondaires</h3>
       <div class="LigneArbitre">
         <h4 class="bouton">+</h4>
-        <h4>Nom : <input id="NomArbitreSec1"/></h4>
-        <h4>Nationalité : <input id="NatArbitreSec1"/></h4>
+        <h4>
+          Nom :
+          <input id="NomArbitreSec1" oninput="IsVoid($('#NomArbitreSec1'))" />
+        </h4>
+        <h4>
+          Nationalité :
+          <input id="NatArbitreSec1" oninput="IsVoid($('#NatArbitreSec1'))" />
+        </h4>
       </div>
       <div class="LigneArbitre">
         <h4 class="bouton">+</h4>
-        <h4>Nom : <input id="NomArbitreSec2"/></h4>
-        <h4>Nationalité : <input id="NatArbitreSec2"/></h4>
+        <h4>
+          Nom :
+          <input id="NomArbitreSec2" oninput="IsVoid($('#NomArbitreSec2'))" />
+        </h4>
+        <h4>
+          Nationalité :
+          <input id="NatArbitreSec2" oninput="IsVoid($('#NatArbitreSec2'))" />
+        </h4>
       </div>
       <div class="bouton" id="Back"><h3>Terminer</h3></div>
     </div>

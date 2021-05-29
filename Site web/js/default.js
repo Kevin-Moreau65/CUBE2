@@ -138,6 +138,9 @@ $("#BoutonDroitE").change(function () {
 });
 /*-----------------------------Bouton droite et gauche-----------------------------------------------------------------------------*/
 var State = 0;
+//State = 0 = étape 1
+//State = 1 = étape 2
+//State = 2 = étape 3
 $("#Suivant").click(function () {
   let valeur = $("#Barreetape").val();
   if (State == 0) {
@@ -321,33 +324,54 @@ $(function () {
   });
 });
 function RefreshMaillot() {
+  //Cette fonction sert a reset les maillot des terrain ainsi que ceux dispo en cas de changement d'équipe
   $(".MaillotT>img").attr("src", "/Site web/img/maillot-blanc.png");
+  //On réattribut des maillot blanc aux maillots du terrain puis on les remet d'origine
   $(".MaillotT>img.Capitaine").remove();
+  //On enlève le capitaine
   $(".MaillotT>h4").css({ opacity: "0" });
   $(".MaillotT").css({ opacity: "0.5" });
   $(".bouge").show();
+  //On affiche tout les maillot des joueurs dispo
   $("#Droite > .bouge").remove();
+  //On suprimme tout les joueurs coté remplacant
 }
 function nombreRemplacant(ID) {
+  //On vérifie si le maillot a était drop sur la zone des remplacant
   if (Droite === true) {
+    //Si oui on incrémente le nombre de remplacant
     remplacant++;
+    //Puis on actualise l'affichage
     $("#ColoneBanc").text("BANC (" + remplacant + "/11)");
+    //On reinitialise le flag
     Droite = false;
   } else if (ID === "Droite") {
+    //Si le maillot qui vient d'etre drop vient de la zone remplacant c'est qu'on a enlever un remplacant
     remplacant--;
+    //On décrémente puis on actualise
     $("#ColoneBanc").text("BANC (" + remplacant + "/11)");
   }
   if (remplacant >= 1) {
+    //Si le nombre de remplacant est supérieur ou égal a 1 on estime que l'utilisateur a pris connaissance
+    //du nombre mini de remplacant nécéssaire, on enlève le message
     $("#Warning").text(" ");
   } else {
-    $("#Warning").text("Il faut un minimum de 3 remplacant");
+    //Si le nombre de remplacant retombe a 0, on remet le warning
+    $("#Warning").text("Il faut un minimum de 6 remplacant");
   }
 }
 function Selectchange(Select) {
+  //Cette fonction permet de masquer l'équipe selectionner dans l'autre liste, ce qui empeche de
+  //selectionner deux fois la meme équipe
+  //Value va prendre la valeur de l'élément de la liste sélectionner
   let value;
+  //On vérifie si la liste où l'élément à était selectionner viens de domicile ou exterieur
   if (Select === "Dom") {
+    //La liste est Domicile
+    //On montre toute les valeurs de l'autre liste pour faire un "reset"
     $("#BoutonGaucheE > option").show();
     value = $("#BoutonGauche").val();
+    //Puis on cache l'élément sélectionner dans l'autre liste
     $("#BoutonGaucheE > option:contains('" + value + "')").hide();
   } else if (Select === "Ext") {
     $("#BoutonGauche > option").show();
@@ -356,6 +380,7 @@ function Selectchange(Select) {
   }
 }
 function Etapecmb() {
+  //Cette fonction permet d'actualiser l'étape en fonction de la variable State
   if (State === 0) {
     $("#Etapetext").text("Etape 1/3");
   } else if (State === 1) {
@@ -364,33 +389,38 @@ function Etapecmb() {
     $("#Etapetext").text("Etape 3/3");
   }
 }
-function moveup(value, nextvalue) {
-  let int = setInterval(frame, 22);
-  function frame() {
-    if (value >= nextvalue) {
-      clearInterval(int);
-    } else {
-      value += 0.01;
-      $("#Barreetape").val(value);
-    }
-  }
-}
-function movedown(value, nextvalue) {
-  let int = setInterval(frame, 22);
-  function frame() {
-    if (value <= nextvalue) {
-      clearInterval(int);
-    } else {
-      value -= 0.01;
-      $("#Barreetape").val(value);
-    }
-  }
-}
 function move(value, nextvalue) {
+  //Cette fonction fait l'animation de la barre de progrès
+  //value = valeur de la barre, nextvalue = valeur que doit prendre la barre
+  //On vérifie d'abord si la valeur que doit prendre la barre est plus petite ou plus grande que
+  //la valeur actuelle
+  //Ici value est plus petit que nextvalue donc la barre doit monter
   if (value < nextvalue) {
-    moveup(value, nextvalue);
+    //On initialise un interval : la fonction frame sera appeller tout les 22 millième de seconde
+    //tant que value ne sera pas égal a next value
+    let int = setInterval(frame, 22);
+    function frame() {
+      if (value >= nextvalue) {
+        //Si la condition est remplie l'interval se stop
+        clearInterval(int);
+      } else {
+        //sinon value s'incrémente de 0.01 puis envoie cette value a la barre de progression
+        //Vu que l'intervalle est trés petit, cela donne une impression d'animation de la barre
+        value += 0.01;
+        $("#Barreetape").val(value);
+      }
+    }
   } else {
-    movedown(value, nextvalue);
+    //Meme chose qu'en haut, hors vu que value est plus grand que nextvalue, la barre doit descendre
+    let int = setInterval(frame, 22);
+    function frame() {
+      if (value <= nextvalue) {
+        clearInterval(int);
+      } else {
+        value -= 0.01;
+        $("#Barreetape").val(value);
+      }
+    }
   }
 }
 $("#AjArbitre").click(function () {
@@ -407,6 +437,8 @@ $("#Back").click(function () {
   IsVoidArbitre();
 });
 function IsVoid(Input, Title) {
+  //Title = Titre de l'input et input = l'input
+  // Si on veut mettre que l'input en rouge si il est vide
   if (Title === undefined) {
     if (Input.val() === "" || Input.val() === null) {
       Input.addClass("Void");
@@ -415,6 +447,7 @@ function IsVoid(Input, Title) {
       Input.removeClass("Void");
       return;
     }
+    //Si on veut mettre son titre
   } else {
     if (Input.val() === "" || Input.val() === null) {
       Title.addClass("Red");
@@ -426,6 +459,9 @@ function IsVoid(Input, Title) {
   }
 }
 function IsVoidArbitre() {
+  //On utilise 2 fois cette suite, autant en faire un fonction
+  //L'array sert a stocker si oui ou non chaque input est vide (true) ou non (false)
+  //Je le fait de cette sorte car un if ne s'arreterait qu'au premier true
   let array = [];
   array.push(IsVoid($("#NatArbitreP")));
   array.push(IsVoid($("#NomArbitreP")));
@@ -433,15 +469,20 @@ function IsVoidArbitre() {
   array.push(IsVoid($("#NomArbitreSec1")));
   array.push(IsVoid($("#NatArbitreSec2")));
   array.push(IsVoid($("#NomArbitreSec2")));
+  //Si l'index (la position dans l'array) de true === -1 cela veut dire qu'il n'existe pas dans l'array
+  //Et donc que tous les champs sont remplie
   if (array.indexOf(true) !== -1) {
+    //Arbitre sera en rouge ainsi que le/les champs d'arbitre vide
     $("#Arbitres>h3").addClass("Red");
     return true;
   } else {
+    //Arbitre ainsi que tt les champs d'arbitre seront normaux
     $("#Arbitres>h3").removeClass("Red");
     return false;
   }
 }
 $("#SaveFirstStep").click(function () {
+  //Meme méthode qu'en haut mais avec tout les champs de la page
   let array = [];
   array.push(IsVoid($("#Lieuinput"), $("#LieuTitre")));
   array.push(IsVoid($("#DatePicker"), $("#DateTitre")));
@@ -453,6 +494,7 @@ $("#SaveFirstStep").click(function () {
   );
   array.push(IsVoidArbitre());
   if (array.indexOf(true) !== -1) {
+    //On affiche une alerte pour indiquer que la sauvegarde est impossible du a des champs mal remplie
     alert(
       "Pour sauvegarder la première étape il est important de remplir tout les champs."
     );

@@ -154,8 +154,6 @@ $("#Suivant").click(function () {
     $("#BackStep").text("\u00c9quipe domicile");
     $("#SousTitre").text("\u00c9quipe extérieur");
     move(valeur, 1);
-  } else {
-    console.log("NON");
   }
   Etapecmb();
 });
@@ -181,8 +179,6 @@ $("#Precedent").click(function () {
     $("#Etapetext").text("Etape 0/3");
     move(valeur, 0);
     return;
-  } else {
-    console.log("NON");
   }
   Etapecmb();
 });
@@ -282,7 +278,6 @@ $(function () {
     drop: function () {
       if (MaillotDIV.hasClass("Capitaine") === false) {
         Droite = true;
-        console.log(Droite);
         $(this).append(MaillotDIV);
         $(this).children(MaillotDIV).show();
         Dropped = true;
@@ -409,24 +404,57 @@ $("#Back").click(function () {
   }, 250);
 });
 $("#Back").click(function () {
-  if (
-    $("#NatArbitreP").val() === "" ||
-    $("#NomArbitreP").val() === "" ||
-    $("#NatArbitreSec1").val() === "" ||
-    $("#NomArbitreSec").val() === "" ||
-    $("#NatArbitreSec2").val() === "" ||
-    $("#NomArbitreSec2").val() === ""
-  ) {
-    $("#Arbitres>h3").css({ color: "red" });
-  } else {
-    $("#Arbitres>h3").css({ color: "white" });
-  }
-  IsVoid($("#NomArbitreSec1"));
+  IsVoidArbitre();
 });
-function IsVoid(Input) {
-  if (Input.val() === "") {
-    Input.addClass("Void");
+function IsVoid(Input, Title) {
+  if (Title === undefined) {
+    if (Input.val() === "" || Input.val() === null) {
+      Input.addClass("Void");
+      return true;
+    } else {
+      Input.removeClass("Void");
+      return;
+    }
   } else {
-    Input.removeClass("Void");
+    if (Input.val() === "" || Input.val() === null) {
+      Title.addClass("Red");
+      return true;
+    } else {
+      Title.removeClass("Red");
+      return;
+    }
   }
 }
+function IsVoidArbitre() {
+  let array = [];
+  array.push(IsVoid($("#NatArbitreP")));
+  array.push(IsVoid($("#NomArbitreP")));
+  array.push(IsVoid($("#NatArbitreSec1")));
+  array.push(IsVoid($("#NomArbitreSec1")));
+  array.push(IsVoid($("#NatArbitreSec2")));
+  array.push(IsVoid($("#NomArbitreSec2")));
+  if (array.indexOf(true) !== -1) {
+    $("#Arbitres>h3").addClass("Red");
+    return true;
+  } else {
+    $("#Arbitres>h3").removeClass("Red");
+    return false;
+  }
+}
+$("#SaveFirstStep").click(function () {
+  let array = [];
+  array.push(IsVoid($("#Lieuinput"), $("#LieuTitre")));
+  array.push(IsVoid($("#DatePicker"), $("#DateTitre")));
+  array.push(
+    IsVoid($("#BoutonGaucheE"), $("#BoutonGaucheE").parent().children("h3"))
+  );
+  array.push(
+    IsVoid($("#BoutonGauche"), $("#BoutonGauche").parent().children("h3"))
+  );
+  array.push(IsVoidArbitre());
+  if (array.indexOf(true) !== -1) {
+    alert(
+      "Pour sauvegarder la première étape il est important de remplir tout les champs."
+    );
+  }
+});

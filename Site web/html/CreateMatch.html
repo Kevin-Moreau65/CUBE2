@@ -27,7 +27,12 @@
     <div class="rectangle">
       <div id="M1G">
         <h3>Domicile</h3>
-        <select id="BoutonGauche" class="BoutonMenu" name="TeamDom" onchange="Selectchange('Dom')">
+        <select
+          id="BoutonGauche"
+          class="BoutonMenu"
+          name="TeamDom"
+          onchange="Selectchange('Dom')"
+        >
           <option value="none" selected disabled hidden>
             Liste des équipes
           </option>
@@ -41,7 +46,11 @@
       <div id="M1D">
         <h3>Exterieur</h3>
         <select
-          id="BoutonGaucheE" class="BoutonMenu" name="TeamExt" onchange="Selectchange('Ext')">
+          id="BoutonGaucheE"
+          class="BoutonMenu"
+          name="TeamExt"
+          onchange="Selectchange('Ext')"
+        >
           <option value="none" selected disabled hidden>
             Liste des équipes
           </option>
@@ -60,14 +69,23 @@
     <div class="rectangle">
       <div id="Date">
         <h3 id="DateTitre">Date</h3>
-        <input id="DatePicker" class="BoutonMenu" type="date" />
+        <input
+          id="DatePicker"
+          class="BoutonMenu"
+          type="date"
+          oninput="IsVoid($('#DatePicker'))"
+        />
       </div>
       <div id="Lieu">
         <h3 id="LieuTitre">Lieu</h3>
-        <input class="BoutonMenuInput" />
+        <input
+          id="Lieuinput"
+          class="BoutonMenuInput"
+          oninput="IsVoid($('#Lieuinput'))"
+        />
       </div>
     </div>
-    <div class="bouton"><h3>Sauvegarder</h3></div>
+    <div class="bouton" id="SaveFirstStep"><h3>Sauvegarder</h3></div>
   </div>
   <!-----------------------------------------------------Pages 2--------------------------------------------------------->
   <div id="Etape2" class="PasPassé Etape">

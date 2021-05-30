@@ -41,103 +41,89 @@ $("#BoutonGaucheE").change(function () {
   }
   RefreshMaillot();
 });
-
-$("#BoutonDroit").change(function () {
-  /*Bouton de changement de formation*/ if ($(this).val() == "4-4-2") {
-    $("#Maillot1").animate({ left: "39.5%", top: "13%" }, 250);
-    $("#Maillot2").animate({ left: "53.5%", top: "13%" }, 250);
-    $("#Maillot3").animate({ left: "28%", top: "33%" }, 250);
-    $("#Maillot4").animate({ left: "38%", top: "33%" }, 250);
-    $("#Maillot5").animate({ left: "55%", top: "33%" }, 250);
-    $("#Maillot6").animate({ left: "65%", top: "33%" }, 250);
-    $("#Maillot7").animate({ left: "28%", bottom: "27%" }, 250);
-    $("#Maillot8").animate({ left: "38%", bottom: "27%" }, 250);
-    $("#Maillot9").animate({ left: "55%", bottom: "27%" }, 250);
-    $("#Maillot10").animate({ left: "65%", bottom: "27%" }, 250);
-  } else if ($(this).val() == "4-4-2 losange") {
-    $("#Maillot1").animate({ left: "39.5%", top: "13%" }, 250);
-    $("#Maillot2").animate({ left: "53.5%", top: "13%" }, 250);
-    $("#Maillot3").animate({ left: "46.5%", top: "28%" }, 250);
-    $("#Maillot4").animate({ left: "39%", top: "40%" }, 250);
-    $("#Maillot5").animate({ left: "54%", top: "40%" }, 250);
-    $("#Maillot6").animate({ left: "46.5%", top: "52%" }, 250);
-    $("#Maillot7").animate({ left: "29%", bottom: "30%" }, 250);
-    $("#Maillot8").animate({ left: "39%", bottom: "17%" }, 250);
-    $("#Maillot9").animate({ left: "54%", bottom: "17%" }, 250);
-    $("#Maillot10").animate({ left: "64%", bottom: "30%" }, 250);
-  } else if ($(this).val() == "Coupe du monde 2018") {
-    $("#Maillot1").animate({ left: "46.5%", top: "13%" }, 250);
-    $("#Maillot2").animate({ left: "33%", top: "33%" }, 250);
-    $("#Maillot3").animate({ left: "46.5%", top: "33%" }, 250);
-    $("#Maillot4").animate({ left: "60%", top: "33%" }, 250);
-    $("#Maillot5").animate({ left: "39%", top: "46%" }, 250);
-    $("#Maillot6").animate({ left: "54%", top: "46%" }, 250);
-    $("#Maillot7").animate({ left: "28%", bottom: "27%" }, 250);
-    $("#Maillot8").animate({ left: "39%", bottom: "17%" }, 250);
-    $("#Maillot9").animate({ left: "54%", bottom: "17%" }, 250);
-    $("#Maillot10").animate({ left: "65%", bottom: "27%" }, 250);
-  } else if ($(this).val() == "5-3-2") {
-    $("#Maillot1").animate({ left: "40%", top: "10%" }, 250);
-    $("#Maillot2").animate({ left: "53%", top: "10%" }, 250);
-    $("#Maillot3").animate({ left: "34%", top: "30%" }, 250);
-    $("#Maillot4").animate({ left: "46.5%", top: "38%" }, 250);
-    $("#Maillot5").animate({ left: "59.5%", top: "30%" }, 250);
-    $("#Maillot6").animate({ left: "28.5%", top: "47.5%" }, 250);
-    $("#Maillot7").animate({ left: "36%", bottom: "23%" }, 250);
-    $("#Maillot8").animate({ left: "46.5%", bottom: "18%" }, 250);
-    $("#Maillot9").animate({ left: "57%", bottom: "23%" }, 250);
-    $("#Maillot10").animate({ left: "64.5%", bottom: "32.5%" }, 250);
+class posmaillot {
+  constructor(left, botop) {
+    this.left = left + "%";
+    this.botop = botop + "%";
   }
-});
-$("#BoutonDroitE").change(function () {
-  /*Bouton de changement de formation*/ if ($(this).val() == "4-4-2") {
-    $("#Maillot1E").animate({ left: "39.5%", top: "13%" }, 250);
-    $("#Maillot2E").animate({ left: "53.5%", top: "13%" }, 250);
-    $("#Maillot3E").animate({ left: "28%", top: "33%" }, 250);
-    $("#Maillot4E").animate({ left: "38%", top: "33%" }, 250);
-    $("#Maillot5E").animate({ left: "55%", top: "33%" }, 250);
-    $("#Maillot6E").animate({ left: "65%", top: "33%" }, 250);
-    $("#Maillot7E").animate({ left: "28%", bottom: "27%" }, 250);
-    $("#Maillot8E").animate({ left: "38%", bottom: "27%" }, 250);
-    $("#Maillot9E").animate({ left: "55%", bottom: "27%" }, 250);
-    $("#Maillot10E").animate({ left: "65%", bottom: "27%" }, 250);
-  } else if ($(this).val() == "4-4-2 losange") {
-    $("#Maillot1E").animate({ left: "39.5%", top: "13%" }, 250);
-    $("#Maillot2E").animate({ left: "53.5%", top: "13%" }, 250);
-    $("#Maillot3E").animate({ left: "46.5%", top: "28%" }, 250);
-    $("#Maillot4E").animate({ left: "39%", top: "40%" }, 250);
-    $("#Maillot5E").animate({ left: "54%", top: "40%" }, 250);
-    $("#Maillot6E").animate({ left: "46.5%", top: "52%" }, 250);
-    $("#Maillot7E").animate({ left: "29%", bottom: "30%" }, 250);
-    $("#Maillot8E").animate({ left: "39%", bottom: "17%" }, 250);
-    $("#Maillot9E").animate({ left: "54%", bottom: "17%" }, 250);
-    $("#Maillot10E").animate({ left: "64%", bottom: "30%" }, 250);
-  } else if ($(this).val() == "Coupe du monde 2018") {
-    $("#Maillot1E").animate({ left: "46.5%", top: "13%" }, 250);
-    $("#Maillot2E").animate({ left: "33%", top: "33%" }, 250);
-    $("#Maillot3E").animate({ left: "46.5%", top: "33%" }, 250);
-    $("#Maillot4E").animate({ left: "60%", top: "33%" }, 250);
-    $("#Maillot5E").animate({ left: "39%", top: "46%" }, 250);
-    $("#Maillot6E").animate({ left: "54%", top: "46%" }, 250);
-    $("#Maillot7E").animate({ left: "28%", bottom: "27%" }, 250);
-    $("#Maillot8E").animate({ left: "39%", bottom: "17%" }, 250);
-    $("#Maillot9E").animate({ left: "54%", bottom: "17%" }, 250);
-    $("#Maillot10E").animate({ left: "65%", bottom: "27%" }, 250);
-  } else if ($(this).val() == "5-3-2") {
-    $("#Maillot1E").animate({ left: "40%", top: "10%" }, 250);
-    $("#Maillot2E").animate({ left: "53%", top: "10%" }, 250);
-    $("#Maillot3E").animate({ left: "34%", top: "30%" }, 250);
-    $("#Maillot4E").animate({ left: "46.5%", top: "38%" }, 250);
-    $("#Maillot5E").animate({ left: "59.5%", top: "30%" }, 250);
-    $("#Maillot6E").animate({ left: "28.5%", top: "47.5%" }, 250);
-    $("#Maillot7E").animate({ left: "36%", bottom: "23%" }, 250);
-    $("#Maillot8E").animate({ left: "46.5%", bottom: "18%" }, 250);
-    $("#Maillot9E").animate({ left: "57%", bottom: "23%" }, 250);
-    $("#Maillot10E").animate({ left: "64.5%", bottom: "32.5%" }, 250);
+}
+let form442 = [
+  "none",
+  new posmaillot(39.5, 13),
+  new posmaillot(53.5, 13),
+  new posmaillot(28, 33),
+  new posmaillot(38, 33),
+  new posmaillot(55, 33),
+  new posmaillot(65, 33),
+  new posmaillot(28, 27),
+  new posmaillot(38, 27),
+  new posmaillot(55, 27),
+  new posmaillot(65, 27),
+];
+let form442los = [
+  "none",
+  new posmaillot(39.5, 13),
+  new posmaillot(53.5, 13),
+  new posmaillot(46.5, 28),
+  new posmaillot(39, 40),
+  new posmaillot(54, 40),
+  new posmaillot(46.5, 52),
+  new posmaillot(29, 30),
+  new posmaillot(39, 17),
+  new posmaillot(54, 17),
+  new posmaillot(64, 30),
+];
+let formCDM = [
+  "none",
+  new posmaillot(46.5, 13),
+  new posmaillot(33, 33),
+  new posmaillot(46.5, 33),
+  new posmaillot(60, 33),
+  new posmaillot(39, 46),
+  new posmaillot(54, 46),
+  new posmaillot(28, 27),
+  new posmaillot(39, 17),
+  new posmaillot(54, 17),
+  new posmaillot(65, 27),
+];
+let form532 = [
+  "none",
+  new posmaillot(40, 10),
+  new posmaillot(53, 10),
+  new posmaillot(34, 30),
+  new posmaillot(46.5, 38),
+  new posmaillot(59.5, 30),
+  new posmaillot(28.5, 47.5),
+  new posmaillot(36, 23),
+  new posmaillot(46.5, 18),
+  new posmaillot(57, 23),
+  new posmaillot(64.5, 32.5),
+];
+let formarray = [form442, form442los, formCDM, form532];
+function FormationMaillot(Maillot, leftpos, botoppos, i) {
+  if (i <= 6) {
+    $(Maillot).animate({ left: leftpos, top: botoppos }, 250);
+  } else {
+    $(Maillot).animate({ left: leftpos, bottom: botoppos }, 250);
+  }
+}
+$("#BoutonDroit, #BoutonDroitE").change(function () {
+  if ($(this).attr("id").slice(-1) === "t") {
+    array = formarray[$(this).val()];
+    for (i = 1; i <= 10; i++) {
+      array[i];
+      FormationMaillot("#Maillot" + i, array[i].left, array[i].botop, i);
+    }
+  } else {
+    array = formarray[$(this).val()];
+    for (i = 1; i <= 10; i++) {
+      array[i];
+      FormationMaillot("#Maillot" + i + "E", array[i].left, array[i].botop, i);
+    }
   }
 });
 /*-----------------------------Bouton droite et gauche-----------------------------------------------------------------------------*/
-var State = 0;
+let State = 0;
 //State = 0 = étape 1
 //State = 1 = étape 2
 //State = 2 = étape 3
@@ -197,8 +183,8 @@ function GoForward(i) {
   $("#Etape" + iPlus).toggleClass("Passé");
 }
 // 2 timer, un pour chaque flèches
-var Precedent, Suivant;
-var Timer = [Precedent, Suivant];
+let Precedent, Suivant;
+let Timer = [Precedent, Suivant];
 // Quand la souris passe sur les flèches
 $("#Suivant, #Precedent").hover(
   function () {

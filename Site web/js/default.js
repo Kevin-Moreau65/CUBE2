@@ -137,34 +137,23 @@ let State = 0;
 //State = 0 = étape 1
 //State = 1 = étape 2
 //State = 2 = étape 3
-let Steparray = [
-  "Menu Principal",
-  "Paramètre du match",
-  "\u00c9quipe domicile",
-  "\u00c9quipe extérieur",
-  "Lancement du match",
-];
-function setStep(Step) {
-  let Back = Step;
-  let Next = Step;
-  Back--;
-  Next++;
-  $("#BackStep").text(Steparray[Back]);
-  $("#SousTitre").text(Steparray[Step]);
+function setStep(Back, Current, Next, Step) {
+  $("#BackStep").text(Back);
+  $("#SousTitre").text(Current);
   $("#Etapetext").text("Etape " + Step + "/3");
-  $("#NextStep").text(Steparray[Next]);
+  $("#NextStep").text(Next);
 }
 $("#Suivant").click(function () {
   let valeur = $("#Barreetape").val();
   if (State == 0) {
     GoForward(1);
     State++;
-    setStep(2);
+    setStep("Paramètre du match","\u00c9quipe domicile","\u00c9quipe extérieur",2);
     move(valeur, 0.66);
   } else if (State == 1) {
     GoForward(2);
     State++;
-    setStep(3);
+    setStep("\u00c9quipe domicile","\u00c9quipe extérieur","Lancement du match",3);
     move(valeur, 1);
   }
 });
@@ -173,12 +162,12 @@ $("#Precedent").click(function () {
   if (State == 2) {
     GoBack(3);
     State--;
-    setStep(2);
+    setStep("Paramètre du match","\u00c9quipe domicile","\u00c9quipe extérieur",2);
     move(valeur, 0.66);
   } else if (State == 1) {
     GoBack(2);
     State--;
-    setStep(1);
+    setStep("Menu Principal", "Paramètre du match", "\u00c9quipe domicile", 1);
     move(valeur, 0.33);
   } else if (State == 0) {
     $("#AlerteRetour, #Darken").show();

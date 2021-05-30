@@ -41,6 +41,7 @@ $("#BoutonGaucheE").change(function () {
   }
   RefreshMaillot();
 });
+//Création d'une classe permettant de pouvoir stocker le left et le top/bottom en une seule variable
 class posmaillot {
   constructor(left, botop) {
     this.left = left + "%";
@@ -48,7 +49,9 @@ class posmaillot {
   }
 }
 let form442 = [
+  //Le none est là pour que le tableau commence a l'index 1
   "none",
+  //Les maillots sont dans l'ordre et ont le left puis le top/bottom
   new posmaillot(39.5, 13),
   new posmaillot(53.5, 13),
   new posmaillot(28, 33),
@@ -99,7 +102,9 @@ let form532 = [
   new posmaillot(57, 23),
   new posmaillot(64.5, 32.5),
 ];
+//Ce tableau est la pour permettre de retrouver une formation grace a la value de la liste de selection
 let formarray = [form442, form442los, formCDM, form532];
+//Maillot = l'id, leftpos = left, botoppos = top/bottom, i pour identifier si il faut mettre bottom ou top
 function FormationMaillot(Maillot, leftpos, botoppos, i) {
   if (i <= 6) {
     $(Maillot).animate({ left: leftpos, top: botoppos }, 250);
@@ -108,9 +113,14 @@ function FormationMaillot(Maillot, leftpos, botoppos, i) {
   }
 }
 $("#BoutonDroit, #BoutonDroitE").change(function () {
+  //Si la dernière lettre de l'id de la liste est t, c'est automatiquement la formation de
+  //l'équipe a domicile que l'on doit changer
   if ($(this).attr("id").slice(-1) === "t") {
+    //On retrouve la formation voulue grace a la value de la liste et le tableau contenant toute les
+    //formations
     array = formarray[$(this).val()];
     for (i = 1; i <= 10; i++) {
+      //i commence a 1 pour faciliter la selection des maillots
       array[i];
       FormationMaillot("#Maillot" + i, array[i].left, array[i].botop, i);
     }
@@ -127,40 +137,48 @@ let State = 0;
 //State = 0 = étape 1
 //State = 1 = étape 2
 //State = 2 = étape 3
+let Steparray = [
+  "Menu Principal",
+  "Paramètre du match",
+  "\u00c9quipe domicile",
+  "\u00c9quipe extérieur",
+  "Lancement du match",
+];
+function setStep(Step) {
+  let Back = Step;
+  let Next = Step;
+  Back--;
+  Next++;
+  $("#BackStep").text(Steparray[Back]);
+  $("#SousTitre").text(Steparray[Step]);
+  $("#Etapetext").text("Etape " + Step + "/3");
+  $("#NextStep").text(Steparray[Next]);
+}
 $("#Suivant").click(function () {
   let valeur = $("#Barreetape").val();
   if (State == 0) {
     GoForward(1);
     State++;
-    $("#NextStep").text("\u00c9quipe extérieur");
-    $("#BackStep").text("Paramètre du match");
-    $("#SousTitre").text("\u00c9quipe domicile");
+    setStep(2);
     move(valeur, 0.66);
   } else if (State == 1) {
     GoForward(2);
     State++;
-    $("#NextStep").text("Lancement du match");
-    $("#BackStep").text("\u00c9quipe domicile");
-    $("#SousTitre").text("\u00c9quipe extérieur");
+    setStep(3);
     move(valeur, 1);
   }
-  Etapecmb();
 });
 $("#Precedent").click(function () {
   let valeur = $("#Barreetape").val();
   if (State == 2) {
     GoBack(3);
     State--;
-    $("#NextStep").text("\u00c9quipe extérieur");
-    $("#BackStep").text("Paramètre du match");
-    $("#SousTitre").text("\u00c9quipe domicile");
+    setStep(2);
     move(valeur, 0.66);
   } else if (State == 1) {
     GoBack(2);
     State--;
-    $("#NextStep").text("\u00c9quipe domicile");
-    $("#BackStep").text("Menu Principal");
-    $("#SousTitre").text("Paramètre du match");
+    setStep(1);
     move(valeur, 0.33);
   } else if (State == 0) {
     $("#AlerteRetour, #Darken").show();
@@ -169,7 +187,6 @@ $("#Precedent").click(function () {
     move(valeur, 0);
     return;
   }
-  Etapecmb();
 });
 
 function GoBack(i) {
@@ -365,16 +382,6 @@ function Selectchange(Select) {
     $("#BoutonGauche > option:contains('" + value + "')").hide();
   }
 }
-function Etapecmb() {
-  //Cette fonction permet d'actualiser l'étape en fonction de la variable State
-  if (State === 0) {
-    $("#Etapetext").text("Etape 1/3");
-  } else if (State === 1) {
-    $("#Etapetext").text("Etape 2/3");
-  } else if (State === 2) {
-    $("#Etapetext").text("Etape 3/3");
-  }
-}
 function move(value, nextvalue) {
   //Cette fonction fait l'animation de la barre de progrès
   //value = valeur de la barre, nextvalue = valeur que doit prendre la barre
@@ -456,7 +463,7 @@ function IsVoidArbitre() {
   array.push(IsVoid($("#NatArbitreSec2")));
   array.push(IsVoid($("#NomArbitreSec2")));
   //Si l'index (la position dans l'array) de true === -1 cela veut dire qu'il n'existe pas dans l'array
-  //Et donc que tous les champs sont remplie
+  //et donc que tous les champs sont remplie
   if (array.indexOf(true) !== -1) {
     //Arbitre sera en rouge ainsi que le/les champs d'arbitre vide
     $("#Arbitres>h3").addClass("Red");

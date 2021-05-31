@@ -1,7 +1,8 @@
 html {
     color: white;
 }
-body{
+
+body {
     background-image: url("../img/Background-Menu.jpg");
     background-size: cover;
     background-position: center;
@@ -9,35 +10,35 @@ body{
     font-family: 'Raleway', sans-serif;
     overflow: hidden;
     height: 100vh;
-    
-    
 }
-p
-{
-    font-size: 14px; /* Paragraphes de 14 pixels */
+
+p {
+    font-size: 14px;
+    /* Paragraphes de 14 pixels */
     text-align: center;
 }
 
-h1
-{
+h1 {
     position: relative;
     top: -4.5%;
 }
-h2{
+
+h2 {
     margin-top: 4%;
 }
 
-  #greybox {
+#greybox {
     background-color: rgba(206, 206, 206, 0.4);
     backdrop-filter: blur(5px);
     border-radius: 12px;
-    position:relative; margin-top: 1%; margin-left: 15%;
+    position: relative;
+    margin-top: 1%;
+    margin-left: 15%;
     width: 70%;
-    height: auto;
+    height: 72vh;
     overflow: hidden;
     transition: transform 1s, opacity 1s;
-    text-align : center;
-    
+    text-align: center;
 }
 
 .scroller {
@@ -47,9 +48,17 @@ h2{
     scrollbar-color: rgb(253, 253, 253) rgba(0, 0, 0, 0);
     scrollbar-width: thin;
     margin-top: 5%;
-  }
+}
 
-  
+#Barreetape {
+    margin-top: 1%;
+    margin-left: 2%;
+    border-radius: 9px;
+    overflow: hidden;
+    border: none;
+
+}
+
 .Button {
     position: relative;
     top: 5%;
@@ -76,18 +85,21 @@ h2{
     transform: scale(0.9)
 }
 
+td
+/* Toutes les cellules des tableaux... */
 
-td /* Toutes les cellules des tableaux... */
-{
-    border: 1px solid white; /* auront une bordure de 1px */
+    {
+    border: 1px solid white;
+    /* auront une bordure de 1px */
 }
-.entete{
+
+.entete {
     margin-top: 5%;
     text-align: center;
     cursor: default;
 }
-/* Fleches JQUERY ----------------------------------------------------------*/
 
+/* Fleches JQUERY ----------------------------------------------------------*/
 
 #Centre {
     position: absolute;
@@ -210,6 +222,7 @@ td /* Toutes les cellules des tableaux... */
     text-align: center;
     height: 100%;
 }
+
 #AlerteRetour {
     position: relative;
     left: -50%;
@@ -236,6 +249,7 @@ td /* Toutes les cellules des tableaux... */
     cursor: pointer;
     text-decoration: underline;
 }
+
 #Darken {
     background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
@@ -246,19 +260,18 @@ td /* Toutes les cellules des tableaux... */
     display: none;
     opacity: 0;
 }
+
 /* Input type file -----------------------------------------------------------*/
+
 #file {
     display: none;
 }
 
-label{
+label {
     color: white;
-    height : 60px;
-    width: 250px;
+    height: 10vh;
+    width: 16vw;
     background-color: #07587e;
-    position:relative;
-    margin: 0 auto;
-    margin-top: 5%;
     /* margin-left: 40%; */
     font-size: 80%;
     display: flex;
@@ -266,7 +279,9 @@ label{
     align-items: center;
     border-radius: 8px;
 }
+
 /* styles du retour visuel */
+
 /* .file-return {
 	margin: 0;
 }
@@ -282,6 +297,7 @@ label{
 } */
 
 /* on complète l'information d'un contenu textuel uniquement lorsque le paragraphe n'est pas vide */
+
 /* .js .file-return:not(:empty):before {
 	content: "Selected file: ";
 	font-style: normal;
@@ -290,30 +306,32 @@ label{
 
 #blah {
     position: relative;
-    }
+}
 
-    #clah {
-        position: relative; 
-    }
-    #dlah {
+#clah {
+    position: relative;
+}
+
+#dlah {
     position: absolute;
-    }
-    #elah {
-    position:absolute; 
-    }
-    .file-return {
+}
 
-        
-    }
+#elah {
+    position: absolute;
+}
+
+.file-return {}
+
 /* CSS JANEK ------------------------------------------------------------------------------- */
 
-footer{
+footer {
     font-size: 8rem;
     position: absolute;
     bottom: 30px;
     left: 30px;
 }
-#Conteneur{
+
+#Conteneur {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -322,17 +340,29 @@ footer{
     width: 250px;
     margin: auto;
 }
-.element{
-    height: 50px;    
+
+.element {
+    height: 50px;
 }
-#poste-select{
+
+#poste-select {
     text-align: end;
 }
-.tableau{
+
+.tableau {
     background: rgba(206, 206, 206, 0.5);
     width: 35%;
     height: 62%;
     bottom: 62%;
     position: relative;
     border-radius: 30px;
+}
+
+#flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
 }

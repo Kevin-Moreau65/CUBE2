@@ -1,54 +1,59 @@
-var State = 0;
+let State = 0;
+//State = 0 = étape 1
+//State = 1 = étape 2
+//State = 2 = étape 3
+function setStep(Back, Current, Next, Step) {
+  $("#BackStep").text(Back);
+  $("#SousTitre").text(Current);
+  $("#Etapetext").text("Etape " + Step + "/3");
+  $("#NextStep").text(Next);
+}
 $("#Suivant").click(function () {
-    if (State == 0) {
-        GoForward(1);
-        State++;
-        $("#NextStep").text("Etape 2/3");
-        $("#BackStep").text("Menu principal");
-        $("#SousTitre").text("Etape 1/3");
-      } else if (State == 1) {
-        GoForward(2);
-        State++;
-        $("#NextStep").text("Etape 3/3");
-        $("#BackStep").text("Etape 1/3");
-        $("#SousTitre").text("Etape 2/3");
-      } else {
-        console.log("NON");
-      }
-    });
-    $("#Precedent").click(function () {
-      if (State == 3) {
-        GoBack(4);
-        State--;
-      } else if (State == 2) {
-        GoBack(3);
-        State--;
-        $("#NextStep").text("Créer l'équipe");
-        $("#BackStep").text("Etape 2/3");
-        $("#SousTitre").text("Etape 3/3");
-      } else if (State == 1) {
-        GoBack(2);
-        State--;
-        $("#NextStep").text("Etape 2/3");
-        $("#BackStep").text("Menu Principal");
-        $("#SousTitre").text("Etape 1/3");
-      } else if (State == 0) {
-        $("#AlerteRetour, #Darken").show();
-        $("#AlerteRetour, #Darken").animate({ opacity: "1" }, 100);
-      } else {
-        console.log("NON");
-      }
-    });
-    function GoBack(i) {
-      iMoins = i--;
-      $("#Etape" + i).toggleClass("Passé");
-      $("#Etape" + iMoins).toggleClass("PasPassé");
-    }
-    function GoForward(i) {
-      iPlus = i++;
-      $("#Etape" + i).toggleClass("PasPassé");
-      $("#Etape" + iPlus).toggleClass("Passé");
-    }
+  let valeur = $("#Barreetape").val();
+  if (State == 0) {
+    GoForward(1);
+    State++;
+    setStep("Paramètres de l'équipe","Saisie des joueurs","Apperçu",2);
+    move(valeur, 0.66);
+  } else if (State == 1) {
+    GoForward(2);
+    State++;
+    setStep("Saisie des joueurs","Apperçu","Valider",3);
+    move(valeur, 1);
+  }
+});
+$("#Precedent").click(function () {
+  let valeur = $("#Barreetape").val();
+  if (State == 2) {
+    GoBack(3);
+    State--;
+    setStep("Paramètres de l'équipe","Saisie des joueurs","Apperçu",2);
+    move(valeur, 0.66);
+  } else if (State == 1) {
+    GoBack(2);
+    State--;
+    setStep("Menu Principal", "Paramètres de l'équipe", "Saisie des joueurs", 1);
+    move(valeur, 0.33);
+  } else if (State == 0) {
+    $("#AlerteRetour, #Darken").show();
+    $("#AlerteRetour, #Darken").animate({ opacity: "1" }, 100);
+    $("#Etapetext").text("Etape 0/3");
+    move(valeur, 0);
+    return;
+  }
+});
+
+function GoBack(i) {
+  iMoins = i--;
+  $("#Etape" + i).toggleClass("Passé");
+  $("#Etape" + iMoins).toggleClass("PasPassé");
+}
+function GoForward(i) {
+  iPlus = i++;
+  $("#Etape" + i).toggleClass("PasPassé");
+  $("#Etape" + iPlus).toggleClass("Passé");
+}
+
     // 2 timer, un pour chaque flèches
     var Precedent, Suivant;
     var Timer = [Precedent, Suivant];
@@ -83,6 +88,10 @@ $("#Suivant").click(function () {
         $("#AlerteRetour, #Darken").hide();
       }, 100);
     });
+
+
+
+    
     // INPUT TYPE FILE AFFICHER APPERCU AVANT ENVOI ////////////////////////////////////////
     function readURL(input) {
       if (input.files && input.files[0]) {
@@ -128,3 +137,4 @@ function readURL(input) {
       reader.readAsDataURL(input.files[0]);
   }
 }
+

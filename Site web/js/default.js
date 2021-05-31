@@ -232,6 +232,7 @@ let MaillotDIV;
 let FromDrop;
 let IDdrag;
 let remplacant = 0;
+let remplacantE = 0;
 let Droite = false;
 let Dropped = false;
 $(function () {
@@ -268,7 +269,7 @@ $(function () {
       }
     },
   });
-  $("#Droite").droppable({
+  $("#Droite, .Droppable").droppable({
     tolerance: "pointer",
     drop: function () {
       if (MaillotDIV.hasClass("Capitaine") === false) {
@@ -276,6 +277,9 @@ $(function () {
         $(this).append(MaillotDIV);
         $(this).children(MaillotDIV).show();
         Dropped = true;
+        if ($(this).hasClass("Droppable")) {
+          nombreRemplacant(IDdrag, true);
+        }
         nombreRemplacant(IDdrag);
       }
     },
@@ -328,7 +332,30 @@ function RefreshMaillot() {
   $("#Droite > .bouge").remove();
   //On suprimme tout les joueurs coté remplacant
 }
-function nombreRemplacant(ID) {
+function nombreRemplacant(ID, Ext) {
+  if (Ext === true){
+    if (Droite === true) {
+      //Si oui on incrémente le nombre de remplacant
+      remplacantE++;
+      //Puis on actualise l'affichage
+      $("#ColoneBanc2").text("BANC (" + remplacantE + "/11)");
+      //On reinitialise le flag
+      Droite = false;
+    } else if (ID === "Droite") {
+      //Si le maillot qui vient d'etre drop vient de la zone remplacant c'est qu'on a enlever un remplacant
+      remplacantE--;
+      //On décrémente puis on actualise
+      $("#ColoneBanc2").text("BANC (" + remplacantE + "/11)");
+    }
+    if (remplacantE >= 6) {
+      //Si le nombre de remplacant est supérieur ou égal a 1 on estime que l'utilisateur a pris connaissance
+      //du nombre mini de remplacant nécéssaire, on enlève le message
+      $(".Droppable > #Warning").text(" ");
+    } else {
+      //Si le nombre de remplacant retombe a 0, on remet le warning
+      $(".Droppable > #Warning").text("Il faut un minimum de 6 remplacants");
+    }
+  } else {
   //On vérifie si le maillot a était drop sur la zone des remplacant
   if (Droite === true) {
     //Si oui on incrémente le nombre de remplacant
@@ -343,15 +370,15 @@ function nombreRemplacant(ID) {
     //On décrémente puis on actualise
     $("#ColoneBanc").text("BANC (" + remplacant + "/11)");
   }
-  if (remplacant >= 1) {
+  if (remplacant >= 6) {
     //Si le nombre de remplacant est supérieur ou égal a 1 on estime que l'utilisateur a pris connaissance
     //du nombre mini de remplacant nécéssaire, on enlève le message
     $("#Warning").text(" ");
   } else {
     //Si le nombre de remplacant retombe a 0, on remet le warning
-    $("#Warning").text("Il faut un minimum de 6 remplacant");
+    $("#Warning").text("Il faut un minimum de 6 remplacants");
   }
-}
+}}
 function Selectchange(Select) {
   //Cette fonction permet de masquer l'équipe selectionner dans l'autre liste, ce qui empeche de
   //selectionner deux fois la meme équipe

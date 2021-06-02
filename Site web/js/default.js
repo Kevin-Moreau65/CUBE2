@@ -520,6 +520,6 @@ function switchmaillot(id, Liste) {
 if (Isselected(Liste)) {
   if (id){
     let src =$(".MaillotD").attr('src');
-    console.log(src)
+    // const words = src.split('&');
   }
 }}

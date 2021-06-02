@@ -509,3 +509,17 @@ $("#SaveFirstStep").click(function () {
     );
   }
 });
+function Isselected(Liste) {
+  if (Liste.val() === "none") {
+    return false
+  } else {
+    return true 
+  }
+}
+function switchmaillot(id, Liste) {
+if (Isselected(Liste)) {
+  if (id){
+    let src =$(".MaillotD").attr('src');
+    console.log(src)
+  }
+}}

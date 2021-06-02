@@ -221,9 +221,9 @@ td
     width: 70%;
     margin: 0 auto; */
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     transition: transform 1s, opacity 1s;
-    bottom: 26.5%;
+    bottom: 85%;
     text-align: center;
 }
 
@@ -399,4 +399,16 @@ label {
     margin: 0 auto;
     overflow: hidden;
     height: auto;
+}
+
+#carrégris{
+    background-color: rgba(206, 206, 206, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    position:relative;  
+    margin-left: 27%;
+    width: 50%;
+    overflow: hidden;
+    transition: transform 1s, opacity 1s;
+    text-align : center;
 }

@@ -32,7 +32,7 @@ h2 {
     backdrop-filter: blur(5px);
     border-radius: 12px;
     position: relative;
-    margin-top: 1%;
+    margin-top: 0;
     margin-left: 15%;
     width: 70%;
     height: auto;
@@ -196,20 +196,35 @@ td
     border-radius: 12px;
     width: 70%;
     margin: 0 auto; */
-    overflow: hidden;
+    position: relative;
     transition: transform 1s, opacity 1s;
+    top: 10%;
 }
 
 #Etape2 {
-    position: relative;
-    background-color: rgba(206, 206, 206, 0.4);
+    /* background-color: rgba(206, 206, 206, 0.4);
     backdrop-filter: blur(5px);
     border-radius: 12px;
     width: 70%;
-    margin: 0 auto;
+    margin: 0 auto; */
+    position: relative;
     overflow: hidden;
     transition: transform 1s, opacity 1s;
-    top: -70%;
+    bottom: 33%;
+    text-align: center;
+}
+
+#Etape3 {
+    /* background-color: rgba(206, 206, 206, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    width: 70%;
+    margin: 0 auto; */
+    position: relative;
+    overflow: hidden;
+    transition: transform 1s, opacity 1s;
+    bottom: 26.5%;
+    text-align: center;
 }
 
 #Menu-Gauche {
@@ -332,7 +347,7 @@ label {
 
 /* CSS JANEK ------------------------------------------------------------------------------- */
 
-footer {
+/* footer {
     font-size: 8rem;
     position: absolute;
     bottom: 30px;
@@ -355,7 +370,7 @@ footer {
 
 #poste-select {
     text-align: end;
-}
+} */
 
 .tableau {
     background: rgba(206, 206, 206, 0.5);
@@ -373,4 +388,15 @@ footer {
     margin-left: 15px;
     margin-right: 15px;
     margin-top: 10px;
+}
+
+.background
+{
+    background-color: rgba(206, 206, 206, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+    height: auto;
 }

@@ -83,13 +83,7 @@ button {
     transform: scale(0.9)
 }
 
-td
-/* Toutes les cellules des tableaux... */
 
-    {
-    border: 1px solid white;
-    /* auront une bordure de 1px */
-}
 
 .entete {
     margin-top: 5%;
@@ -394,14 +388,3 @@ label {
     height: auto;
 }
 
-#carrégris{
-    background-color: rgba(206, 206, 206, 0.4);
-    backdrop-filter: blur(5px);
-    border-radius: 12px;
-    position:relative;  
-    margin-left: 27%;
-    width: 50%;
-    overflow: hidden;
-    transition: transform 1s, opacity 1s;
-    text-align : center;
-}

@@ -168,13 +168,13 @@ option
     color:white;
 }
 
-/* .background {
+.background {
     background: rgba(206, 206, 206, 0.5);
     width:19%;
     display: block;
     margin: auto;
     border-radius: 30px;
-} */
+} 
 
 p
 {

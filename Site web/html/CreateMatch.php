@@ -1,24 +1,31 @@
+<?php
+$db = new PDO('mysql:host=localhost;dbname=CUBES;charset=utf8', 'root', '');
+$r = "SELECT * FROM equipe";
+$query = $db->query($r);
+$i = 0;
+$option = "";
+while ($team = $query->fetch()) {
+  $i++;
+  $teamnom = $team['Nom'];
+  $option .= "<option value='$i'>$teamnom</option>";
+}
+?>
 <!DOCTYPE html>
+
 <head>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet" />
   <link href="/Site web/css/Index.css" rel="stylesheet" type="text/css" />
   <link href="/Site web/css/CreateMatch.css" rel="stylesheet" type="text/css" />
-  <link
-    rel="stylesheet"
-    href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-  />
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
   <meta charset="UTF-8" />
   <title>Préparation d'un Match</title>
 </head>
+
 <body>
   <h1 id="Titre">Préparation d'un Match</h1>
   <div id="CentreTitre">
     <h2 id="SousTitre">Paramètre du match</h2>
-    <a id="étapes"
-      ><span id="Etapetext">Etape 1/3</span>
+    <a id="étapes"><span id="Etapetext">Etape 1/3</span>
       <progress id="Barreetape" value="0.33"></progress>
     </a>
   </div>
@@ -27,78 +34,55 @@
     <div class="rectangle">
       <div id="M1G">
         <h3>Domicile</h3>
-        <select
-          id="BoutonGauche"
-          class="BoutonMenu"
-          name="TeamDom"
-          onchange="Selectchange('Dom')"
-        >
+        <select id="BoutonGauche" class="BoutonMenu" name="TeamDom">
           <option value="none" selected disabled hidden>
             Liste des équipes
           </option>
-          <option>Pau FC</option>
-          <option>Cesi FC</option>
-          <option>PSG</option>
-          <option>Dortmund</option>
-          <option>Juventus</option>
+          <?php echo $option ?>
         </select>
       </div>
       <div id="M1D">
         <h3>Exterieur</h3>
-        <select
-          id="BoutonGaucheE"
-          class="BoutonMenu"
-          name="TeamExt"
-          onchange="Selectchange('Ext')"
-        >
+        <select id="BoutonGaucheE" class="BoutonMenu" name="TeamExt">
           <option value="none" selected disabled hidden>
             Liste des équipes
           </option>
-          <option>Pau FC</option>
-          <option>Cesi FC</option>
-          <option>PSG</option>
-          <option>Dortmund</option>
-          <option>Juventus</option>
+          <?php echo $option ?>
         </select>
       </div>
     </div>
     <div id="Arbitres">
       <h3>Arbitres</h3>
-      <div id="AjArbitre" class="bouton"><h3>Ajouter</h3></div>
+      <div id="AjArbitre" class="bouton">
+        <h3>Ajouter</h3>
+      </div>
     </div>
     <div class="rectangle">
       <div id="Date">
         <h3 id="DateTitre">Date</h3>
-        <input
-          id="DatePicker"
-          class="BoutonMenu"
-          type="date"
-          oninput="IsVoid($('#DatePicker'))"
-        />
+        <input id="DatePicker" class="BoutonMenu" type="date" oninput="IsVoid($('#DatePicker'))" />
       </div>
       <div id="Lieu">
         <h3 id="LieuTitre">Lieu</h3>
-        <input
-          id="Lieuinput"
-          class="BoutonMenuInput"
-          oninput="IsVoid($('#Lieuinput'))"
-        />
+        <input id="Lieuinput" class="BoutonMenuInput" oninput="IsVoid($('#Lieuinput'))" />
       </div>
     </div>
-    <div class="bouton" id="SaveFirstSte" action='test.php'><h3>Sauvegarder</h3></div>
+    <div class="bouton" id="SaveFirstStep">
+      <h3>Sauvegarder</h3>
+    </div>
   </div>
   <!-----------------------------------------------------Pages 2--------------------------------------------------------->
   <div id="Etape2" class="PasPassé Etape">
     <div id="Menu-Gauche">
       <div id="Gauche">
-      <div class="DIVswitch">
-        <p>Domicile</p>
+        <div class="DIVswitch">
+          <p>Domicile</p>
           <label class="switch">
             <input type="checkbox" id="switchDOM" onclick="switchmaillot(true, $('BoutonGauche'))">
             <span class="slider round"></span>
           </label>
-        <p>Neutre</p>
-      </div>
+          <p>Neutre</p>
+        </div>
         <h3 id="ColoneAttaquant">ATTAQUANT</h3>
         <div id="float">
           <div class="bouge" id="DivMaillot">
@@ -278,10 +262,10 @@
       <div id="Gauche">
         <div class="DIVswitch">
           <p>Exterieur</p>
-            <label class="switch">
-              <input type="checkbox" id="switchEXT" onclick="switchmaillot(false, $('BoutonGaucheE'))">
-              <span class="slider round"></span>
-            </label>
+          <label class="switch">
+            <input type="checkbox" id="switchEXT" onclick="switchmaillot(false, $('BoutonGaucheE'))">
+            <span class="slider round"></span>
+          </label>
           <p>Neutre</p>
         </div>
         <h3 id="ColoneAttaquant">ATTAQUANT</h3>
@@ -449,9 +433,8 @@
   </div>
   <!----------------------------------------------------111---------------------------------------------------------->
   <div id="Precedent">
-    <h3><</h3>
-
-    <h4 id="BackStep">Menu principal</h4>
+    <h3>
+      < <h4 id="BackStep">Menu principal</h4>
   </div>
   <div id="Suivant">
     <h3>></h3>
@@ -505,7 +488,9 @@
           <input id="NatArbitreSec2" oninput="IsVoid($('#NatArbitreSec2'))" />
         </h4>
       </div>
-      <div class="bouton" id="Back"><h3>Terminer</h3></div>
+      <div class="bouton" id="Back">
+        <h3>Terminer</h3>
+      </div>
     </div>
   </div>
 

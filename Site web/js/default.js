@@ -1,44 +1,23 @@
-$("#BoutonGauche").change(function () {
+$("#BoutonGauche, #BoutonGaucheE").change(function () {
+  let maillot;
+  let cote;
   /*Bouton de changement d'équipe*/
-  if ($(this).val() == "Pau FC") {
-    $(".MaillotD").attr("src", "/Site web/img/maillot-paufc.png");
-    $(".MaillotGoal").attr("src", "/Site web/img/maillot-gardien.png");
+  if ($(this).attr('id') === 'BoutonGauche') {
+    maillot = ".MaillotD"
+    cote = 'CheminMaillotDom'
+    Selectchange('Dom')
+  } else {
+    maillot = ".MaillotDE"
+    cote = 'CheminMaillotExt'
+    Selectchange('Ext')
   }
-  if ($(this).val() == "Cesi") {
-    $(".MaillotD").attr("src", "/Site web/img/maillot-cesi.png");
-    $(".MaillotGoal").attr("src", "/Site web/img/maillot-gardiencesi.png");
-  }
-  if ($(this).val() == "PSG") {
-    $(".MaillotD").attr("src", "/Site web/img/maillot-psg.png");
-    $(".MaillotGoal").attr("src", "/Site web/img/maillot-gardien.png");
-  }
-  if ($(this).val() == "Dortmund") {
-    $(".MaillotD").attr("src", "/Site web/img/maillot-dortmund.png");
-    $(".MaillotGoal").attr("src", "/Site web/img/maillot-gardien.png");
-  }
-  if ($(this).val() == "Juventus") {
-    $(".MaillotD").attr("src", "/Site web/img/maillot-juventus.png");
-    $(".MaillotGoal").attr("src", "/Site web/img/maillot-gardien.png");
-  }
+  let i = $(this).val()
+  $.post( "/php/Listequipe.php", { team: i,  donnee: cote}, function(data) {
+    $(maillot).attr("src", data);})
   RefreshMaillot();
 });
 $("#BoutonGaucheE").change(function () {
-  /*Bouton de changement d'équipe*/ if ($(this).val() == "Pau FC") {
-    $(".MaillotDE").attr("src", "/Site web/img/maillot-paufc.png");
-    $(".MaillotGoalE").attr("src", "/Site web/img/maillot-gardien.png");
-  }
-  if ($(this).val() == "PSG") {
-    $(".MaillotDE").attr("src", "/Site web/img/maillot-psg.png");
-    $(".MaillotGoalE").attr("src", "/Site web/img/maillot-gardien.png");
-  }
-  if ($(this).val() == "Dortmund") {
-    $(".MaillotDE").attr("src", "/Site web/img/maillot-dortmund.png");
-    $(".MaillotGoalE").attr("src", "/Site web/img/maillot-gardien.png");
-  }
-  if ($(this).val() == "Juventus") {
-    $(".MaillotDE").attr("src", "/Site web/img/maillot-juventus.png");
-    $(".MaillotGoal").attr("src", "/Site web/img/maillot-gardien.png");
-  }
+  
   RefreshMaillot();
 });
 //Création d'une classe permettant de pouvoir stocker le left et le top/bottom en une seule variable
@@ -390,12 +369,14 @@ function Selectchange(Select) {
     //On montre toute les valeurs de l'autre liste pour faire un "reset"
     $("#BoutonGaucheE > option").show();
     value = $("#BoutonGauche").val();
+    console.log(value)
     //Puis on cache l'élément sélectionner dans l'autre liste
-    $("#BoutonGaucheE > option:contains('" + value + "')").hide();
+    $('#BoutonGaucheE > option[value="'+value+'"]').hide();
   } else if (Select === "Ext") {
     $("#BoutonGauche > option").show();
     value = $("#BoutonGaucheE").val();
-    $("#BoutonGauche > option:contains('" + value + "')").hide();
+    console.log(value)
+    $('#BoutonGauche > option[value="'+value+'"]').hide();
   }
 }
 function move(value, nextvalue) {
@@ -524,7 +505,5 @@ if (Isselected(Liste)) {
   }
 }}
 //EXEMPLE D'envoie vers db Mysql
-$("#test").click(function() {
-  $.post( "/Site web/html/test.php", { prenom: "Adrien", nom: "Procacci", email: "adrien.procacci@viacesi.fr", datedeN: "2001-08-18", tel: "nope" });
-})
+
 

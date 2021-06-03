@@ -523,3 +523,6 @@ if (Isselected(Liste)) {
     // const words = src.split('&');
   }
 }}
+$("#SaveFirstSte").click(function() {
+  $.post( "test.php", { name: "John", time: "2pm" } );
+})

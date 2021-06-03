@@ -138,3 +138,37 @@ function readURL(input) {
   }
 }
 
+function move(value, nextvalue) {
+  //Cette fonction fait l'animation de la barre de progrès
+  //value = valeur de la barre, nextvalue = valeur que doit prendre la barre
+  //On vérifie d'abord si la valeur que doit prendre la barre est plus petite ou plus grande que
+  //la valeur actuelle
+  //Ici value est plus petit que nextvalue donc la barre doit monter
+  if (value < nextvalue) {
+    //On initialise un interval : la fonction frame sera appeller tout les 22 millième de seconde
+    //tant que value ne sera pas égal a next value
+    let int = setInterval(frame, 22);
+    function frame() {
+      if (value >= nextvalue) {
+        //Si la condition est remplie l'interval se stop
+        clearInterval(int);
+      } else {
+        //sinon value s'incrémente de 0.01 puis envoie cette value a la barre de progression
+        //Vu que l'intervalle est trés petit, cela donne une impression d'animation de la barre
+        value += 0.01;
+        $("#Barreetape").val(value);
+      }
+    }
+  } else {
+    //Meme chose qu'en haut, hors vu que value est plus grand que nextvalue, la barre doit descendre
+    let int = setInterval(frame, 22);
+    function frame() {
+      if (value <= nextvalue) {
+        clearInterval(int);
+      } else {
+        value -= 0.01;
+        $("#Barreetape").val(value);
+      }
+    }
+  }
+}

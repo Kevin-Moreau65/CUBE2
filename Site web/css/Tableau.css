@@ -80,3 +80,15 @@ text-decoration: none;
   {
       border: none;
   }
+
+
+  .bt-supprimer{
+    background-color:crimson;
+    padding:2px;
+    text-align:center;
+    margin:3px;
+    display:inline-block;
+    border-radius:5px;
+    border:1px solid darkred;
+    cursor:pointer;
+  }

@@ -172,3 +172,55 @@ function move(value, nextvalue) {
     }
   }
 }
+
+
+
+// BOUTON SUPPRIMER ------------------------------------------------------
+
+/* //////////////////////////////////////////////
+Plus d'informations liées à la solution  : 
+//////////////////////////////////////////////
+## equivalent de classList.add et classList.remove
+https://www.zonecss.fr/cours-css-javascript/manipuler-les-valeurs-de-l-attribut-class.html#pKoWax00000.codepen
+*/
+/*
+Toutes le fonctions ci-dessous peuvent être optimisées
+elles sont même volontairement non optimisées
+Elles sont là juste pour vous présenter le concept à vous de les améliorer 
+*/
+var str= ""; 
+for(var i =0;i< 5;i++){
+  str=str+'<tr>'
+    +'<td>Ligne '+i+'</td>'
+    +'<td>Ligne '+i+'</td>'
+    +'<td>Ligne '+i+'</td>'
+    +'<td><span class="bt-supprimer">Sup Ligne '+i+'<span></td>'
+    +'</tr>';
+}
+document.getElementById("tbody").innerHTML=str; 
+document.getElementById("tbody3").innerHTML=str;
+
+var delC =null, oBtSup =  null;
+document.addEventListener('DOMContentLoaded',function(){
+  oTable = document.getElementById('table_dpi');
+  oBtSup = oTable.getElementsByClassName('bt-supprimer');
+  for(var i = 0; i<oBtSup.length; i++){
+    oBtSup[i].addEventListener('click',  supprimerLigne);
+  }//for
+
+  oTable = document.getElementById('table_dpi3');
+  oBtSup = oTable.getElementsByClassName('bt-supprimer');
+  for(var i = 0; i<oBtSup.length; i++){
+    oBtSup[i].addEventListener('click',  supprimerLigne3);
+  }//for
+});
+
+/*
+Méthode 1 basic 
+compatible avec tous les navigateurs même tres anciens
+*/
+function supprimerLigne(oEvent){
+  var oEleBt = oEvent.currentTarget,
+      oTr = oEleBt.parentNode.parentNode ;
+  oTr.remove(); 
+}//fct

@@ -12,7 +12,7 @@
     /* margin-top: 10%; */
     width: 45%;
     height: 60vh;
-    overflow: scroll;
+    overflow-y: scroll;
     transition: transform 1s, opacity 1s;
     text-align: center;
 }
@@ -30,6 +30,14 @@ th
     border-radius: 8px;
     background: rgba(0, 0, 129, 0.212);
 }
+
+/* #menu {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    width: 8em;
+    margin-top: -2.5em;
+  } */
 
 .btntb {
     border:none;

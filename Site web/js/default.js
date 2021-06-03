@@ -523,6 +523,8 @@ if (Isselected(Liste)) {
     // const words = src.split('&');
   }
 }}
-$("#SaveFirstSte").click(function() {
-  $.post( "test.php", { name: "John", time: "2pm" } );
+//EXEMPLE D'envoie vers db Mysql
+$("#test").click(function() {
+  $.post( "/Site web/html/test.php", { prenom: "Adrien", nom: "Procacci", email: "adrien.procacci@viacesi.fr", datedeN: "2001-08-18", tel: "nope" });
 })
+

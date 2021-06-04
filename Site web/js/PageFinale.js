@@ -137,7 +137,7 @@ function readURL(input) {
       reader.readAsDataURL(input.files[0]);
   }
 }
-
+// BARRE DE CHARGEMENT -------------------------------------------------
 function move(value, nextvalue) {
   //Cette fonction fait l'animation de la barre de progrès
   //value = valeur de la barre, nextvalue = valeur que doit prendre la barre
@@ -224,3 +224,17 @@ function supprimerLigne(oEvent){
       oTr = oEleBt.parentNode.parentNode ;
   oTr.remove(); 
 }//fct
+
+// $("tonbouton").click(function()
+
+function addRow(elmt, value)
+{
+    var tr = document.createElement('tr');
+    elmt.appendChild(tr);
+     
+    var td = document.createElement('td');
+    tr.appendChild(td);
+    var tdText = document.createTextNode(value);
+    td.appendChild(tdText);
+}
+

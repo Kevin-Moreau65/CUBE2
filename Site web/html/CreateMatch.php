@@ -85,31 +85,15 @@ while ($team = $query->fetch()) {
         </div>
         <h3 id="ColoneAttaquant">ATTAQUANT</h3>
         <div id="float" class="attaquant categorieDOM">
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
         </div>
         <h3 id="ColoneMilieu">MILIEU</h3>
         <div id="float" class="milieu categorieDOM">
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
         </div>
         <h3 id="ColoneDefenseur categorieDOM">DEFENSEUR</h3>
         <div id="float" class="defenseur categorieDOM">
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
         </div>
         <h3 id="ColoneGardien categorieDOM">GARDIEN</h3>
         <div id="float" class="gardien categorieDOM">
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
         </div>
         <h3 id="ColoneCapitaine">Capitaine</h3>
         <div class="Capitaine bouge" id="DivMaillot">
@@ -196,31 +180,15 @@ while ($team = $query->fetch()) {
         </div>
         <h3 id="ColoneAttaquant">ATTAQUANT</h3>
         <div id="float" class="attaquant categorieEXT">
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
         </div>
         <h3 id="ColoneMilieu">MILIEU</h3>
         <div id="float" class="milieu categorieEXT">
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
         </div>     
         <h3 id="ColoneDefenseur">DEFENSEUR</h3>
         <div id="float" class="defenseur categorieEXT">
-          <div class="bouge" id="DivMaillot">        
-            <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
         </div>        
         <h3 id="ColoneGardien">GARDIEN</h3>
         <div id="float" class="gardien categorieEXT">
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotGoalE" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
         </div>        
         <h3 id="ColoneCapitaine">CAPITAINE</h3>
         <div class="Capitaine bouge" id="DivMaillot">
@@ -293,7 +261,7 @@ while ($team = $query->fetch()) {
       <img id="Terrain" src="/Site web/img/Terrain-menu.jpg" />
     </div>
   </div>
-  <!----------------------------------------------------111---------------------------------------------------------->
+  <!----------------------------------------------------Flèche et autre éléments---------------------------------------------------------->
   <div id="Precedent">
     <h3>
       < <h4 id="BackStep">Menu principal</h4>

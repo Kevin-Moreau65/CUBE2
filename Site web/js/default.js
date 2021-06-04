@@ -1,19 +1,13 @@
 $("#BoutonGauche, #BoutonGaucheE").change(function () {
   let maillot;
   let cote;
+  let i = $(this).val()
   /*Bouton de changement d'équipe*/
   if ($(this).attr('id') === 'BoutonGauche') {
     maillot = ".MaillotD"    
     cote = 'CheminMaillotDom'
     $(".categorieDOM").empty()
     Selectchange('Dom')
-    } else {
-      maillot = ".MaillotDE"
-      cote = 'CheminMaillotExt'
-      $(".categorieEXT").empty()
-      Selectchange('Ext')
-  }
-  let i = $(this).val()
   $.post( "/php/joueur.php", { team: i}, function(data) {
     let team = jQuery.parseJSON(data)  
   for (const joueur of team.attaquant) {
@@ -35,6 +29,33 @@ $("#BoutonGauche, #BoutonGaucheE").change(function () {
   }
   Draglol()
 })
+    } else {
+      maillot = ".MaillotDE"
+      cote = 'CheminMaillotExt'
+      $(".categorieEXT").empty()
+      Selectchange('Ext')
+      $.post( "/php/joueur.php", { team: i}, function(data) {
+        let team = jQuery.parseJSON(data)  
+      for (const joueur of team.attaquant) {
+        $("#float.attaquant.categorieEXT").append('<div class="bouge" id="DivMaillot">'+
+        '<img class="MaillotDE" />'+
+        '<h4>'+SetName(joueur)+'</h4></div>')}
+      for (const joueur of team.milieu) {
+        $("#float.milieu.categorieEXT").append('<div class="bouge" id="DivMaillot">'+
+        '<img class="MaillotDE" />'+
+        '<h4>'+SetName(joueur)+'</h4></div>')}
+      for (const joueur of team.defenseur) {
+        $("#float.defenseur.categorieEXT").append('<div class="bouge" id="DivMaillot">'+
+        '<img class="MaillotDE" />'+
+        '<h4>'+SetName(joueur)+'</h4></div>')}
+      for (const joueur of team.gardien) {
+        $("#float.gardien.categorieEXT").append('<div class="bouge" id="DivMaillot">'+
+        '<img class="MaillotGoalE" />'+
+        '<h4>'+SetName(joueur)+'</h4></div>')
+      }
+      Draglol()
+    })
+  }
   $.post( "/php/Listequipe.php", { team: i,  donnee: cote}, function(data) {
     $(maillot).attr("src", data);
   if ($(maillot).attr('class') === 'MaillotD') {

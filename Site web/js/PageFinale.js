@@ -229,8 +229,8 @@ function supprimerLigne(oEvent){
 
 function addRow()
 {
-   $("#Tableau").append('<tr><td>joueur 20</td><td>pierre</td><td>Richard</td><td>Richard</td><td class="btncr">'+
-     '<img src="/Site web/img/crayon-modifié.png"><td class="btntb">'+
-     '<img src="/Site web/img/icons8-supprimer-24.png"></tr>')
+    $("#Tableau").append('<tr><td>joueur 20</td><td>pierre</td><td>Richard</td><td>Richard</td><td class="btncr">'+
+    '<img src="/Site web/img/crayon-modifié.png"><td class="btntb">'+
+    '<img src="/Site web/img/icons8-supprimer-24.png"></tr>')
 }
 

@@ -234,3 +234,10 @@ function addRow()
     '<img src="/Site web/img/icons8-supprimer-24.png"></tr>')
 }
 
+$
+{
+ 
+}
+
+
+// Identitfier la ligne qui contient le bouton ------ la supprimer /////

@@ -1,0 +1,575 @@
+.Etape {
+    position: relative;
+    background-color: rgba(206, 206, 206, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0px 0px 10px black;
+    overflow: hidden;
+    transition: transform 1s, opacity 1s;
+}
+
+#Etape1 {
+    top: 6%;
+    width: 65%;
+    height: 33vw;
+}
+
+#Etape2 {
+    width: 70%;
+    margin-top: -30vw;
+}
+
+#Etape3 {
+    width: 70%;
+    margin-top: -70vh;
+}
+
+#Etape3>h2 {
+    position: relative;
+    font-size: 1.75em;
+    top: 5%;
+    margin-top: 0%;
+}
+
+#Terrain {
+    z-index: -20;
+    width: 100%;
+    margin: auto;
+    display: block;
+    height: 70vh;
+}
+
+#Precedent, #Suivant {
+    background-color: rgba(206, 206, 206, 0.4);
+    backdrop-filter: blur(5px);
+    width: 1.2em;
+    text-align: center;
+    height: 15vh;
+    position: absolute;
+    top: 49%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    color: black;
+    transition: transform 0.2s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#Precedent:hover, #Suivant:hover {
+    transform: scale(1.05);
+}
+
+#Precedent:active, #Suivant:active {
+    transform: scale(0.95)
+}
+
+#Precedent {
+    margin-right: 85.5%;
+    right: 0;
+    padding-right: 10px;
+}
+
+#Suivant {
+    margin-left: 85%;
+    padding-left: 10px;
+}
+
+#Suivant>h3 {
+    margin-right: 10px;
+}
+
+#Precedent>h3 {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+}
+
+#NextStep {
+    position: absolute;
+    left: 0;
+    margin-left: 1.8em;
+    height: auto;
+    width: 8em;
+}
+
+#BackStep {
+    position: absolute;
+    right: 0;
+    margin-right: 2em;
+    height: auto;
+    width: 8em;
+}
+
+.Passé {
+    transform: translateX(-200%) scale(0.1);
+    opacity: 0;
+}
+
+.PasPassé {
+    transform: translateX(200%) scale(0.1);
+    opacity: 0;
+}
+
+#Menu-Gauche {
+    position: absolute;
+    width: 25%;
+    left: 0%;
+    text-align: center;
+    height: 100%;
+}
+
+#Menu-Droit {
+    position: absolute;
+    width: 25%;
+    right: 0%;
+    text-align: center;
+    height: 100%;
+}
+
+.maillotB {
+    width: 5%;
+    position: absolute;
+    opacity: 0.6;
+}
+
+#Maillot1, #Maillot1E {
+    position: absolute;
+    left: 39.5%;
+    top: 13%;
+}
+
+#Maillot2, #Maillot2E {
+    position: absolute;
+    left: 53.5%;
+    top: 13%;
+}
+
+#Maillot3, #Maillot3E {
+    position: absolute;
+    left: 28%;
+    top: 33%;
+}
+
+#Maillot4, #Maillot4E {
+    position: absolute;
+    left: 38%;
+    top: 33%;
+}
+
+#Maillot5, #Maillot5E {
+    position: absolute;
+    left: 55%;
+    top: 33%;
+}
+
+#Maillot6, #Maillot6E {
+    position: absolute;
+    left: 65%;
+    top: 33%;
+}
+
+#Maillot7, #Maillot7E {
+    position: absolute;
+    left: 28%;
+    bottom: 27%;
+}
+
+#Maillot8, #Maillot8E {
+    position: absolute;
+    left: 38%;
+    bottom: 27%;
+}
+
+#Maillot9, #Maillot9E {
+    position: absolute;
+    left: 55%;
+    bottom: 27%;
+}
+
+#Maillot10, #Maillot10E {
+    position: absolute;
+    left: 65%;
+    bottom: 27%;
+}
+
+#Maillot11, #Maillot11E {
+    position: absolute;
+    left: 46.5%;
+    bottom: -0.5%;
+}
+
+#MaillotJoueur1 {
+    left: 10%;
+    top: 10%;
+}
+
+#TerrainMaillot {
+    width: 50%;
+    margin: auto;
+    display: block;
+    height: 69.8vh;
+    overflow: hidden;
+}
+
+.BoutonMenu {
+    border-radius: 7px;
+    height: 2vw;
+    margin-top: 2%;
+}
+
+.BoutonMenuInput {
+    border-radius: 7px;
+    height: 2vw;
+    margin-top: 2%;
+}
+
+#Gauche {
+    text-align: center;
+    justify-content: center;
+    height: 94.8%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-left: 8px;
+}
+
+#Droite {
+    text-align: center;
+    justify-content: center;
+    height: 94.8%;
+    overflow-y: scroll;
+    padding-right: 8px;
+}
+
+#Warning {
+    color: rgb(216, 1, 1);
+}
+
+#DivMaillot {
+    width: 31%;
+    height: 15%;
+    margin-bottom: 5px;
+    align-items: center;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#DivMaillot>h4 {
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-size: 0.7em;
+}
+
+.MaillotGoal, .MaillotGoalE {
+    width: 90%;
+    margin: 2px;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 18px;
+}
+
+#Droite>h3 {
+    display: flex;
+}
+
+#Gauche>h3 {
+    display: flex;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    -webkit-border-radius: 7px;
+    background-color: rgb(206, 206, 206);
+    ;
+}
+
+#Droite>h3:before, #Droite>h3:after, #Gauche>h3:before, #Gauche>h3:after {
+    color: white;
+    content: '';
+    flex: 1;
+    border-bottom: solid 2px;
+    margin: auto 6px;
+}
+
+#Droite>h3::before {
+    margin-left: 1.3em !important;
+}
+
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+#MaillotMap {
+    cursor: pointer;
+}
+
+.MaillotD, .MaillotDE {
+    width: 90%;
+}
+
+.Brassard {
+    width: 90%;
+}
+
+.Centre {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: scale(1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#AlerteRetour, #MenuArbitre {
+    position: relative;
+    left: -50%;
+    top: 10%;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: rgba(206, 206, 206, 0.4);
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 10px black;
+    display: none;
+    opacity: 0;
+}
+
+#MenuArbitre {
+    width: 50vw;
+    height: 82vh;
+}
+
+#AlerteRetour>#RetourMenu, #AlerteRetour>#RetourPage {
+    height: 0.9em;
+    width: 10%;
+    position: relative;
+    left: 45%;
+}
+
+#AlerteRetour>#RetourMenu:hover, #AlerteRetour>#RetourPage:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#Darken {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+}
+
+h1 {
+    position: relative;
+    top: -4.5%;
+}
+
+#SousTitre {
+    position: relative;
+    text-align: center;
+    left: -50%;
+}
+
+#CentreTitre {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+}
+
+.MaillotT {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    font-size: 0.7em;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    width: 7%;
+    height: 20%;
+    opacity: 0.5;
+}
+
+.MaillotT img {
+    width: 96%;
+    z-index: 99;
+    margin: 0;
+}
+
+.MaillotT h4 {
+    justify-content: center;
+    z-index: 100;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.bouton {
+    width: 16%;
+    background-color: rgba(206, 206, 206, 0.4);
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px black;
+    transition: transform 0.2s;
+    position: relative;
+    top: 10%;
+    margin: auto auto auto auto;
+}
+
+.bouton:hover {
+    transform: scale(1.07);
+}
+
+.bouton:active {
+    transform: scale(1);
+}
+
+.rectangle {
+    display: flex;
+    height: 7vw;
+    justify-content: space-evenly;
+}
+
+#étapes {
+    margin-left: -50%;
+    display: flex;
+}
+
+#Barreetape {
+    margin-top: 1%;
+    margin-left: 2%;
+    border-radius: 9px;
+    overflow: hidden;
+    border: none;
+}
+
+#Barreetape::-moz-progress-bar {
+    background-color: rgb(54, 154, 202);
+}
+
+#Barreetape::-webkit-progress-bar {
+    background-color: rgb(255, 255, 255);
+}
+
+#Barreetape::-webkit-progress-value {
+    background-color: rgb(54, 154, 202);
+}
+
+.LigneArbitre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: solid 0.8px;
+    border-radius: 12px;
+}
+
+#CentreRetour {
+    top: 30%;
+}
+
+.LigneArbitre>.bouton {
+    width: 5%;
+    font-size: x-large;
+    margin: auto 0;
+}
+
+.LigneArbitre:nth-of-type(3) {
+    border-top: none;
+}
+
+.LigneArbitre:nth-of-type(2) {
+    border-bottom: none;
+}
+
+.Void {
+    border: solid red 0.5px;
+}
+
+.Red {
+    color: red;
+}
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 0, 0, 0);
+    border: solid 0.5px;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 10%;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #07587e;
+  }
+  
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .DIVswitch {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-top: 20px;
+      align-items: center;
+  }
+

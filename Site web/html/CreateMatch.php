@@ -78,7 +78,7 @@ while ($team = $query->fetch()) {
         <div class="DIVswitch">
           <p>Domicile</p>
           <label class="switch">
-            <input type="checkbox" id="switchDOM" onclick="switchmaillot(true, $('BoutonGauche'))">
+            <input type="checkbox" id="switchDOM">
             <span class="slider round"></span>
           </label>
           <p>Neutre</p>
@@ -189,7 +189,7 @@ while ($team = $query->fetch()) {
         <div class="DIVswitch">
           <p>Exterieur</p>
           <label class="switch">
-            <input type="checkbox" id="switchEXT" onclick="switchmaillot(false, $('BoutonGaucheE'))">
+            <input type="checkbox" id="switchEXT">
             <span class="slider round"></span>
           </label>
           <p>Neutre</p>

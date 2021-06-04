@@ -6,6 +6,7 @@ $("#BoutonGauche, #BoutonGaucheE").change(function () {
   if ($(this).attr('id') === 'BoutonGauche') {
     maillot = ".MaillotD"    
     cote = 'CheminMaillotDom'
+    $("switchDOM").prop('checked', false)
     $(".categorieDOM").empty()
     Selectchange('Dom')
   $.post( "/php/joueur.php", { team: i}, function(data) {
@@ -32,6 +33,7 @@ $("#BoutonGauche, #BoutonGaucheE").change(function () {
     } else {
       maillot = ".MaillotDE"
       cote = 'CheminMaillotExt'
+      $("switchEXT").prop('checked', false)
       $(".categorieEXT").empty()
       Selectchange('Ext')
       $.post( "/php/joueur.php", { team: i}, function(data) {
@@ -56,14 +58,16 @@ $("#BoutonGauche, #BoutonGaucheE").change(function () {
       Draglol()
     })
   }
-  $.post( "/php/Listequipe.php", { team: i,  donnee: cote}, function(data) {
-    $(maillot).attr("src", data);
-  if ($(maillot).attr('class') === 'MaillotD') {
-    $("#float.gardien.categorieDOM>div>img").attr('src', '/Site web/img/maillot-gardien.png')
-  } else  {
-    $("#float.gardien.categorieEXT>div>img").attr('src', '/Site web/img/maillot-gardien.png')
-  }
-  })
+  setTimeout(() => {
+    $.post( "/php/Listequipe.php", { team: i,  donnee: cote}, function(data) {
+      $(maillot).attr("src", data);
+    if ($(maillot).attr('class') === 'MaillotD') {
+      $("#float.gardien.categorieDOM>div>img").attr('src', '/Site web/img/maillot-gardien.png')
+    } else  {
+      $("#float.gardien.categorieEXT>div>img").attr('src', '/Site web/img/maillot-gardien.png')
+    }
+    })
+  }, 100);
   
 
   RefreshMaillot();
@@ -543,20 +547,6 @@ $("#SaveFirstStep").click(function () {
     );
   }
 });
-function Isselected(Liste) {
-  if (Liste.val() === "none") {
-    return false
-  } else {
-    return true 
-  }
-}
-function switchmaillot(id, Liste) {
-if (Isselected(Liste)) {
-  if (id){
-    let src =$(".MaillotD").attr('src');
-    // const words = src.split('&');
-  }
-}}
 //EXEMPLE D'envoie vers db Mysql
 function SetName(nom) {
   let array = nom.split(" ");
@@ -569,4 +559,29 @@ function SetName(nom) {
   }
   return result
 }
+$('#switchDOM, #switchEXT').change(function() {
+  let check = $(this).prop('checked')
+  let maillot;
+  let path;
+  let id;
+  if ($(this).attr('id') === 'switchDOM') {
+    maillot = '.MaillotD'
+    path = 'CheminMaillotDom'
+    id = $('#BoutonGauche').val();
+  } else {
+    maillot = '.MaillotDE'
+    path = 'CheminMaillotExt'
+    id = $('#BoutonGaucheE').val();
+  }
+  if (check) {
+    $.post('/php/SwitchMaillot.php', {type: "CheminMaillotNeutre", id: id}, function(data) {
+      $(maillot).attr('src', data)
+    })
+  } else {
+    $.post('/php/SwitchMaillot.php', {type: path, id: id}, function(data) {
+      $(maillot).attr('src', data)
+    })
+  }
+}) 
+
 

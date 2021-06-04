@@ -106,7 +106,7 @@ function GoForward(i) {
 
           reader.readAsDataURL(input.files[0]);
       }
-  }µ
+  }
 
   function readURL(input) {
     if (input.files && input.files[0]) {
@@ -227,14 +227,10 @@ function supprimerLigne(oEvent){
 
 // $("tonbouton").click(function()
 
-function addRow(elmt, value)
+function addRow()
 {
-    var tr = document.createElement('tr');
-    elmt.appendChild(tr);
-     
-    var td = document.createElement('td');
-    tr.appendChild(td);
-    var tdText = document.createTextNode(value);
-    td.appendChild(tdText);
+   $("#Tableau").append('<tr><td>joueur 20</td><td>pierre</td><td>Richard</td><td>Richard</td><td class="btncr">'+
+     '<img src="/Site web/img/crayon-modifié.png"><td class="btntb">'+
+     '<img src="/Site web/img/icons8-supprimer-24.png"></tr>')
 }
 

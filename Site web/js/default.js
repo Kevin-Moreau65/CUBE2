@@ -13,8 +13,7 @@ $("#BoutonGauche, #BoutonGaucheE").change(function () {
   }
   let i = $(this).val()
   $.post( "/php/Listequipe.php", { team: i,  donnee: cote}, function(data) {
-    $(maillot).attr("src", data);
-  console.log(data)})
+    $(maillot).attr("src", data);})
   $.post( "/php/joueur.php", { team: i}, function(data) {
   console.log(data)})
   RefreshMaillot();

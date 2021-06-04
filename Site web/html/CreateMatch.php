@@ -18,13 +18,13 @@ while ($team = $query->fetch()) {
   <link href="/Site web/css/CreateMatch.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
   <meta charset="UTF-8" />
-  <title>Préparation d'un Match</title>
+  <title>Préparation d'un match</title>
 </head>
 
 <body>
-  <h1 id="Titre">Préparation d'un Match</h1>
+  <h1 id="Titre">Préparation d'un match</h1>
   <div id="CentreTitre">
-    <h2 id="SousTitre">Paramètre du match</h2>
+    <h2 id="SousTitre">Paramètres du match</h2>
     <a id="étapes"><span id="Etapetext">Etape 1/3</span>
       <progress id="Barreetape" value="0.33"></progress>
     </a>
@@ -97,7 +97,7 @@ while ($team = $query->fetch()) {
             <h4>K.Mbappé</h4>
           </div>
         </div>
-        <h3 id="ColoneDefenseur categorieDOM">D&EacuteFENSEUR</h3>
+        <h3 id="ColoneDefenseur categorieDOM">DEFENSEUR</h3>
         <div id="float" class="defenseur categorieDOM">
           <div class="bouge" id="DivMaillot">
             <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
@@ -114,7 +114,7 @@ while ($team = $query->fetch()) {
         <h3 id="ColoneCapitaine">Capitaine</h3>
         <div class="Capitaine bouge" id="DivMaillot">
           <img class="Brassard Capitaine" src="/Site web/img/brassard.png" />
-          <h4>Capitaine</h4>
+          <h4>CAPITAINE</h4>
         </div>
       </div>
     </div>
@@ -208,7 +208,7 @@ while ($team = $query->fetch()) {
             <h4>K.Mbappé</h4>
           </div>
         </div>     
-        <h3 id="ColoneDefenseur">D&EacuteFENSEUR</h3>
+        <h3 id="ColoneDefenseur">DEFENSEUR</h3>
         <div id="float" class="defenseur categorieEXT">
           <div class="bouge" id="DivMaillot">        
             <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
@@ -222,7 +222,7 @@ while ($team = $query->fetch()) {
             <h4>K.Mbappé</h4>
           </div>
         </div>        
-        <h3 id="ColoneCapitaine">Capitaine</h3>
+        <h3 id="ColoneCapitaine">CAPITAINE</h3>
         <div class="Capitaine bouge" id="DivMaillot">
           <img class="Brassard Capitaine" src="/Site web/img/brassard.png" />
           <h4>Capitaine</h4>
@@ -300,7 +300,7 @@ while ($team = $query->fetch()) {
   </div>
   <div id="Suivant">
     <h3>></h3>
-    <h4 id="NextStep">&Eacutequipe domicile</h4>
+    <h4 id="NextStep">Equipe domicile</h4>
   </div>
   <div id="Darken"></div>
   <div id="CentreRetour" class="Centre">

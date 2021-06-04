@@ -183,12 +183,12 @@ $("#Suivant").click(function () {
   if (State == 0) {
     GoForward(1);
     State++;
-    setStep("Paramètre du match","\u00c9quipe domicile","\u00c9quipe extérieur",2);
+    setStep("Paramètre du match","Equipe domicile","Equipe extérieur",2);
     move(valeur, 0.66);
   } else if (State == 1) {
     GoForward(2);
     State++;
-    setStep("\u00c9quipe domicile","\u00c9quipe extérieur","Lancement du match",3);
+    setStep("Equipe domicile","Equipe extérieur","Lancement du match",3);
     move(valeur, 1);
   }
 });
@@ -197,12 +197,12 @@ $("#Precedent").click(function () {
   if (State == 2) {
     GoBack(3);
     State--;
-    setStep("Paramètre du match","\u00c9quipe domicile","\u00c9quipe extérieur",2);
+    setStep("Paramètre du match","Equipe domicile","Equipe extérieur",2);
     move(valeur, 0.66);
   } else if (State == 1) {
     GoBack(2);
     State--;
-    setStep("Menu Principal", "Paramètre du match", "\u00c9quipe domicile", 1);
+    setStep("Menu principal", "Paramètre du match", "Equipe domicile", 1);
     move(valeur, 0.33);
   } else if (State == 0) {
     $("#AlerteRetour, #Darken").show();

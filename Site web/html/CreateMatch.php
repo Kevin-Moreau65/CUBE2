@@ -84,106 +84,32 @@ while ($team = $query->fetch()) {
           <p>Neutre</p>
         </div>
         <h3 id="ColoneAttaquant">ATTAQUANT</h3>
-        <div id="float">
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>C.Ronaldo</h4>
-          </div>
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
+        <div id="float" class="attaquant categorieDOM">
           <div class="bouge" id="DivMaillot">
             <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
             <h4>K.Mbappé</h4>
           </div>
         </div>
         <h3 id="ColoneMilieu">MILIEU</h3>
-        <div id="float">
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
+        <div id="float" class="milieu categorieDOM">
           <div class="bouge" id="DivMaillot">
             <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
             <h4>K.Mbappé</h4>
           </div>
         </div>
-        <h3 id="ColoneDefenseur">D&EacuteFENSEUR</h3>
-        <div id="float">
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
-          <div class="bouge" id="DivMaillot">
-            <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
-            <h4>K.Mbappé</h4>
-          </div>
+        <h3 id="ColoneDefenseur categorieDOM">D&EacuteFENSEUR</h3>
+        <div id="float" class="defenseur categorieDOM">
           <div class="bouge" id="DivMaillot">
             <img class="MaillotD" src="/Site web/img/maillot-blanc.png" />
             <h4>K.Mbappé</h4>
           </div>
         </div>
-        <h3 id="ColoneGardien">GARDIEN</h3>
+        <h3 id="ColoneGardien categorieDOM">GARDIEN</h3>
+        <div id="float" class="gardien categorieDOM">
         <div class="bouge" id="DivMaillot">
           <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
           <h4>K.Mbappé</h4>
         </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
         </div>
         <h3 id="ColoneCapitaine">Capitaine</h3>
         <div class="Capitaine bouge" id="DivMaillot">
@@ -269,97 +195,33 @@ while ($team = $query->fetch()) {
           <p>Neutre</p>
         </div>
         <h3 id="ColoneAttaquant">ATTAQUANT</h3>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
+        <div id="float" class="attaquant categorieEXT">
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+          </div>
         </div>
         <h3 id="ColoneMilieu">MILIEU</h3>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
+        <div id="float" class="milieu categorieEXT">
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+          </div>
+        </div>     
         <h3 id="ColoneDefenseur">D&EacuteFENSEUR</h3>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
+        <div id="float" class="defenseur categorieEXT">
+          <div class="bouge" id="DivMaillot">        
+            <img class="MaillotDE" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+          </div>
+        </div>        
         <h3 id="ColoneGardien">GARDIEN</h3>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
-        <div class="bouge" id="DivMaillot">
-          <img class="MaillotGoal" src="/Site web/img/maillot-blanc.png" />
-          <h4>K.Mbappé</h4>
-        </div>
+        <div id="float" class="gardien categorieEXT">
+          <div class="bouge" id="DivMaillot">
+            <img class="MaillotGoalE" src="/Site web/img/maillot-blanc.png" />
+            <h4>K.Mbappé</h4>
+          </div>
+        </div>        
         <h3 id="ColoneCapitaine">Capitaine</h3>
         <div class="Capitaine bouge" id="DivMaillot">
           <img class="Brassard Capitaine" src="/Site web/img/brassard.png" />

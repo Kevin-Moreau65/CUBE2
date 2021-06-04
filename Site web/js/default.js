@@ -3,20 +3,48 @@ $("#BoutonGauche, #BoutonGaucheE").change(function () {
   let cote;
   /*Bouton de changement d'équipe*/
   if ($(this).attr('id') === 'BoutonGauche') {
-    maillot = ".MaillotD"
+    maillot = ".MaillotD"    
     cote = 'CheminMaillotDom'
+    $(".categorieDOM").empty()
     Selectchange('Dom')
-  } else {
-    maillot = ".MaillotDE"
-    cote = 'CheminMaillotExt'
-    Selectchange('Ext')
+    } else {
+      maillot = ".MaillotDE"
+      cote = 'CheminMaillotExt'
+      $(".categorieEXT").empty()
+      Selectchange('Ext')
   }
   let i = $(this).val()
+  $.post( "/php/joueur.php", { team: i}, function(data) {
+    let team = jQuery.parseJSON(data)  
+  for (const joueur of team.attaquant) {
+    $("#float.attaquant.categorieDOM").append('<div class="bouge" id="DivMaillot">'+
+    '<img class="MaillotD" />'+
+    '<h4>'+SetName(joueur)+'</h4></div>')}
+  for (const joueur of team.milieu) {
+    $("#float.milieu.categorieDOM").append('<div class="bouge" id="DivMaillot">'+
+    '<img class="MaillotD" />'+
+    '<h4>'+SetName(joueur)+'</h4></div>')}
+  for (const joueur of team.defenseur) {
+    $("#float.defenseur.categorieDOM").append('<div class="bouge" id="DivMaillot">'+
+    '<img class="MaillotD" />'+
+    '<h4>'+SetName(joueur)+'</h4></div>')}
+  for (const joueur of team.gardien) {
+    $("#float.gardien.categorieDOM").append('<div class="bouge" id="DivMaillot">'+
+    '<img class="MaillotGoal" />'+
+    '<h4>'+SetName(joueur)+'</h4></div>')
+  }
+  Draglol()
+})
   $.post( "/php/Listequipe.php", { team: i,  donnee: cote}, function(data) {
     $(maillot).attr("src", data);
-  console.log(data)})
-  $.post( "/php/joueur.php", { team: i}, function(data) {
-  console.log(data)})
+  if ($(maillot).attr('class') === 'MaillotD') {
+    $("#float.gardien.categorieDOM>div>img").attr('src', '/Site web/img/maillot-gardien.png')
+  } else  {
+    $("#float.gardien.categorieEXT>div>img").attr('src', '/Site web/img/maillot-gardien.png')
+  }
+  })
+  
+
   RefreshMaillot();
 });
 $("#BoutonGaucheE").change(function () {
@@ -217,7 +245,7 @@ let remplacant = 0;
 let remplacantE = 0;
 let Droite = false;
 let Dropped = false;
-$(function () {
+function Draglol() { $(function () {
   $(".bouge").draggable({
     helper: "clone",
     tolerance: "pointer",
@@ -301,6 +329,7 @@ $(function () {
     },
   });
 });
+}
 function RefreshMaillot() {
   //Cette fonction sert a reset les maillot des terrain ainsi que ceux dispo en cas de changement d'équipe
   $(".MaillotT>img").attr("src", "/Site web/img/maillot-blanc.png");
@@ -508,5 +537,15 @@ if (Isselected(Liste)) {
   }
 }}
 //EXEMPLE D'envoie vers db Mysql
-
+function SetName(nom) {
+  let array = nom.split(" ");
+  let result
+  if (array[1] !== undefined) {
+  let maj = array[0][0];
+   result = maj+"."+array[1];
+  } else {
+    result = nom
+  }
+  return result
+}
 

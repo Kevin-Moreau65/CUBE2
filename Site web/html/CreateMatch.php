@@ -7,15 +7,14 @@ $db_name = 'cubes';
 //Initializes MySQLi
 $conn = mysqli_init();
 
-mysqli_ssl_set($conn, NULL, NULL, "/var/www/html/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
+mysqli_ssl_set($conn, NULL, NULL, "/php/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
 
 // Establish the connection
-mysqli_real_connect($conn, $host, $username, $password, 'quickstartdb', 3306, NULL, MYSQLI_CLIENT_SSL);
-$r = "SELECT * FROM equipe";
-$query = $db->query($r);
+mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306, MYSQLI_CLIENT_SSL, MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT);
+$query = mysqli_query($conn, 'SELECT * FROM equipe');
 $i = 0;
 $option = "";
-while ($team = $query->fetch()) {
+while ($team = mysqli_fetch_assoc($query)) {
   $i++;
   $teamnom = $team['Nom'];
   $option .= "<option value='$i'>$teamnom</option>";

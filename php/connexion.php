@@ -1,15 +1,13 @@
 <?php
+$host = 'cubefootbdd.mysql.database.azure.com';
+$username = 'footadmin@cubefootbdd';
+$password = 'Viacesi65';
+$db_name = 'cubes';
 
-$db = new PDO('mysql:host=localhost;dbname=CUBES;charset=utf8','root','');
-// $sql = "SELECT * FROM ";
+//Initializes MySQLi
+$conn = mysqli_init();
 
-// $resultats = $db->query($sql);
+mysqli_ssl_set($conn, NULL, NULL, "/php/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
 
-// while($ligne = $resultats->fetch()){
-//     echo $ligne['nom'];
-//     echo '<hr/>;';
-
-
-
-
-?>
+// Establish the connection
+mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306, MYSQLI_CLIENT_SSL, MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT);

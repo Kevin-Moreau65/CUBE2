@@ -9,55 +9,17 @@ $("#BoutonGauche, #BoutonGaucheE").change(function () {
     $("switchDOM").prop('checked', false)
     $(".categorieDOM").empty()
     Selectchange('Dom')
-  $.post( "/php/joueur.php", { team: i}, function(data) {
-    let team = jQuery.parseJSON(data)  
-  for (const joueur of team.attaquant) {
-    $("#float.attaquant.categorieDOM").append('<div class="bouge" id="DivMaillot">'+
-    '<img class="MaillotD" />'+
-    '<h4>'+SetName(joueur)+'</h4></div>')}
-  for (const joueur of team.milieu) {
-    $("#float.milieu.categorieDOM").append('<div class="bouge" id="DivMaillot">'+
-    '<img class="MaillotD" />'+
-    '<h4>'+SetName(joueur)+'</h4></div>')}
-  for (const joueur of team.defenseur) {
-    $("#float.defenseur.categorieDOM").append('<div class="bouge" id="DivMaillot">'+
-    '<img class="MaillotD" />'+
-    '<h4>'+SetName(joueur)+'</h4></div>')}
-  for (const joueur of team.gardien) {
-    $("#float.gardien.categorieDOM").append('<div class="bouge" id="DivMaillot">'+
-    '<img class="MaillotGoal" />'+
-    '<h4>'+SetName(joueur)+'</h4></div>')
-  }
+    SetMaillot(i,"MaillotD", "categorieDOM")
   Draglol()
-})
-    } else {
+} else {
       maillot = ".MaillotDE"
       cote = 'CheminMaillotExt'
       $("switchEXT").prop('checked', false)
       $(".categorieEXT").empty()
       Selectchange('Ext')
-      $.post( "/php/joueur.php", { team: i}, function(data) {
-        let team = jQuery.parseJSON(data)  
-      for (const joueur of team.attaquant) {
-        $("#float.attaquant.categorieEXT").append('<div class="bouge" id="DivMaillot">'+
-        '<img class="MaillotDE" />'+
-        '<h4>'+SetName(joueur)+'</h4></div>')}
-      for (const joueur of team.milieu) {
-        $("#float.milieu.categorieEXT").append('<div class="bouge" id="DivMaillot">'+
-        '<img class="MaillotDE" />'+
-        '<h4>'+SetName(joueur)+'</h4></div>')}
-      for (const joueur of team.defenseur) {
-        $("#float.defenseur.categorieEXT").append('<div class="bouge" id="DivMaillot">'+
-        '<img class="MaillotDE" />'+
-        '<h4>'+SetName(joueur)+'</h4></div>')}
-      for (const joueur of team.gardien) {
-        $("#float.gardien.categorieEXT").append('<div class="bouge" id="DivMaillot">'+
-        '<img class="MaillotGoalE" />'+
-        '<h4>'+SetName(joueur)+'</h4></div>')
-      }
+      SetMaillot(i, "MaillotDE", "categorieEXT")
       Draglol()
-    })
-  }
+    }
   setTimeout(() => {
     $.post( "/php/Listequipe.php", { team: i,  donnee: cote}, function(data) {
       $(maillot).attr("src", data);
@@ -68,14 +30,28 @@ $("#BoutonGauche, #BoutonGaucheE").change(function () {
     }
     })
   }, 100);
-  
-
   RefreshMaillot();
 });
-$("#BoutonGaucheE").change(function () {
-  
-  RefreshMaillot();
-});
+function SetMaillot(value, maillot, chemin) {
+  $.post( "/php/joueur.php", { team: value}, function(data) {
+    let team = jQuery.parseJSON(data)  
+  for (const joueur of team.attaquant) {
+    $("#float.attaquant."+chemin).append('<div class="bouge" id="DivMaillot">'+
+    '<img class="'+maillot+'" />'+
+    '<h4>'+SetName(joueur)+'</h4></div>')}
+  for (const joueur of team.milieu) {
+    $("#float.milieu."+chemin).append('<div class="bouge" id="DivMaillot">'+
+    '<img class="'+maillot+'" />'+
+    '<h4>'+SetName(joueur)+'</h4></div>')}
+  for (const joueur of team.defenseur) {
+    $("#float.defenseur."+chemin).append('<div class="bouge" id="DivMaillot">'+
+    '<img class="'+maillot+'" />'+
+    '<h4>'+SetName(joueur)+'</h4></div>')}
+  for (const joueur of team.gardien) {
+    $("#float.gardien."+chemin).append('<div class="bouge" id="DivMaillot">'+
+    '<img class="'+maillot+'" />'+
+    '<h4>'+SetName(joueur)+'</h4></div>')}
+})}
 //Création d'une classe permettant de pouvoir stocker le left et le top/bottom en une seule variable
 class posmaillot {
   constructor(left, botop) {
@@ -576,12 +552,10 @@ $('#switchDOM, #switchEXT').change(function() {
   if (check) {
     $.post('/php/SwitchMaillot.php', {type: "CheminMaillotNeutre", id: id}, function(data) {
       $(maillot).attr('src', data)
-      alert(data)
     })
   } else {
     $.post('/php/SwitchMaillot.php', {type: path, id: id}, function(data) {
       $(maillot).attr('src', data)
-      alert(data)
     })
   }
 }) 

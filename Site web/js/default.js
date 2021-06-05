@@ -576,10 +576,12 @@ $('#switchDOM, #switchEXT').change(function() {
   if (check) {
     $.post('/php/SwitchMaillot.php', {type: "CheminMaillotNeutre", id: id}, function(data) {
       $(maillot).attr('src', data)
+      alert(data)
     })
   } else {
     $.post('/php/SwitchMaillot.php', {type: path, id: id}, function(data) {
       $(maillot).attr('src', data)
+      alert(data)
     })
   }
 }) 

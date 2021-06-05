@@ -1,5 +1,16 @@
 <?php
-$db = new PDO('mysql:host=localhost;dbname=CUBES;charset=utf8', 'root', '');
+$host = 'cubefootbdd.mysql.database.azure.com';
+$username = 'footadmin@cubefootbdd';
+$password = 'Viacesi65';
+$db_name = 'cubes';
+
+//Initializes MySQLi
+$conn = mysqli_init();
+
+mysqli_ssl_set($conn, NULL, NULL, "/var/www/html/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
+
+// Establish the connection
+mysqli_real_connect($conn, $host, $username, $password, 'quickstartdb', 3306, NULL, MYSQLI_CLIENT_SSL);
 $r = "SELECT * FROM equipe";
 $query = $db->query($r);
 $i = 0;
@@ -183,13 +194,13 @@ while ($team = $query->fetch()) {
         </div>
         <h3 id="ColoneMilieu">MILIEU</h3>
         <div id="float" class="milieu categorieEXT">
-        </div>     
+        </div>
         <h3 id="ColoneDefenseur">DEFENSEUR</h3>
         <div id="float" class="defenseur categorieEXT">
-        </div>        
+        </div>
         <h3 id="ColoneGardien">GARDIEN</h3>
         <div id="float" class="gardien categorieEXT">
-        </div>        
+        </div>
         <h3 id="ColoneCapitaine">CAPITAINE</h3>
         <div class="Capitaine bouge" id="DivMaillot">
           <img class="Brassard Capitaine" src="/Site web/img/brassard.png" />
